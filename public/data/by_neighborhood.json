@@ -1,0 +1,314 @@
+[
+  {
+    "nta": "Claremont Village-Claremont (East)",
+    "recurred": 3688,
+    "no_recurrence": 508,
+    "censored": 1382,
+    "total": 5578,
+    "rate": 0.8789323164918971
+  },
+  {
+    "nta": "Highbridge",
+    "recurred": 11225,
+    "no_recurrence": 1599,
+    "censored": 4380,
+    "total": 17204,
+    "rate": 0.8753119151590767
+  },
+  {
+    "nta": "Fordham Heights",
+    "recurred": 12721,
+    "no_recurrence": 1972,
+    "censored": 4603,
+    "total": 19296,
+    "rate": 0.8657864289117266
+  },
+  {
+    "nta": "West Farms",
+    "recurred": 7345,
+    "no_recurrence": 1181,
+    "censored": 2912,
+    "total": 11438,
+    "rate": 0.8614825240441004
+  },
+  {
+    "nta": "Allerton",
+    "recurred": 7544,
+    "no_recurrence": 1271,
+    "censored": 2902,
+    "total": 11717,
+    "rate": 0.8558139534883721
+  },
+  {
+    "nta": "Mount Hope",
+    "recurred": 17327,
+    "no_recurrence": 2993,
+    "censored": 7048,
+    "total": 27368,
+    "rate": 0.8527066929133859
+  },
+  {
+    "nta": "Mount Eden-Claremont (West)",
+    "recurred": 15182,
+    "no_recurrence": 2627,
+    "censored": 5498,
+    "total": 23307,
+    "rate": 0.8524903138862373
+  },
+  {
+    "nta": "University Heights (South)-Morris Heights",
+    "recurred": 14328,
+    "no_recurrence": 2567,
+    "censored": 5804,
+    "total": 22699,
+    "rate": 0.8480615566735721
+  },
+  {
+    "nta": "Concourse-Concourse Village",
+    "recurred": 19710,
+    "no_recurrence": 3666,
+    "censored": 7525,
+    "total": 30901,
+    "rate": 0.8431724845995893
+  },
+  {
+    "nta": "Melrose",
+    "recurred": 8048,
+    "no_recurrence": 1526,
+    "censored": 3655,
+    "total": 13229,
+    "rate": 0.8406099853770629
+  },
+  {
+    "nta": "Castle Hill-Unionport",
+    "recurred": 3730,
+    "no_recurrence": 768,
+    "censored": 1352,
+    "total": 5850,
+    "rate": 0.8292574477545576
+  },
+  {
+    "nta": "Kingsbridge Heights-Van Cortlandt Village",
+    "recurred": 7076,
+    "no_recurrence": 1479,
+    "censored": 3177,
+    "total": 11732,
+    "rate": 0.8271186440677966
+  },
+  {
+    "nta": "Pelham Parkway-Van Nest",
+    "recurred": 4788,
+    "no_recurrence": 1041,
+    "censored": 2344,
+    "total": 8173,
+    "rate": 0.8214101904271744
+  },
+  {
+    "nta": "Tremont",
+    "recurred": 9865,
+    "no_recurrence": 2148,
+    "censored": 4709,
+    "total": 16722,
+    "rate": 0.8211937068176143
+  },
+  {
+    "nta": "Belmont",
+    "recurred": 13062,
+    "no_recurrence": 2881,
+    "censored": 5712,
+    "total": 21655,
+    "rate": 0.8192937339271154
+  },
+  {
+    "nta": "Bedford Park",
+    "recurred": 13489,
+    "no_recurrence": 3147,
+    "censored": 7014,
+    "total": 23650,
+    "rate": 0.8108319307525848
+  },
+  {
+    "nta": "Longwood",
+    "recurred": 8892,
+    "no_recurrence": 2201,
+    "censored": 4283,
+    "total": 15376,
+    "rate": 0.8015865861354007
+  },
+  {
+    "nta": "Norwood",
+    "recurred": 8766,
+    "no_recurrence": 2182,
+    "censored": 3896,
+    "total": 14844,
+    "rate": 0.8006941907197662
+  },
+  {
+    "nta": "Crotona Park East",
+    "recurred": 4762,
+    "no_recurrence": 1187,
+    "censored": 2802,
+    "total": 8751,
+    "rate": 0.8004706673390486
+  },
+  {
+    "nta": "University Heights (North)-Fordham",
+    "recurred": 10289,
+    "no_recurrence": 2666,
+    "censored": 5094,
+    "total": 18049,
+    "rate": 0.7942107294480896
+  },
+  {
+    "nta": "Kingsbridge-Marble Hill",
+    "recurred": 1549,
+    "no_recurrence": 427,
+    "censored": 924,
+    "total": 2900,
+    "rate": 0.7839068825910931
+  },
+  {
+    "nta": "Westchester Square",
+    "recurred": 2117,
+    "no_recurrence": 592,
+    "censored": 1863,
+    "total": 4572,
+    "rate": 0.781469176818014
+  },
+  {
+    "nta": "Morrisania",
+    "recurred": 7718,
+    "no_recurrence": 2166,
+    "censored": 3801,
+    "total": 13685,
+    "rate": 0.7808579522460543
+  },
+  {
+    "nta": "Mott Haven-Port Morris",
+    "recurred": 7382,
+    "no_recurrence": 2125,
+    "censored": 5036,
+    "total": 14543,
+    "rate": 0.7764804880614284
+  },
+  {
+    "nta": "Hunts Point",
+    "recurred": 3143,
+    "no_recurrence": 936,
+    "censored": 1640,
+    "total": 5719,
+    "rate": 0.7705319931355724
+  },
+  {
+    "nta": "Soundview-Bruckner-Bronx River",
+    "recurred": 9593,
+    "no_recurrence": 2887,
+    "censored": 5255,
+    "total": 17735,
+    "rate": 0.7686698717948718
+  },
+  {
+    "nta": "Wakefield-Woodlawn",
+    "recurred": 4653,
+    "no_recurrence": 1546,
+    "censored": 3031,
+    "total": 9230,
+    "rate": 0.7506049362800452
+  },
+  {
+    "nta": "Williamsbridge-Olinville",
+    "recurred": 7157,
+    "no_recurrence": 2724,
+    "censored": 4946,
+    "total": 14827,
+    "rate": 0.7243194008703573
+  },
+  {
+    "nta": "Riverdale-Spuyten Duyvil",
+    "recurred": 1360,
+    "no_recurrence": 585,
+    "censored": 1045,
+    "total": 2990,
+    "rate": 0.699228791773779
+  },
+  {
+    "nta": "Soundview-Clason Point",
+    "recurred": 851,
+    "no_recurrence": 414,
+    "censored": 852,
+    "total": 2117,
+    "rate": 0.6727272727272727
+  },
+  {
+    "nta": "Parkchester",
+    "recurred": 1965,
+    "no_recurrence": 1038,
+    "censored": 1544,
+    "total": 4547,
+    "rate": 0.6543456543456544
+  },
+  {
+    "nta": "UNKNOWN",
+    "recurred": 17,
+    "no_recurrence": 11,
+    "censored": 5,
+    "total": 33,
+    "rate": 0.6071428571428571
+  },
+  {
+    "nta": "Pelham Bay-Country Club-City Island",
+    "recurred": 958,
+    "no_recurrence": 659,
+    "censored": 1177,
+    "total": 2794,
+    "rate": 0.5924551638837353
+  },
+  {
+    "nta": "Morris Park",
+    "recurred": 472,
+    "no_recurrence": 342,
+    "censored": 699,
+    "total": 1513,
+    "rate": 0.5798525798525799
+  },
+  {
+    "nta": "Eastchester-Edenwald-Baychester",
+    "recurred": 1061,
+    "no_recurrence": 1055,
+    "censored": 1735,
+    "total": 3851,
+    "rate": 0.5014177693761814
+  },
+  {
+    "nta": "Throgs Neck-Schuylerville",
+    "recurred": 506,
+    "no_recurrence": 527,
+    "censored": 783,
+    "total": 1816,
+    "rate": 0.4898354307841239
+  },
+  {
+    "nta": "Pelham Gardens",
+    "recurred": 129,
+    "no_recurrence": 146,
+    "censored": 512,
+    "total": 787,
+    "rate": 0.4690909090909091
+  },
+  {
+    "nta": "Co-op City",
+    "recurred": 100,
+    "no_recurrence": 116,
+    "censored": 155,
+    "total": 371,
+    "rate": 0.46296296296296297
+  },
+  {
+    "nta": "Hutchinson Metro Center",
+    "recurred": 0,
+    "no_recurrence": 0,
+    "censored": 3,
+    "total": 3,
+    "rate": null
+  }
+]

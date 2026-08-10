@@ -1,0 +1,12 @@
+{
+  "recurred": 252568,
+  "no_recurrence": 57906,
+  "censored": 121098,
+  "total": 431572,
+  "rate": 0.8134916289286703,
+  "building_any_recurrence_rate": 0.7210827866810595,
+  "buildings_with_data": 12043,
+  "date_range_start": "2024-08-10T00:00:00",
+  "last_updated": "2026-08-10T21:58:10.177Z",
+  "total_rows_fetched": 653373
+}

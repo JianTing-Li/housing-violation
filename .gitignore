@@ -13,3 +13,11 @@
 .cursor/
 
 .DS_Store
+
+# Raw data cache (re-fetched from Socrata, not committed)
+.cache/
+data-raw/
+
+# Dependencies / build output
+node_modules/
+dist/
