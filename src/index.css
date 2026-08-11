@@ -35,8 +35,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(253, 252, 250, 0.92);
-  backdrop-filter: blur(6px);
+  /* Opaque, not translucent — content that scrolls underneath (e.g. the
+     choropleth map) must not bleed through the nav bar. */
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -135,6 +136,11 @@ a {
   margin-block: 1.5rem;
   border-radius: 4px;
   overflow: hidden;
+  /* Leaflet's internal panes use `transform: translate3d(...)` for pan/zoom
+     performance, which can otherwise composite above a sibling `position:
+     sticky` element (the nav) despite correct z-index/document order. This
+     forces a real stacking-context boundary so nothing inside can escape. */
+  isolation: isolate;
   border: 1px solid var(--color-border);
 }
 
