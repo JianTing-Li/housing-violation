@@ -1,28 +1,63 @@
 import { geoJSON } from 'leaflet';
 import { GeoJSON, MapContainer } from 'react-leaflet';
 import { formatNumber, formatPct } from '../lib/format.js';
-import { makeRateColorScale } from '../lib/colorScale.js';
+import { colorForNeighborhood } from '../lib/colorScale.js';
+import { binForNeighborhood } from '../lib/neighborhoodLegend.js';
 
 export function Choropleth({ boundaries, ratesByNta }) {
   const bounds = geoJSON(boundaries).getBounds();
-  const colorFor = makeRateColorScale(Object.values(ratesByNta).map((r) => r.rate));
 
   function style(feature) {
     const entry = ratesByNta[feature.properties.ntaname];
     return {
-      fillColor: colorFor(entry?.rate),
+      fillColor: colorForNeighborhood(entry),
       fillOpacity: 0.85,
       color: '#fdfcfa',
       weight: 1,
     };
   }
 
+  function tooltipHtml(feature) {
+    const entry = ratesByNta[feature.properties.ntaname];
+    const bin = binForNeighborhood(entry);
+    if (!entry || bin.id === 'insufficient-data') {
+      return `<strong>${feature.properties.ntaname}</strong><br/>Insufficient data (fewer than 25 classifiable cases)`;
+    }
+    return (
+      `<strong>${feature.properties.ntaname}</strong><br/>` +
+      `${formatPct(entry.rate)} repeat violation rate<br/>` +
+      `${formatNumber(entry.recurred + entry.no_recurrence)} classifiable closed violations`
+    );
+  }
+
   function onEachFeature(feature, layer) {
     const entry = ratesByNta[feature.properties.ntaname];
-    const label = entry
-      ? `<strong>${feature.properties.ntaname}</strong><br/>${formatPct(entry.rate)} same-type repeat rate<br/>${formatNumber(entry.recurred + entry.no_recurrence)} classifiable closed violations`
-      : `<strong>${feature.properties.ntaname}</strong><br/>No violation data`;
-    layer.bindTooltip(label, { sticky: true });
+    const bin = binForNeighborhood(entry);
+    const ariaLabel =
+      entry && bin.id !== 'insufficient-data'
+        ? `${feature.properties.ntaname}: ${formatPct(entry.rate)} repeat violation rate, ${formatNumber(entry.recurred + entry.no_recurrence)} classifiable closed violations`
+        : `${feature.properties.ntaname}: insufficient data, fewer than 25 classifiable cases`;
+
+    layer.bindTooltip(tooltipHtml(feature), { sticky: true });
+
+    // Hover alone isn't accessible — make each neighborhood keyboard-
+    // focusable and touch-tappable, with the same info surfaced either way.
+    layer.on('add', () => {
+      const el = layer.getElement?.();
+      if (!el) return;
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', ariaLabel);
+      el.addEventListener('focus', () => layer.openTooltip());
+      el.addEventListener('blur', () => layer.closeTooltip());
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          layer.openTooltip();
+        }
+      });
+      el.addEventListener('click', () => layer.openTooltip());
+    });
   }
 
   return (

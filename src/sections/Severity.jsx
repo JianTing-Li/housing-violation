@@ -17,10 +17,10 @@ function buildTakeaway(byClass) {
   const highestLabel = CLASS_LABELS[highest.class];
 
   if (highest.class === 'C') {
-    return `Class C — the “immediately hazardous” tier — has the highest same-type repeat rate (${formatPct(highest.rate)}), just ahead of Class B (${formatPct(second.rate)}).`;
+    return `Class C — the “immediately hazardous” tier — has the highest repeat violation rate (${formatPct(highest.rate)}), just ahead of Class B (${formatPct(second.rate)}).`;
   }
 
-  return `${highestLabel} has the highest same-type repeat rate (${formatPct(highest.rate)}). Class C is close behind at ${formatPct(byClass.find((c) => c.class === 'C').rate)}, so severity alone does not explain the pattern.`;
+  return `${highestLabel} has the highest repeat violation rate (${formatPct(highest.rate)}). Class C is close behind at ${formatPct(byClass.find((c) => c.class === 'C').rate)}, so severity alone does not explain the pattern.`;
 }
 
 export function Severity() {
@@ -36,7 +36,7 @@ export function Severity() {
 
   return (
     <section id="severity" className="section">
-      <h2>Do more serious violations stay fixed?</h2>
+      <h2>How do repeat rates vary by severity?</h2>
 
       <div className="chart-block">
         <ResponsiveContainer width="100%" height={280}>
@@ -60,7 +60,7 @@ export function Severity() {
 
       <p>
         HPD groups violations into three classes: A (non-hazardous), B (hazardous), and C
-        (immediately hazardous). The same-type repeat rate does not fall steadily as severity
+        (immediately hazardous). The repeat violation rate does not fall steadily as severity
         rises. This measure cannot tell whether any individual repair held.
       </p>
 

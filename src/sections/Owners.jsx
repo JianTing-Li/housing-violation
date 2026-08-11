@@ -7,18 +7,32 @@ import { getRecommendation } from '../lib/recommendations.js';
 
 const TOP_N = 8;
 
+// Recharts right-aligns category-axis tick labels by default, inside a
+// fixed-width column — with "Reg #NNNNNN" labels well short of that
+// column's width, their right-aligned text left a ragged, indented gap
+// between the chart and the flush-left title above it. This renders every
+// label flush at the same small x instead, so the whole chart block's left
+// edge lines up with the title/subtitle text.
+function LeftAlignedTick({ x, y, payload }) {
+  return (
+    <text x={4} y={y} dy={4} textAnchor="start" fontSize={12.5} fill="#5c5c5c">
+      {payload.value}
+    </text>
+  );
+}
+
 function OwnerBarChart({ data, dataKey, valueFormatter, barColor }) {
   return (
     <ResponsiveContainer width="100%" height={TOP_N * 40 + 20}>
-      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, left: 10, bottom: 0 }}>
+      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, left: 0, bottom: 0 }}>
         <XAxis type="number" hide />
         <YAxis
           type="category"
           dataKey="label"
-          width={110}
+          width={96}
           tickLine={false}
           axisLine={false}
-          tick={{ fontSize: 12.5 }}
+          tick={<LeftAlignedTick />}
         />
         <Bar dataKey={dataKey} fill={barColor} radius={[0, 4, 4, 0]} maxBarSize={22}>
           <LabelList dataKey={dataKey} position="right" formatter={valueFormatter} />
@@ -62,7 +76,7 @@ export function Owners() {
           <OwnerBarChart data={countData} dataKey="total" valueFormatter={formatNumber} barColor="#1a1a1a" />
         </div>
         <div className="owner-chart">
-          <h3>Highest same-type repeat rate</h3>
+          <h3>Highest repeat violation rate</h3>
           <p className="owner-chart__subtitle">
             Among registrations with at least 25 classifiable violations
           </p>
@@ -72,7 +86,7 @@ export function Owners() {
 
       <ChartTakeaway>
         Registration #{countData[0]?.registrationid} has the most closed violations:{' '}
-        {formatNumber(countData[0]?.total)}. Its same-type repeat rate is{' '}
+        {formatNumber(countData[0]?.total)}. Its repeat violation rate is{' '}
         {formatPct(countData[0]?.rate)}. A high count and a high rate are different measures, and
         they do not always point to the same registration.
       </ChartTakeaway>

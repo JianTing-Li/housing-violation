@@ -10,7 +10,7 @@ export const RECOMMENDATIONS = [
   {
     id: 'severity-scrutiny',
     section: 'More serious violations',
-    text: 'Give Class C closures a larger share of follow-up checks, then compare their same-type repeat rate with Classes A and B.',
+    text: 'Give Class C closures a larger share of follow-up checks, then compare their repeat violation rate with Classes A and B.',
   },
   {
     id: 'violation-targeting',

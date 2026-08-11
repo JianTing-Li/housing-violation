@@ -1,4 +1,4 @@
-import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useJsonData } from '../hooks/useJsonData.js';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
@@ -37,12 +37,12 @@ export function ViolationTypes() {
 
   if (loading || error || !data) return null;
 
-  const physical = data.filter((d) => d.category === 'physical');
+  const physical = data.filter((d) => d.chart_eligibility === 'physical_condition_ranking');
   const administrative = data
-    .filter((d) => d.category === 'administrative')
+    .filter((d) => d.category === 'administrative_or_posting')
     .sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0));
-  const ambiguous = data
-    .filter((d) => d.category === 'ambiguous')
+  const enforcement = data
+    .filter((d) => d.category === 'enforcement_or_legal_status')
     .sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0));
 
   const top = physical.slice(0, TOP_N);
@@ -54,7 +54,7 @@ export function ViolationTypes() {
 
   return (
     <section id="violation-types" className="section">
-      <h2>Which problems return most often?</h2>
+      <h2>Which physical-condition violations have the highest repeat rates?</h2>
 
       <div className="chart-block chart-block--tall">
         <ResponsiveContainer width="100%" height={chartData.length * 46 + 20}>
@@ -83,40 +83,43 @@ export function ViolationTypes() {
       <ChartTakeaway>
         {top.length > 0 && (
           <>
-            “{top[0].display_name}” has a {formatPct(top[0].rate)} same-type repeat rate, the
+            “{top[0].display_name}” has a {formatPct(top[0].rate)} repeat violation rate, the
             highest among physical-condition categories with enough records to compare.
           </>
         )}
       </ChartTakeaway>
 
       <p>
-        This chart only includes physical conditions — things like leaks, pests, or broken
-        equipment — with at least 25 classifiable closed violations. Paperwork and posting
-        requirements, like the annual bedbug filing, are left out here because a repeat filing
-        isn't evidence of an unresolved physical problem. They're listed separately below.
+        This chart includes only records categorized as a physical condition, with at least 25
+        classifiable closed violations. Administrative, posting, and enforcement records are
+        excluded here because a repeat of that kind of record is not evidence of an unresolved
+        physical condition. They are listed separately below.
       </p>
 
       <Callout>{getRecommendation('violation-targeting')}</Callout>
 
       {administrative.length > 0 && (
         <div className="category-aside">
-          <h3>Recurring paperwork &amp; posting requirements</h3>
+          <h3>Administrative and posting violations</h3>
           <p className="category-aside__note">
-            These come back on a schedule — annual filings, required signage — not because a
-            repair failed. Excluded from the chart above; shown here for reference.
+            These are valid HPD violations involving reports, registrations, certificates,
+            notices, or required signs. They are presented separately because they do not
+            directly describe a physical housing condition. Some involve periodic requirements;
+            others do not.
           </p>
           <CategoryList items={administrative} />
         </div>
       )}
 
-      {ambiguous.length > 0 && (
+      {enforcement.length > 0 && (
         <div className="category-aside">
-          <h3>Not yet classified</h3>
+          <h3>Enforcement and legal-status records</h3>
           <p className="category-aside__note">
-            These don't clearly read as either a physical condition or a paperwork requirement
-            from the violation text alone, so they're held out of the chart above until reviewed.
+            These describe a regulatory or legal status — a vacate order, a filing tied to one, or
+            an enforcement-program notice — rather than an ongoing physical condition or a routine
+            posting duty.
           </p>
-          <CategoryList items={ambiguous} />
+          <CategoryList items={enforcement} />
         </div>
       )}
     </section>
