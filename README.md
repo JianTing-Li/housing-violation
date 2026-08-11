@@ -1,6 +1,6 @@
 # Bronx Housing Violation Recurrence
 
-**[Live site →](https://housing-violations-recurrence.vercel.app/)**
+**[Explore the analysis →](https://housing-violations-recurrence.vercel.app/)**
 
 A data journalism site analyzing 653K+ NYC HPD housing violation records to answer one question: **when a housing violation gets marked "closed," does the problem actually go away?**
 
