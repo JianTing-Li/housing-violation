@@ -1,6 +1,7 @@
 [
   {
     "code": "§27-2033.3",
+    "display_name": "Missing temperature sensor",
     "description": "§27-2033.3(B) CORRECT FAILURE TO INSTALL AN INTERNET CAPABLE TEMPERATURE REPORTING DEVICE IN ONE LIVING ROOM IN APARTMENT LOCATED AT APT 10G",
     "is_compliance_cadence": false,
     "recurred": 975,
@@ -11,6 +12,7 @@
   },
   {
     "code": "§27-2017.4",
+    "display_name": "Roach infestation",
     "description": "HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF ROACHES IN THE ENTIRE APARTMENT LOCATED AT APT 4H, 4th STORY, 1st APARTMENT FR",
     "is_compliance_cadence": false,
     "recurred": 24627,
@@ -21,6 +23,7 @@
   },
   {
     "code": "§27-2045",
+    "display_name": "Missing smoke detector",
     "description": "§ 27-2045 ADM CODE REPAIR OR REPLACE THE SMOKE DETECTOR MISSING IN THE ENTIRE APARTMENT LOCATED AT APT 1B, 1st STORY, 1st APARTMENT FROM NOR",
     "is_compliance_cadence": false,
     "recurred": 14022,
@@ -31,6 +34,7 @@
   },
   {
     "code": "§27-2013",
+    "display_name": "Repaint required",
     "description": "§ 27-2013 ADM CODE PAINT WITH LIGHT COLORED PAINT TO THE SATISFACTION OF THIS DEPARTMENT WALLS AND CEILING IN THE ENTIRE APARTMENT LOCATED A",
     "is_compliance_cadence": false,
     "recurred": 14678,
@@ -41,6 +45,7 @@
   },
   {
     "code": "§27-2005",
+    "display_name": "Broken stove burners",
     "description": "§ 27-2005 HMC: PROPERLY REPAIR OR REPLACE THE BROKEN OR DEFECTIVE BURNERS TO STOVE REAR AND FRONT AT RIGHT SIDE IN THE KITCHEN LOCATED AT AP",
     "is_compliance_cadence": false,
     "recurred": 140075,
@@ -51,6 +56,7 @@
   },
   {
     "code": "§27-2017.3",
+    "display_name": "Mold condition",
     "description": "§ 27-2017.3 HMC: TRACE AND REPAIR THE SOURCE AND ABATE THE VISIBLE MOLD CONDITION... LESS THAN 10SQ. FT. AT WINDOW CASING NORTH WALL IN THE",
     "is_compliance_cadence": false,
     "recurred": 11501,
@@ -61,6 +67,7 @@
   },
   {
     "code": "§27-2026",
+    "display_name": "Water leak",
     "description": "§ 27-2026, 2027 HMC: PROPERLY REPAIR THE SOURCE AND ABATE THE EVIDENCE OF A WATER LEAK AT CEILING IN THE BATHROOM LOCATED AT APT 4A, 1st STO",
     "is_compliance_cadence": false,
     "recurred": 17715,
@@ -71,6 +78,7 @@
   },
   {
     "code": "§27-2046.1",
+    "display_name": "Missing CO detector",
     "description": "§ 27-2046.1 HMC: REPAIR OR REPLACE THE CARBON MONOXIDE DETECTING DEVICE(S). MISSING IN THE ENTIRE APARTMENT LOCATED AT APT 1B, 1st STORY, 1s",
     "is_compliance_cadence": false,
     "recurred": 6174,
@@ -81,6 +89,7 @@
   },
   {
     "code": "§27-2031",
+    "display_name": "No hot water",
     "description": "§ 27-2031 ADM CODE PROVIDE HOT WATER AT ALL HOT WATER FIXTURES IN THE ENTIRE APARTMENT LOCATED AT APT 7Q, 7th STORY, 2nd APARTMENT FROM WEST",
     "is_compliance_cadence": false,
     "recurred": 4778,
@@ -91,6 +100,7 @@
   },
   {
     "code": "§27-2033",
+    "display_name": "Boiler access blocked",
     "description": "§ 27-2033 ADM CODE PROVIDE READY ACCESS TO BUILDINGS HEATING SYSTEM LOCKED DOOR SUPER STATED WOULD GIVE ME ACCESS BUT DID NOT COMPLY AT BOIL",
     "is_compliance_cadence": false,
     "recurred": 4092,
@@ -101,6 +111,7 @@
   },
   {
     "code": "UNKNOWN",
+    "display_name": "Annual bedbug report",
     "description": "(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR AS DESCRIBED ON HPD\u001a",
     "is_compliance_cadence": false,
     "recurred": 2525,
@@ -111,6 +122,7 @@
   },
   {
     "code": "§27-2029",
+    "display_name": "Inadequate heat",
     "description": "§ 27-2029 ADM CODE PROVIDE AN ADEQUATE SUPPLY OF HEAT FOR THE APARTMENT IN THE ENTIRE APARTMENT LOCATED AT APT 6T, 6th STORY, 1st APARTMENT",
     "is_compliance_cadence": false,
     "recurred": 1979,
@@ -121,6 +133,7 @@
   },
   {
     "code": "§27-2017",
+    "display_name": "Rodent infestation",
     "description": "567 (C) § 27-2017, 27-2017.1, 27-2017.4, 27-2017.5, 27-2017.8, 27-2019, 27-2021 HMC: ABATE THE NUISANCE CONSISTING OF EVIDENCE OF RATS AND A",
     "is_compliance_cadence": false,
     "recurred": 434,
@@ -131,6 +144,7 @@
   },
   {
     "code": "§27-2010",
+    "display_name": "Trash/refuse buildup",
     "description": "§ 27-2010, 2011, 2012 ADM CODE REMOVE THE ACCUMULATION OF REFUSE AND/OR RUBBISH AND MAINTAIN IN A CLEAN CONDITION THE FLOOR AT COMPACTOR CLO",
     "is_compliance_cadence": false,
     "recurred": 975,
@@ -141,6 +155,7 @@
   },
   {
     "code": "§27-2070",
+    "display_name": "No gas supply",
     "description": "§ 27-2070 ADM CODE PROVIDE AN ADEQUATE SUPPLY OF GAS TO THE FIXTURES AT RANGE IN THE KITCHEN LOCATED AT APT 28, 2nd STORY, 2nd APARTMENT FRO",
     "is_compliance_cadence": false,
     "recurred": 517,
@@ -151,6 +166,7 @@
   },
   {
     "code": "§27-2043.1",
+    "display_name": "Missing window guard",
     "description": "§ 27-2043.1 HMC INSTALL THE MISSING OR REPAIR/REPLACE THE DEFECTIVE WINDOW GUARD(S) IN ACCORDANCE WITH THE SPECIFICATIONS OF THE NEW YORK CI",
     "is_compliance_cadence": false,
     "recurred": 970,
@@ -161,6 +177,7 @@
   },
   {
     "code": "§27-2011",
+    "display_name": "Yard not maintained",
     "description": "§ 27-2011 ADM CODE CLEANSE TO THE SATISFACTION OF THIS DEPARTMENT THE NORTH AND EAST YARD",
     "is_compliance_cadence": false,
     "recurred": 572,
@@ -171,6 +188,7 @@
   },
   {
     "code": "§27-2056.6",
+    "display_name": "Lead paint hazard",
     "description": "§ 27-2056.6 ADM CODE - CORRECT THE LEAD-BASED PAINT HAZARD - PRESUMED LEAD PAINT THAT IS PEELING OR ON A DETERIORATED SUBSURFACE USING WORK",
     "is_compliance_cadence": false,
     "recurred": 2868,
@@ -181,6 +199,7 @@
   },
   {
     "code": "§300",
+    "display_name": "Unpermitted alteration",
     "description": "§ 300 M/D LAW FILE PLANS AND APPLICATION AND LEGALIZE THE FOLLOWING ALTERATION OR RESTORE TO THE LEGAL CONDITION EXISTING PRIOR TO THE MAKIN",
     "is_compliance_cadence": false,
     "recurred": 265,
@@ -191,6 +210,7 @@
   },
   {
     "code": "§27-2037",
+    "display_name": "Electrical fixture defect",
     "description": "§ 27-2037, 2038 HMC: PROVIDE A SAFE AND ADEQUATE SUPPLY OF ELECTRIC SERVICE TO THE FIXTURES ELECTRICAL LIGHT FIXTURE AT CEILING IN THE 2nd R",
     "is_compliance_cadence": false,
     "recurred": 395,
@@ -201,6 +221,7 @@
   },
   {
     "code": "§27-2104",
+    "display_name": "Missing registration sign",
     "description": "§ 27-2104 ADM CODE POST AND MAINTAIN A PROPER SIGN ON WALL OF ENTRANCE STORY SHOWING THE REGISTRATION NUMBER ASSIGNED BY THE DEPARTMENT AND",
     "is_compliance_cadence": false,
     "recurred": 206,
@@ -211,6 +232,7 @@
   },
   {
     "code": "§27-2021",
+    "display_name": "Missing trash receptacles",
     "description": "§ 27-2021 ADM CODE PROVIDE SUFFICIENT, PROPER AND SEPARATE METAL RECEPTACLES FOR THE DEPOSIT OF GARBAGE, RUBBISH AND OTHER WASTE MATERIAL AN",
     "is_compliance_cadence": false,
     "recurred": 131,
@@ -221,6 +243,7 @@
   },
   {
     "code": "§27-2024",
+    "display_name": "No cold water",
     "description": "§ 27-2024 ADM CODE PROVIDE ADEQUATE SUPPLY OF COLD WATER FOR THE FIXTURES AT BATHTUB IN THE BATHROOM LOCATED AT APT 6K, 6th STORY, 1st APART",
     "is_compliance_cadence": false,
     "recurred": 386,
@@ -231,6 +254,7 @@
   },
   {
     "code": "§27-2107",
+    "display_name": "Unregistered property",
     "description": "§27-2107 ADM CODE OWNER FAILED TO FILE A VALID REGISTRATION STATEMENT WITH THE DEPARTMENT AS REQUIRED BY ADM CODE §27-2097 AND IS THEREFORE",
     "is_compliance_cadence": false,
     "recurred": 795,
@@ -241,6 +265,7 @@
   },
   {
     "code": "§27-2053",
+    "display_name": "Missing super contact sign",
     "description": "§ 27-2053 ADM CODE POST SIGN ON WALL OF ENTRANCE STORY BEARING NAME, ADDRESS INCLUDING APARTMENT NUMBER IF ANY, AND TELEPHONE NUMBER OF SUPE",
     "is_compliance_cadence": false,
     "recurred": 189,
@@ -251,6 +276,7 @@
   },
   {
     "code": "§53",
+    "display_name": "Fire escape defect",
     "description": "§ 53, 187, 231 M/D LAW AND DEPARTMENT RULES AND REGULATIONS. PROVIDE A SHOE PROPERLY SECURED TO BOTTOM OF STRING OF DROPLADDER TACK WELDED,",
     "is_compliance_cadence": false,
     "recurred": 262,
@@ -261,6 +287,7 @@
   },
   {
     "code": "§25-171",
+    "display_name": "Fire door gap",
     "description": "28 RCNY § 25-171; & 67 (7)(B) MDL; NYC FIRE CODE § 703.1.3; NYC FIRE CODE § 703.2: ADJUST DOOR TO PREVENT GAPS BETWEEN THE TOP AND SIDE EDGE",
     "is_compliance_cadence": false,
     "recurred": 50,
@@ -271,6 +298,7 @@
   },
   {
     "code": "§27-2042",
+    "display_name": "Missing elevator mirror",
     "description": "§ 27-2042 ADM CODE PROVIDE A MIRROR IN SELF-SERVICE ELEVATOR ARRANGED SO AS TO ENABLE A PERSON ENTERING, TO VIEW INSIDE OF ELEVATOR NUMBER 2",
     "is_compliance_cadence": false,
     "recurred": 24,
@@ -281,6 +309,7 @@
   },
   {
     "code": "§27-2014",
+    "display_name": "Rust/paint maintenance",
     "description": "§ 27-2014 ADM CODE AND DEPT. RULES AND REGULATIONS. SCRAPE AND REMOVE RUST SCALES AND PAINT WITH 2 COATS OF PAINT ALL STORIES AND ALL BALCON",
     "is_compliance_cadence": false,
     "recurred": 40,
@@ -291,6 +320,7 @@
   },
   {
     "code": "§26-1103",
+    "display_name": "Missing info notice",
     "description": "§ 26-1103 ADMIN. CODE: POST AND MAINTAIN A PROPER NOTICE ON WALL OF THE ENTRANCE STORY IN ENGLISH AND SPANISH ON THE AVAILABILITY OF THE AGE",
     "is_compliance_cadence": false,
     "recurred": 101,
@@ -301,6 +331,7 @@
   },
   {
     "code": "§329",
+    "display_name": "Missing inspection certificate",
     "description": "§ 329, M/D LAW AND DEPT. RULES AND REGS. PROVIDE A COMPLETED CERTIFICATE OF INSPECTION VISITS IN A PROPER FRAME AT OR NEAR MAILBOXES, BOTTOM",
     "is_compliance_cadence": false,
     "recurred": 95,
@@ -311,6 +342,7 @@
   },
   {
     "code": "§27-2081",
+    "display_name": "Illegal room occupancy",
     "description": "§ 27-2081 ADM CODE DISCONTINUE USE OF ROOMS FOR LIVING, DISCONNECT PLUMBING FIXTURES AND PROPERLY SEAL PIPE CONNECTIONS AT WASH BASIN, WATER",
     "is_compliance_cadence": false,
     "recurred": 6,
@@ -321,6 +353,7 @@
   },
   {
     "code": "§27-2073",
+    "display_name": "No cooking gas",
     "description": "§ 27-2073 ADM CODE - PROVIDE AN ADEQUATE SUPPLY OF GAS TO THE FIXTURES NO COOKING GAS AT RANGE IN THE ENTIRE APARTMENT LOCATED AT APT FL1, 1",
     "is_compliance_cadence": false,
     "recurred": 11,
@@ -331,6 +364,7 @@
   },
   {
     "code": "§27-2039",
+    "display_name": "Missing mailbox light",
     "description": "§ 27-2039 ADM CODE PROVIDE AND MAINTAIN A LIGHT DIRECTLY OVER THE MAIL BOXES IN PUBLIC HALL AT WEST WALL AT PUBLIC HALL, 1st STORY, SECTION",
     "is_compliance_cadence": false,
     "recurred": 47,
@@ -341,6 +375,7 @@
   },
   {
     "code": "§27-2041",
+    "display_name": "Missing door peephole",
     "description": "§ 27-2041 ADM CODE PROVIDE A PEEP HOLE IN ENTRANCE DOOR OF THE DWELLING UNIT SO LOCATED SO AS TO PERMIT A PERSON INSIDE THE DWELLING TO VIEW",
     "is_compliance_cadence": false,
     "recurred": 4,
@@ -351,6 +386,7 @@
   },
   {
     "code": "§27-2028",
+    "display_name": "Heating system defect",
     "description": "§ 27-2028, 2032 ADM CODE PROVIDE AN ADEQUATE SUPPLY OF HEAT FROM AN APPROVED CENTRAL HEATING SYSTEM, OR AN APPROVED SYSTEM OF GAS OR ELECTRI",
     "is_compliance_cadence": false,
     "recurred": 11,
@@ -361,6 +397,7 @@
   },
   {
     "code": "§27-2022",
+    "display_name": "Missing waste sign",
     "description": "§ 27-2022 ADM CODE POST A SIGN INDICATING HOURS OF COLLECTION AND METHOD OF COLLECTION OF WASTE MATERIAL WHERE DUMBWAITER SERVICE IS NOT PRO",
     "is_compliance_cadence": false,
     "recurred": 20,
@@ -371,6 +408,7 @@
   },
   {
     "code": "§27-2040",
+    "display_name": "Missing entrance lighting",
     "description": "§ 27-2040 ADM CODE PROVIDE ADEQUATE LIGHTING AT OR NEAR THE OUTSIDE OF THE FRONT ENTRANCEWAY OF THE BUILDING AND KEEP SAME BURNING FROM SUNS",
     "is_compliance_cadence": false,
     "recurred": 2,
@@ -381,6 +419,7 @@
   },
   {
     "code": "§27-2142",
+    "display_name": "Vacate order",
     "description": "§ 27-2142 ADM CODE APTS HAVE BEEN VACATED BY THIS DEPARTMENT AND CANNOT BE REOCCUPIED UNTIL SO ORDERED AFTER PROOF OF COMPLIANCE FOR APTS SO",
     "is_compliance_cadence": false,
     "recurred": 7,
@@ -391,6 +430,7 @@
   },
   {
     "code": "§27-2153",
+    "display_name": "Enforcement program notice",
     "description": "§27-2153 ADM CODE THE PREMISES HAS BEEN SELECTED TO PARTICIPATE IN THE ALTERNATIVE ENFORCEMENT PROGRAM WHICH MAY RESULT IN BUILDING-WIDE INS",
     "is_compliance_cadence": false,
     "recurred": 4,
@@ -401,6 +441,7 @@
   },
   {
     "code": "§27-2043",
+    "display_name": "Missing door lock",
     "description": "§ 27-2043 ADM CODE PROVIDE A LOCK AND KEY TO THE ENTRANCE DOOR OF DWELLING UNIT AND, IF A CL A MULTIPLE DWELLING, ALSO HEAVY DUTY MORTISE LO",
     "is_compliance_cadence": false,
     "recurred": 1,
@@ -411,6 +452,7 @@
   },
   {
     "code": "§27-2056.7",
+    "display_name": "Lead paint certification",
     "description": "§ 27-2056.7, 27-2056.17 AND 27-2056.8 ADM CODE - CERTIFY COMPLIANCE WITH LEAD-BASED PAINT HAZARD CONTROL REQUIREMENTS DURING PERIOD OF UNIT",
     "is_compliance_cadence": false,
     "recurred": 16,
@@ -421,6 +463,7 @@
   },
   {
     "code": "§27-2018.1",
+    "display_name": "Required posting/notice",
     "description": "§27-2018.1 HMC: POST, IN THE FORM APPROVED BY THE COMMISSIONER, AND MAINTAIN THE NOTICE ABOUT PREVENTION, DETECTION AND REMOVAL OF BEDBUG IN",
     "is_compliance_cadence": true,
     "recurred": 3,
@@ -431,6 +474,7 @@
   },
   {
     "code": "§27-2048",
+    "display_name": "Missing floor sign",
     "description": "§ 27-2048 ADM CODE PAINT OR POST A SIGN INDICATING FLOORS AT 5TH STORY PUBLICHALLWAY ( SOUTH SECTION )",
     "is_compliance_cadence": false,
     "recurred": 4,
@@ -441,6 +485,7 @@
   },
   {
     "code": "§67",
+    "display_name": "Missing egress plan",
     "description": "§ 67 M/D LAW POST A PRINTED SCALE FLOOR PLAN SHOWING MEANS OF EGRESS, AT BY ELEVATOR AT 5TH STORY",
     "is_compliance_cadence": false,
     "recurred": 2,
@@ -451,6 +496,7 @@
   },
   {
     "code": "§27-848",
+    "display_name": "Missing chute sign",
     "description": "§ 27-848 ADMIN CODE & DEPT. RULES AND REGS. REPLACE REFUSE CHUTE WARNING SIGN PUBLIC HALL DOOR TO SERVICE CLOSET OR ON WALL OVER HOPPER DOOR",
     "is_compliance_cadence": false,
     "recurred": 0,
@@ -461,6 +507,7 @@
   },
   {
     "code": "§27-2038",
+    "display_name": "Missing passage lighting",
     "description": "§ 27-2038 ADM CODE PROVIDE ADEQUATE LIGHTING FOR CEILING AT FIRE PASSAGE WAY AT NORTH YARD",
     "is_compliance_cadence": false,
     "recurred": 0,
@@ -471,6 +518,7 @@
   },
   {
     "code": "§27-2077",
+    "display_name": "Illegal rooming unit",
     "description": "§ 27-2077 ADM CODE DISCONTINUE THE ROOMING UNIT DUPLEX LOWER LEVEL IN THE 4th ROOM FROM NORTH LOCATED AT APT 1B, 1st STORY, 1st APARTMENT FR",
     "is_compliance_cadence": false,
     "recurred": 0,

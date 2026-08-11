@@ -240,6 +240,35 @@ a {
   margin-top: 0.5rem;
 }
 
+.violation-tooltip {
+  max-width: 280px;
+  padding: 0.65rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-size: 0.82rem;
+}
+
+.violation-tooltip strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.violation-tooltip__rate {
+  display: block;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.violation-tooltip p {
+  margin: 0.4rem 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
 .recommendations-list {
   list-style: none;
   margin: 1.5rem 0 0;

@@ -115,6 +115,81 @@ function classifyViolationType(novdescription) {
   return { code, isComplianceCadence };
 }
 
+// Plain-language chart labels, hand-curated per §-code (the group key this
+// script already uses — see classifyViolationType above). NOVDescription is
+// raw legal correction-order text; these are what actually get shown on the
+// chart axis, so a reader isn't parsing citation language mid-scroll.
+const DISPLAY_NAMES = {
+  '§27-2033.3': 'Missing temperature sensor',
+  '§27-2017.4': 'Roach infestation',
+  '§27-2045': 'Missing smoke detector',
+  '§27-2013': 'Repaint required',
+  '§27-2005': 'Broken stove burners',
+  '§27-2017.3': 'Mold condition',
+  '§27-2026': 'Water leak',
+  '§27-2046.1': 'Missing CO detector',
+  '§27-2031': 'No hot water',
+  '§27-2033': 'Boiler access blocked',
+  '§27-2029': 'Inadequate heat',
+  '§27-2017': 'Rodent infestation',
+  '§27-2010': 'Trash/refuse buildup',
+  '§27-2070': 'No gas supply',
+  '§27-2043.1': 'Missing window guard',
+  '§27-2011': 'Yard not maintained',
+  '§27-2056.6': 'Lead paint hazard',
+  '§300': 'Unpermitted alteration',
+  '§27-2037': 'Electrical fixture defect',
+  '§27-2104': 'Missing registration sign',
+  '§27-2021': 'Missing trash receptacles',
+  '§27-2024': 'No cold water',
+  '§27-2107': 'Unregistered property',
+  '§27-2053': 'Missing super contact sign',
+  '§53': 'Fire escape defect',
+  '§25-171': 'Fire door gap',
+  '§27-2042': 'Missing elevator mirror',
+  '§27-2014': 'Rust/paint maintenance',
+  '§26-1103': 'Missing info notice',
+  '§329': 'Missing inspection certificate',
+  '§27-2081': 'Illegal room occupancy',
+  '§27-2073': 'No cooking gas',
+  '§27-2039': 'Missing mailbox light',
+  '§27-2041': 'Missing door peephole',
+  '§27-2028': 'Heating system defect',
+  '§27-2022': 'Missing waste sign',
+  '§27-2040': 'Missing entrance lighting',
+  '§27-2142': 'Vacate order',
+  '§27-2153': 'Enforcement program notice',
+  '§27-2043': 'Missing door lock',
+  '§27-2056.7': 'Lead paint certification',
+  '§27-2018.1': 'Required posting/notice',
+  '§27-2048': 'Missing floor sign',
+  '§67': 'Missing egress plan',
+  '§27-848': 'Missing chute sign',
+  '§27-2038': 'Missing passage lighting',
+  '§27-2077': 'Illegal rooming unit',
+  UNKNOWN: 'Annual bedbug report',
+};
+
+// Fallback for any future code not yet hand-curated above: strip the
+// citation prefix and hard-truncate at a word boundary. No ellipsis — the
+// full text is still available in the chart tooltip, so this only needs to
+// be "good enough to not be blank," not polished.
+function fallbackDisplayName(description) {
+  let s = (description || '').replace(/^§+\s?[\d.\-()A-Za-z]*\s*(,\s*[\d.\-()A-Za-z]+\s*)*(ADM\.?\s?CODE|HMC|M\/D LAW)?:?\s*/i, '');
+  s = s.trim();
+  if (s.length > 32) {
+    const truncated = s.slice(0, 32);
+    const lastSpace = truncated.lastIndexOf(' ');
+    s = lastSpace > 12 ? truncated.slice(0, lastSpace) : truncated;
+  }
+  s = s.toLowerCase();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function displayNameFor(code, description) {
+  return DISPLAY_NAMES[code] ?? fallbackDisplayName(description);
+}
+
 // The "how much time has passed" reference for censoring should be the
 // most recent date actually present in the data, not wall-clock "now" —
 // Socrata's ingestion can lag a few days behind real time, and using real
@@ -234,6 +309,7 @@ function buildByViolationType(eligible) {
   return [...groups.entries()]
     .map(([code, g]) => ({
       code,
+      display_name: displayNameFor(code, g.sampleDescription),
       description: g.sampleDescription.slice(0, 140).trim(),
       is_compliance_cadence: g.isComplianceCadence,
       ...summarize(g.items),

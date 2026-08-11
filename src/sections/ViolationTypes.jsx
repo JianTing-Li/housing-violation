@@ -1,11 +1,23 @@
-import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useJsonData } from '../hooks/useJsonData.js';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
-import { cleanViolationLabel, formatPct } from '../lib/format.js';
+import { formatPct } from '../lib/format.js';
 import { getRecommendation } from '../lib/recommendations.js';
 
 const TOP_N = 8;
+
+function ViolationTooltip({ active, payload }) {
+  if (!active || !payload?.length) return null;
+  const d = payload[0].payload;
+  return (
+    <div className="violation-tooltip">
+      <strong>{d.display_name}</strong>
+      <span className="violation-tooltip__rate">{d.ratePct}% repeat rate</span>
+      <p>{d.description}</p>
+    </div>
+  );
+}
 
 export function ViolationTypes() {
   const { data, loading, error } = useJsonData('by_violation_type.json');
@@ -18,7 +30,7 @@ export function ViolationTypes() {
   const top = genuine.slice(0, TOP_N);
   const chartData = [...top, ...(complianceCadence ? [complianceCadence] : [])].map((d) => ({
     ...d,
-    label: cleanViolationLabel(d.description),
+    label: d.display_name,
     ratePct: Math.round(d.rate * 100),
   }));
 
@@ -37,11 +49,12 @@ export function ViolationTypes() {
             <YAxis
               type="category"
               dataKey="label"
-              width={260}
+              width={190}
               tickLine={false}
               axisLine={false}
               tick={{ fontSize: 12.5 }}
             />
+            <Tooltip content={<ViolationTooltip />} cursor={{ fill: 'rgba(0,0,0,0.04)' }} />
             <Bar dataKey="ratePct" radius={[0, 4, 4, 0]} maxBarSize={26}>
               {chartData.map((entry) => (
                 <Cell key={entry.code} fill={entry.is_compliance_cadence ? '#c9c3ba' : '#b3401f'} />
@@ -55,8 +68,8 @@ export function ViolationTypes() {
       <ChartTakeaway>
         {top.length > 0 && (
           <>
-            “{cleanViolationLabel(top[0].description)}” has a {formatPct(top[0].rate)} same-type
-            repeat rate, the highest among categories with enough records to compare.
+            “{top[0].display_name}” has a {formatPct(top[0].rate)} same-type repeat rate, the
+            highest among categories with enough records to compare.
           </>
         )}
       </ChartTakeaway>
