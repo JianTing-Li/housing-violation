@@ -3,6 +3,7 @@ import { useJsonData } from '../hooks/useJsonData.js';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
 import { formatNumber, formatPct } from '../lib/format.js';
+import { getRecommendation } from '../lib/recommendations.js';
 
 const COLORS = {
   recurred: '#b3401f',
@@ -65,11 +66,7 @@ export function OverallRecurrence() {
         turn out.
       </p>
 
-      <Callout>
-        Require a verified re-inspection before a violation is closed, instead of relying on
-        landlord self-certification — the current system counts a violation as "fixed" without
-        confirming it.
-      </Callout>
+      <Callout>{getRecommendation('reinspection')}</Callout>
     </section>
   );
 }

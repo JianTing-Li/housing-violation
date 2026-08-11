@@ -3,6 +3,7 @@ import { useJsonData } from '../hooks/useJsonData.js';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
 import { formatPct } from '../lib/format.js';
+import { getRecommendation } from '../lib/recommendations.js';
 
 const CLASS_LABELS = {
   A: 'Class A (non-hazardous)',
@@ -64,10 +65,7 @@ export function Severity() {
         drop-off for Class C.
       </p>
 
-      <Callout>
-        Scrutiny at close-out should scale with severity, not just urgency at issuance — a
-        Class C closure deserves at least as much verification as a Class A one.
-      </Callout>
+      <Callout>{getRecommendation('severity-scrutiny')}</Callout>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import { Choropleth } from '../components/Choropleth.jsx';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
 import { formatPct } from '../lib/format.js';
+import { getRecommendation } from '../lib/recommendations.js';
 
 const TOP_N = 5;
 const MIN_ELIGIBLE = 25; // same volume floor used elsewhere before ranking by rate
@@ -64,11 +65,7 @@ export function Neighborhoods() {
         below before drawing conclusions about a place itself.
       </p>
 
-      <Callout>
-        Use this pattern for inspection-capacity and resourcing decisions, not as a standalone
-        explanation — high-recurrence neighborhoods are where verified re-inspection would catch
-        the most repeat failures per inspector-hour.
-      </Callout>
+      <Callout>{getRecommendation('neighborhood-resourcing')}</Callout>
     </section>
   );
 }

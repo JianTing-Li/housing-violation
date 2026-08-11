@@ -91,6 +91,7 @@ a {
 
 .hero-stats {
   display: flex;
+  align-items: flex-end;
   gap: 2.5rem;
   margin-top: 2.5rem;
   flex-wrap: wrap;
@@ -143,6 +144,31 @@ a {
   margin-top: 0.5rem;
 }
 
+.owner-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-block: 2rem;
+}
+
+.owner-chart h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.owner-chart__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .owner-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section h2 {
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
@@ -182,6 +208,56 @@ a {
   font-size: 0.95rem;
 }
 
+.methodology summary {
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.methodology summary::marker {
+  color: var(--color-accent);
+}
+
+.methodology__body {
+  margin-top: 1.25rem;
+}
+
+.methodology__body p {
+  font-size: 0.95rem;
+}
+
+.chart-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.recommendations-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.recommendations-list li {
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--color-border);
+}
+
+.recommendations-list__section {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
 .section--placeholder h2 {
   font-size: 1.6rem;
 }
@@ -197,6 +273,11 @@ a {
   padding: 2.5rem 1.5rem 4rem;
   font-size: 0.85rem;
   color: var(--color-text-muted);
+}
+
+.footer__limitations {
+  margin-top: 0.75rem;
+  max-width: 60ch;
 }
 
 @media (max-width: 600px) {

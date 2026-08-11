@@ -3,6 +3,7 @@ import { useJsonData } from '../hooks/useJsonData.js';
 import { ChartTakeaway } from '../components/ChartTakeaway.jsx';
 import { Callout } from '../components/Callout.jsx';
 import { cleanViolationLabel, formatPct } from '../lib/format.js';
+import { getRecommendation } from '../lib/recommendations.js';
 
 const TOP_N = 8;
 
@@ -67,10 +68,7 @@ export function ViolationTypes() {
         repaired-and-failed-again violation, so it's expected to look different from the rest.
       </p>
 
-      <Callout>
-        Target verified re-inspection at these specific top categories first — they're where a
-        "closed" status is least likely to mean the problem is actually gone.
-      </Callout>
+      <Callout>{getRecommendation('violation-targeting')}</Callout>
     </section>
   );
 }

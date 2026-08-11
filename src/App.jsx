@@ -1,10 +1,13 @@
 import { Nav } from './components/Nav.jsx';
+import { Footer } from './components/Footer.jsx';
 import { Hero } from './sections/Hero.jsx';
 import { OverallRecurrence } from './sections/OverallRecurrence.jsx';
 import { Severity } from './sections/Severity.jsx';
 import { ViolationTypes } from './sections/ViolationTypes.jsx';
 import { Neighborhoods } from './sections/Neighborhoods.jsx';
-import { PlaceholderSection } from './sections/PlaceholderSection.jsx';
+import { Owners } from './sections/Owners.jsx';
+import { Methodology } from './sections/Methodology.jsx';
+import { Recommendations } from './sections/Recommendations.jsx';
 
 export default function App() {
   return (
@@ -16,19 +19,11 @@ export default function App() {
         <Severity />
         <ViolationTypes />
         <Neighborhoods />
-        <PlaceholderSection id="owners" title="Owner &amp; Building Level" />
-        <PlaceholderSection id="methodology" title="Methodology" />
-        <PlaceholderSection id="recommendations" title="Recommendations" />
+        <Owners />
+        <Methodology />
+        <Recommendations />
       </main>
-      <footer className="footer">
-        <p>
-          Data: NYC HPD Housing Maintenance Code Violations (
-          <a href="https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5">
-            wvxf-dwi5
-          </a>
-          )
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 }
