@@ -8,6 +8,7 @@
   },
   "scripts": {
     "fetch-data": "node scripts/fetch-data.js",
+    "test": "node --test scripts/*.test.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

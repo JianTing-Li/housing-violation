@@ -7,10 +7,16 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-process.loadEnvFile('.env');
+// Only load/require the token when this file is actually run as the fetch
+// script — not when it's imported (e.g. by tests) just to reach the pure
+// classification/aggregation functions below.
+const isMain = import.meta.url === `file://${process.argv[1]}`;
+if (isMain) {
+  process.loadEnvFile('.env');
+}
 
 const APP_TOKEN = process.env.SOCRATA_APP_TOKEN;
-if (!APP_TOKEN) {
+if (isMain && !APP_TOKEN) {
   console.error('SOCRATA_APP_TOKEN is not set in .env — aborting.');
   process.exit(1);
 }
@@ -105,14 +111,107 @@ function effectiveCloseDate(row) {
   return null;
 }
 
-// Bedbug annual-notice filings (§27-2018.1) are a recurring paperwork
-// requirement, not a repaired-and-failed-again violation — flagged so the
-// frontend doesn't lump it in with genuine repeat-repair failures.
+// HPD's annual bedbug report filing ("(A) § HMC:FILE ANNUAL BEDBUG REPORT
+// IN ACCORDANCE WITH HPD RULE...") cites "HPD RULE" instead of an Admin
+// Code section number — confirmed against the raw data (21,415 rows), not
+// a rare edge case — so the §-regex below never matches it and it would
+// otherwise fall into the generic UNKNOWN bucket alongside genuinely
+// uncategorized future violations. Giving it its own stable synthetic code
+// keeps it correctly and consistently classified without widening UNKNOWN
+// into a mixed bag that silently inherits whatever category UNKNOWN gets.
+const BEDBUG_ANNUAL_REPORT_PATTERN = /FILE\s+ANNUAL\s+BEDBUG\s+REPORT/i;
+const BEDBUG_ANNUAL_REPORT_CODE = 'BEDBUG-ANNUAL-REPORT';
+
 function classifyViolationType(novdescription) {
-  const match = /§\s?[\d]+(?:\.\d+)?(?:-[\d]+(?:\.\d+)?)?/.exec(novdescription || '');
+  const description = novdescription || '';
+  if (BEDBUG_ANNUAL_REPORT_PATTERN.test(description)) {
+    return { code: BEDBUG_ANNUAL_REPORT_CODE };
+  }
+  const match = /§\s?[\d]+(?:\.\d+)?(?:-[\d]+(?:\.\d+)?)?/.exec(description);
   const code = match ? match[0].replace(/\s/g, '') : 'UNKNOWN';
-  const isComplianceCadence = code === '§27-2018.1';
-  return { code, isComplianceCadence };
+  return { code };
+}
+
+// Category classification is a hand-reviewed lookup, not a live keyword
+// scan — every code below was checked against its actual NOV text before
+// being placed here (see the audit notes in the project conversation this
+// was built from). Buckets:
+//   'physical'       — a tangible defect/condition in the unit or building
+//                       that requires repair, replacement, extermination,
+//                       or similar corrective physical work.
+//   'administrative' — a paperwork, posting, filing, or registration
+//                       obligation. These recur because they're a
+//                       recordkeeping/compliance process (e.g. an annual
+//                       filing), not because a physical condition broke
+//                       again — so they don't belong in a ranking meant to
+//                       represent unresolved physical conditions.
+//   'ambiguous'       — doesn't cleanly fit either bucket from the NOV text
+//                       alone; judgment call documented inline below.
+// Codes not listed here default to 'ambiguous' (see categoryFor) rather
+// than 'physical', so a future re-fetch surfaces new/unrecognized codes for
+// human review instead of silently asserting they represent a physical
+// condition.
+const VIOLATION_CATEGORY = {
+  // --- administrative: recurring paperwork/posting/filing obligations ---
+  [BEDBUG_ANNUAL_REPORT_CODE]: 'administrative', // annual filing to HPD
+  '§27-2018.1': 'administrative', // post & maintain bedbug prevention notice
+  '§27-2104': 'administrative', // post & maintain registration-number sign
+  '§27-2053': 'administrative', // post sign with super's name/address/phone
+  '§26-1103': 'administrative', // post & maintain housing info guide notice
+  '§329': 'administrative', // provide/post certificate of inspection visits
+  '§27-2022': 'administrative', // post sign with waste collection hours
+  '§67': 'administrative', // post printed egress floor plan
+  '§27-848': 'administrative', // replace refuse chute warning sign
+  '§27-2048': 'administrative', // paint or post floor-number signage
+  '§27-2107': 'administrative', // owner failed to file registration statement
+  '§27-2056.7': 'administrative', // certify lead-paint hazard control compliance
+
+  // --- ambiguous: mixed or unclear from NOV text alone ---
+  '§27-2033': 'ambiguous', // access/compliance failure during inspection, not a decaying condition or a filing
+  '§300': 'ambiguous', // requires EITHER filing paperwork to legalize OR physically restoring — text offers both paths
+  '§27-2142': 'ambiguous', // vacate order: a regulatory status tied to an underlying condition, not itself a repair action
+  '§27-2153': 'ambiguous', // one-time enforcement-program enrollment notice — not physical, but not a recurring filing either
+
+  // --- physical: a tangible defect/condition requiring repair, replacement,
+  // extermination, or similar corrective physical work. Listed explicitly
+  // (rather than left to the default) so the default only ever applies to
+  // codes nobody has reviewed yet — see categoryFor below.
+  '§27-2033.3': 'physical', // missing temperature-reporting device
+  '§27-2017.4': 'physical', // roach infestation
+  '§27-2045': 'physical', // missing/defective smoke detector
+  '§27-2013': 'physical', // repaint required
+  '§27-2005': 'physical', // broken stove burners
+  '§27-2017.3': 'physical', // mold condition
+  '§27-2026': 'physical', // water leak
+  '§27-2046.1': 'physical', // missing/defective CO detector
+  '§27-2031': 'physical', // no hot water
+  '§27-2029': 'physical', // inadequate heat
+  '§27-2017': 'physical', // rodent infestation
+  '§27-2010': 'physical', // trash/refuse buildup
+  '§27-2070': 'physical', // no gas supply
+  '§27-2043.1': 'physical', // missing/defective window guard
+  '§27-2011': 'physical', // yard not maintained
+  '§27-2056.6': 'physical', // lead paint hazard
+  '§27-2037': 'physical', // electrical fixture defect
+  '§27-2021': 'physical', // missing trash receptacles
+  '§27-2024': 'physical', // no cold water
+  '§53': 'physical', // fire escape hardware defect
+  '§25-171': 'physical', // fire door gap
+  '§27-2042': 'physical', // missing elevator mirror
+  '§27-2014': 'physical', // rust/paint maintenance
+  '§27-2081': 'physical', // illegal room occupancy (requires physical plumbing disconnection)
+  '§27-2073': 'physical', // no cooking gas
+  '§27-2039': 'physical', // missing mailbox light
+  '§27-2041': 'physical', // missing door peephole
+  '§27-2028': 'physical', // heating system defect
+  '§27-2040': 'physical', // missing entrance lighting
+  '§27-2043': 'physical', // missing door lock
+  '§27-2038': 'physical', // missing passage lighting
+  '§27-2077': 'physical', // illegal rooming unit (requires physical work to discontinue)
+};
+
+function categoryFor(code) {
+  return VIOLATION_CATEGORY[code] ?? 'ambiguous';
 }
 
 // Plain-language chart labels, hand-curated per §-code (the group key this
@@ -167,7 +266,7 @@ const DISPLAY_NAMES = {
   '§27-848': 'Missing chute sign',
   '§27-2038': 'Missing passage lighting',
   '§27-2077': 'Illegal rooming unit',
-  UNKNOWN: 'Annual bedbug report',
+  [BEDBUG_ANNUAL_REPORT_CODE]: 'Annual bedbug report',
 };
 
 // Fallback for any future code not yet hand-curated above: strip the
@@ -299,9 +398,9 @@ function buildByClass(eligible) {
 function buildByViolationType(eligible) {
   const groups = new Map();
   for (const item of eligible) {
-    const { code, isComplianceCadence } = classifyViolationType(item.row.novdescription);
+    const { code } = classifyViolationType(item.row.novdescription);
     if (!groups.has(code)) {
-      groups.set(code, { items: [], isComplianceCadence, sampleDescription: item.row.novdescription });
+      groups.set(code, { items: [], sampleDescription: item.row.novdescription });
     }
     groups.get(code).items.push(item);
   }
@@ -311,7 +410,7 @@ function buildByViolationType(eligible) {
       code,
       display_name: displayNameFor(code, g.sampleDescription),
       description: g.sampleDescription.slice(0, 140).trim(),
-      is_compliance_cadence: g.isComplianceCadence,
+      category: categoryFor(code),
       ...summarize(g.items),
     }))
     .filter((g) => g.recurred + g.no_recurrence >= RATE_VOLUME_FLOOR)
@@ -406,6 +505,16 @@ async function fetchNtaBoundaries() {
   };
 }
 
+// --- Exports (for tests only — the app never imports this script) --------
+export {
+  classifyViolationType,
+  categoryFor,
+  VIOLATION_CATEGORY,
+  BEDBUG_ANNUAL_REPORT_CODE,
+  displayNameFor,
+  DISPLAY_NAMES,
+};
+
 // --- Main -----------------------------------------------------------------
 
 async function main() {
@@ -453,7 +562,9 @@ async function main() {
   console.log('\nOverall summary:', overallSummary);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
