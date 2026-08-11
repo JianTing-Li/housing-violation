@@ -115,7 +115,24 @@ function classifyViolationType(novdescription) {
   return { code, isComplianceCadence };
 }
 
-function buildEligibility(rows) {
+// The "how much time has passed" reference for censoring should be the
+// most recent date actually present in the data, not wall-clock "now" —
+// Socrata's ingestion can lag a few days behind real time, and using real
+// "now" would treat that gap as if we'd confirmed no recurrence happened,
+// when we simply don't have data covering it yet.
+function computeDataCutoff(rows) {
+  let max = new Date(0);
+  for (const row of rows) {
+    for (const field of ['inspectiondate', 'certifieddate', 'currentstatusdate']) {
+      if (!row[field]) continue;
+      const d = new Date(row[field]);
+      if (d > max) max = d;
+    }
+  }
+  return max;
+}
+
+function buildEligibility(rows, dataCutoff) {
   const byKey = new Map(); // buildingid|ordernumber -> [{violationid, inspectiondate}]
   for (const row of rows) {
     const key = `${row.buildingid}|${row.ordernumber}`;
@@ -142,7 +159,7 @@ function buildEligibility(rows) {
     let status;
     if (recurred) {
       status = 'recurred';
-    } else if (NOW - closeDate >= RECURRENCE_WINDOW_DAYS * 86400000) {
+    } else if (dataCutoff - closeDate >= RECURRENCE_WINDOW_DAYS * 86400000) {
       status = 'no_recurrence';
     } else {
       status = 'censored';
@@ -165,7 +182,7 @@ function summarize(items) {
   return { recurred, no_recurrence: noRecurrence, censored, total: items.length, rate: rate(recurred, noRecurrence) };
 }
 
-function buildOverallSummary(eligible) {
+function buildOverallSummary(eligible, dataCutoff) {
   const summary = summarize(eligible);
 
   const byBuilding = new Map();
@@ -185,6 +202,7 @@ function buildOverallSummary(eligible) {
       buildingsWithData === 0 ? null : buildingsWithRecurrence / buildingsWithData,
     buildings_with_data: buildingsWithData,
     date_range_start: START_DATE,
+    data_cutoff: dataCutoff.toISOString(),
     last_updated: NOW.toISOString(),
     total_rows_fetched: null, // filled in by caller
   };
@@ -323,11 +341,13 @@ async function main() {
   }
   console.log(`Total rows: ${rows.length}`);
 
-  const eligible = buildEligibility(rows);
+  const dataCutoff = computeDataCutoff(rows);
+  console.log(`Data cutoff (latest date observed in the data): ${dataCutoff.toISOString()}`);
+  const eligible = buildEligibility(rows, dataCutoff);
 
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  const overallSummary = buildOverallSummary(eligible);
+  const overallSummary = buildOverallSummary(eligible, dataCutoff);
   overallSummary.total_rows_fetched = rows.length;
 
   const outputs = {

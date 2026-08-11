@@ -1356,8 +1356,8 @@
   },
   {
     "buildingid": "81870",
-    "eligible_count": 298,
-    "recurrence_rate": 0.9194630872483222
+    "eligible_count": 297,
+    "recurrence_rate": 0.9225589225589226
   },
   {
     "buildingid": "73812",
@@ -1441,8 +1441,8 @@
   },
   {
     "buildingid": "109345",
-    "eligible_count": 167,
-    "recurrence_rate": 0.9580838323353293
+    "eligible_count": 166,
+    "recurrence_rate": 0.963855421686747
   },
   {
     "buildingid": "88965",
@@ -1571,8 +1571,8 @@
   },
   {
     "buildingid": "83716",
-    "eligible_count": 757,
-    "recurrence_rate": 0.9841479524438573
+    "eligible_count": 756,
+    "recurrence_rate": 0.9854497354497355
   },
   {
     "buildingid": "933679",
@@ -1791,8 +1791,8 @@
   },
   {
     "buildingid": "64926",
-    "eligible_count": 150,
-    "recurrence_rate": 0.8933333333333333
+    "eligible_count": 149,
+    "recurrence_rate": 0.8993288590604027
   },
   {
     "buildingid": "107415",
@@ -1951,8 +1951,8 @@
   },
   {
     "buildingid": "76121",
-    "eligible_count": 210,
-    "recurrence_rate": 0.8809523809523809
+    "eligible_count": 209,
+    "recurrence_rate": 0.8851674641148325
   },
   {
     "buildingid": "95433",
@@ -2036,8 +2036,8 @@
   },
   {
     "buildingid": "57830",
-    "eligible_count": 55,
-    "recurrence_rate": 0.6727272727272727
+    "eligible_count": 54,
+    "recurrence_rate": 0.6851851851851852
   },
   {
     "buildingid": "57867",
@@ -2201,8 +2201,8 @@
   },
   {
     "buildingid": "80056",
-    "eligible_count": 122,
-    "recurrence_rate": 0.8032786885245902
+    "eligible_count": 121,
+    "recurrence_rate": 0.8099173553719008
   },
   {
     "buildingid": "1007825",
@@ -2371,8 +2371,8 @@
   },
   {
     "buildingid": "121194",
-    "eligible_count": 282,
-    "recurrence_rate": 0.9184397163120568
+    "eligible_count": 281,
+    "recurrence_rate": 0.9217081850533808
   },
   {
     "buildingid": "81485",
@@ -2941,13 +2941,13 @@
   },
   {
     "buildingid": "108478",
-    "eligible_count": 30,
-    "recurrence_rate": 0.13333333333333333
+    "eligible_count": 29,
+    "recurrence_rate": 0.13793103448275862
   },
   {
     "buildingid": "65858",
-    "eligible_count": 176,
-    "recurrence_rate": 0.75
+    "eligible_count": 174,
+    "recurrence_rate": 0.7586206896551724
   },
   {
     "buildingid": "66689",
@@ -3066,8 +3066,8 @@
   },
   {
     "buildingid": "806886",
-    "eligible_count": 443,
-    "recurrence_rate": 0.9548532731376975
+    "eligible_count": 440,
+    "recurrence_rate": 0.9613636363636363
   },
   {
     "buildingid": "120630",
@@ -3156,8 +3156,8 @@
   },
   {
     "buildingid": "63194",
-    "eligible_count": 25,
-    "recurrence_rate": 0.68
+    "eligible_count": 20,
+    "recurrence_rate": 0.85
   },
   {
     "buildingid": "96757",
@@ -3631,8 +3631,8 @@
   },
   {
     "buildingid": "120562",
-    "eligible_count": 13,
-    "recurrence_rate": 0.07692307692307693
+    "eligible_count": 12,
+    "recurrence_rate": 0.08333333333333333
   },
   {
     "buildingid": "953115",
@@ -3741,8 +3741,8 @@
   },
   {
     "buildingid": "96892",
-    "eligible_count": 111,
-    "recurrence_rate": 0.8648648648648649
+    "eligible_count": 110,
+    "recurrence_rate": 0.8727272727272727
   },
   {
     "buildingid": "55187",
@@ -4086,8 +4086,8 @@
   },
   {
     "buildingid": "114475",
-    "eligible_count": 217,
-    "recurrence_rate": 0.8940092165898618
+    "eligible_count": 216,
+    "recurrence_rate": 0.8981481481481481
   },
   {
     "buildingid": "81703",
@@ -4281,8 +4281,8 @@
   },
   {
     "buildingid": "104012",
-    "eligible_count": 431,
-    "recurrence_rate": 0.9767981438515081
+    "eligible_count": 430,
+    "recurrence_rate": 0.9790697674418605
   },
   {
     "buildingid": "92381",
@@ -4661,8 +4661,8 @@
   },
   {
     "buildingid": "979325",
-    "eligible_count": 90,
-    "recurrence_rate": 0.9333333333333333
+    "eligible_count": 89,
+    "recurrence_rate": 0.9438202247191011
   },
   {
     "buildingid": "72058",
@@ -5196,8 +5196,8 @@
   },
   {
     "buildingid": "119039",
-    "eligible_count": 29,
-    "recurrence_rate": 0.6551724137931034
+    "eligible_count": 28,
+    "recurrence_rate": 0.6785714285714286
   },
   {
     "buildingid": "64952",
@@ -5466,8 +5466,8 @@
   },
   {
     "buildingid": "109462",
-    "eligible_count": 45,
-    "recurrence_rate": 0.7555555555555555
+    "eligible_count": 44,
+    "recurrence_rate": 0.7727272727272727
   },
   {
     "buildingid": "931143",
@@ -5566,8 +5566,8 @@
   },
   {
     "buildingid": "806311",
-    "eligible_count": 153,
-    "recurrence_rate": 0.7058823529411765
+    "eligible_count": 151,
+    "recurrence_rate": 0.7152317880794702
   },
   {
     "buildingid": "94089",
@@ -5671,13 +5671,13 @@
   },
   {
     "buildingid": "113363",
-    "eligible_count": 65,
-    "recurrence_rate": 0.5538461538461539
+    "eligible_count": 64,
+    "recurrence_rate": 0.5625
   },
   {
     "buildingid": "95927",
-    "eligible_count": 11,
-    "recurrence_rate": 0.45454545454545453
+    "eligible_count": 10,
+    "recurrence_rate": 0.5
   },
   {
     "buildingid": "46818",
@@ -5896,8 +5896,8 @@
   },
   {
     "buildingid": "879756",
-    "eligible_count": 42,
-    "recurrence_rate": 0.6904761904761905
+    "eligible_count": 40,
+    "recurrence_rate": 0.725
   },
   {
     "buildingid": "87508",
@@ -6236,8 +6236,8 @@
   },
   {
     "buildingid": "116852",
-    "eligible_count": 287,
-    "recurrence_rate": 0.9442508710801394
+    "eligible_count": 284,
+    "recurrence_rate": 0.954225352112676
   },
   {
     "buildingid": "121671",
@@ -6518,11 +6518,6 @@
     "buildingid": "80116",
     "eligible_count": 17,
     "recurrence_rate": 0.11764705882352941
-  },
-  {
-    "buildingid": "83651",
-    "eligible_count": 16,
-    "recurrence_rate": 0.6875
   },
   {
     "buildingid": "115645",
@@ -6986,8 +6981,8 @@
   },
   {
     "buildingid": "89810",
-    "eligible_count": 36,
-    "recurrence_rate": 0.5
+    "eligible_count": 34,
+    "recurrence_rate": 0.5294117647058824
   },
   {
     "buildingid": "51221",
@@ -7066,7 +7061,7 @@
   },
   {
     "buildingid": "49165",
-    "eligible_count": 8,
+    "eligible_count": 6,
     "recurrence_rate": 0
   },
   {
@@ -7461,8 +7456,8 @@
   },
   {
     "buildingid": "847877",
-    "eligible_count": 862,
-    "recurrence_rate": 0.9930394431554525
+    "eligible_count": 861,
+    "recurrence_rate": 0.9941927990708479
   },
   {
     "buildingid": "119169",
@@ -7546,8 +7541,8 @@
   },
   {
     "buildingid": "118389",
-    "eligible_count": 48,
-    "recurrence_rate": 0.6666666666666666
+    "eligible_count": 47,
+    "recurrence_rate": 0.6808510638297872
   },
   {
     "buildingid": "85468",
@@ -7581,8 +7576,8 @@
   },
   {
     "buildingid": "85785",
-    "eligible_count": 13,
-    "recurrence_rate": 0.8461538461538461
+    "eligible_count": 12,
+    "recurrence_rate": 0.9166666666666666
   },
   {
     "buildingid": "119364",
@@ -7621,8 +7616,8 @@
   },
   {
     "buildingid": "65477",
-    "eligible_count": 37,
-    "recurrence_rate": 0.918918918918919
+    "eligible_count": 36,
+    "recurrence_rate": 0.9444444444444444
   },
   {
     "buildingid": "121310",
@@ -7896,8 +7891,8 @@
   },
   {
     "buildingid": "107782",
-    "eligible_count": 119,
-    "recurrence_rate": 0.8991596638655462
+    "eligible_count": 118,
+    "recurrence_rate": 0.9067796610169492
   },
   {
     "buildingid": "55195",
@@ -8761,18 +8756,18 @@
   },
   {
     "buildingid": "928057",
-    "eligible_count": 87,
-    "recurrence_rate": 0.9195402298850575
+    "eligible_count": 86,
+    "recurrence_rate": 0.9302325581395349
   },
   {
     "buildingid": "45514",
-    "eligible_count": 101,
-    "recurrence_rate": 0.8316831683168316
+    "eligible_count": 100,
+    "recurrence_rate": 0.84
   },
   {
     "buildingid": "823493",
-    "eligible_count": 213,
-    "recurrence_rate": 0.9436619718309859
+    "eligible_count": 212,
+    "recurrence_rate": 0.9481132075471698
   },
   {
     "buildingid": "116721",
@@ -9361,8 +9356,8 @@
   },
   {
     "buildingid": "109438",
-    "eligible_count": 70,
-    "recurrence_rate": 0.9285714285714286
+    "eligible_count": 69,
+    "recurrence_rate": 0.9420289855072463
   },
   {
     "buildingid": "96836",
@@ -9421,7 +9416,7 @@
   },
   {
     "buildingid": "45645",
-    "eligible_count": 3,
+    "eligible_count": 2,
     "recurrence_rate": 0
   },
   {
@@ -9566,8 +9561,8 @@
   },
   {
     "buildingid": "111928",
-    "eligible_count": 52,
-    "recurrence_rate": 0.9230769230769231
+    "eligible_count": 51,
+    "recurrence_rate": 0.9411764705882353
   },
   {
     "buildingid": "77341",
@@ -10181,13 +10176,13 @@
   },
   {
     "buildingid": "64771",
-    "eligible_count": 85,
-    "recurrence_rate": 0.7529411764705882
+    "eligible_count": 84,
+    "recurrence_rate": 0.7619047619047619
   },
   {
     "buildingid": "74521",
-    "eligible_count": 151,
-    "recurrence_rate": 0.8609271523178808
+    "eligible_count": 150,
+    "recurrence_rate": 0.8666666666666667
   },
   {
     "buildingid": "119166",
@@ -10281,8 +10276,8 @@
   },
   {
     "buildingid": "64090",
-    "eligible_count": 73,
-    "recurrence_rate": 0.7534246575342466
+    "eligible_count": 72,
+    "recurrence_rate": 0.7638888888888888
   },
   {
     "buildingid": "119014",
@@ -10781,8 +10776,8 @@
   },
   {
     "buildingid": "61048",
-    "eligible_count": 115,
-    "recurrence_rate": 0.8782608695652174
+    "eligible_count": 114,
+    "recurrence_rate": 0.8859649122807017
   },
   {
     "buildingid": "117114",
@@ -11226,8 +11221,8 @@
   },
   {
     "buildingid": "94450",
-    "eligible_count": 34,
-    "recurrence_rate": 0.7352941176470589
+    "eligible_count": 33,
+    "recurrence_rate": 0.7575757575757576
   },
   {
     "buildingid": "81753",
@@ -11611,8 +11606,8 @@
   },
   {
     "buildingid": "50398",
-    "eligible_count": 26,
-    "recurrence_rate": 0.19230769230769232
+    "eligible_count": 25,
+    "recurrence_rate": 0.2
   },
   {
     "buildingid": "116399",
@@ -12006,8 +12001,8 @@
   },
   {
     "buildingid": "114440",
-    "eligible_count": 218,
-    "recurrence_rate": 0.9220183486238532
+    "eligible_count": 217,
+    "recurrence_rate": 0.9262672811059908
   },
   {
     "buildingid": "70351",
@@ -12056,8 +12051,8 @@
   },
   {
     "buildingid": "104278",
-    "eligible_count": 29,
-    "recurrence_rate": 0.7241379310344828
+    "eligible_count": 28,
+    "recurrence_rate": 0.75
   },
   {
     "buildingid": "85765",
@@ -12166,8 +12161,8 @@
   },
   {
     "buildingid": "48307",
-    "eligible_count": 193,
-    "recurrence_rate": 0.9430051813471503
+    "eligible_count": 191,
+    "recurrence_rate": 0.9528795811518325
   },
   {
     "buildingid": "66035",
@@ -12306,8 +12301,8 @@
   },
   {
     "buildingid": "63785",
-    "eligible_count": 72,
-    "recurrence_rate": 0.75
+    "eligible_count": 69,
+    "recurrence_rate": 0.782608695652174
   },
   {
     "buildingid": "97691",
@@ -12411,8 +12406,8 @@
   },
   {
     "buildingid": "46131",
-    "eligible_count": 53,
-    "recurrence_rate": 0.6981132075471698
+    "eligible_count": 51,
+    "recurrence_rate": 0.7254901960784313
   },
   {
     "buildingid": "96610",
@@ -12721,8 +12716,8 @@
   },
   {
     "buildingid": "116708",
-    "eligible_count": 59,
-    "recurrence_rate": 0.576271186440678
+    "eligible_count": 58,
+    "recurrence_rate": 0.5862068965517241
   },
   {
     "buildingid": "92716",
@@ -13011,8 +13006,8 @@
   },
   {
     "buildingid": "80789",
-    "eligible_count": 14,
-    "recurrence_rate": 0.07142857142857142
+    "eligible_count": 8,
+    "recurrence_rate": 0.125
   },
   {
     "buildingid": "967660",
@@ -13281,8 +13276,8 @@
   },
   {
     "buildingid": "64308",
-    "eligible_count": 17,
-    "recurrence_rate": 0.4117647058823529
+    "eligible_count": 16,
+    "recurrence_rate": 0.4375
   },
   {
     "buildingid": "120592",
@@ -13561,8 +13556,8 @@
   },
   {
     "buildingid": "109489",
-    "eligible_count": 54,
-    "recurrence_rate": 0.5
+    "eligible_count": 53,
+    "recurrence_rate": 0.5094339622641509
   },
   {
     "buildingid": "65037",
@@ -13736,8 +13731,8 @@
   },
   {
     "buildingid": "51992",
-    "eligible_count": 27,
-    "recurrence_rate": 0.18518518518518517
+    "eligible_count": 25,
+    "recurrence_rate": 0.2
   },
   {
     "buildingid": "87405",
@@ -14221,8 +14216,8 @@
   },
   {
     "buildingid": "81687",
-    "eligible_count": 8,
-    "recurrence_rate": 0.625
+    "eligible_count": 7,
+    "recurrence_rate": 0.7142857142857143
   },
   {
     "buildingid": "56949",
@@ -14401,8 +14396,8 @@
   },
   {
     "buildingid": "51559",
-    "eligible_count": 4,
-    "recurrence_rate": 0.5
+    "eligible_count": 2,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "49222",
@@ -14421,8 +14416,8 @@
   },
   {
     "buildingid": "110185",
-    "eligible_count": 24,
-    "recurrence_rate": 0.08333333333333333
+    "eligible_count": 22,
+    "recurrence_rate": 0.09090909090909091
   },
   {
     "buildingid": "45435",
@@ -14576,8 +14571,8 @@
   },
   {
     "buildingid": "120455",
-    "eligible_count": 15,
-    "recurrence_rate": 0.7333333333333333
+    "eligible_count": 13,
+    "recurrence_rate": 0.8461538461538461
   },
   {
     "buildingid": "51239",
@@ -14591,8 +14586,8 @@
   },
   {
     "buildingid": "45461",
-    "eligible_count": 155,
-    "recurrence_rate": 0.9806451612903225
+    "eligible_count": 153,
+    "recurrence_rate": 0.9934640522875817
   },
   {
     "buildingid": "88945",
@@ -15141,8 +15136,8 @@
   },
   {
     "buildingid": "86423",
-    "eligible_count": 59,
-    "recurrence_rate": 0.6440677966101694
+    "eligible_count": 57,
+    "recurrence_rate": 0.6666666666666666
   },
   {
     "buildingid": "97346",
@@ -15641,8 +15636,8 @@
   },
   {
     "buildingid": "79270",
-    "eligible_count": 756,
-    "recurrence_rate": 0.955026455026455
+    "eligible_count": 748,
+    "recurrence_rate": 0.9652406417112299
   },
   {
     "buildingid": "1011401",
@@ -15666,8 +15661,8 @@
   },
   {
     "buildingid": "934081",
-    "eligible_count": 19,
-    "recurrence_rate": 0.5789473684210527
+    "eligible_count": 16,
+    "recurrence_rate": 0.6875
   },
   {
     "buildingid": "56241",
@@ -16121,8 +16116,8 @@
   },
   {
     "buildingid": "56944",
-    "eligible_count": 67,
-    "recurrence_rate": 0.8955223880597015
+    "eligible_count": 65,
+    "recurrence_rate": 0.9230769230769231
   },
   {
     "buildingid": "110640",
@@ -16551,8 +16546,8 @@
   },
   {
     "buildingid": "100204",
-    "eligible_count": 61,
-    "recurrence_rate": 0.9016393442622951
+    "eligible_count": 60,
+    "recurrence_rate": 0.9166666666666666
   },
   {
     "buildingid": "806702",
@@ -17155,11 +17150,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "99203",
-    "eligible_count": 3,
-    "recurrence_rate": 0.3333333333333333
-  },
-  {
     "buildingid": "102590",
     "eligible_count": 32,
     "recurrence_rate": 0.8125
@@ -17681,8 +17671,8 @@
   },
   {
     "buildingid": "95694",
-    "eligible_count": 7,
-    "recurrence_rate": 0.14285714285714285
+    "eligible_count": 6,
+    "recurrence_rate": 0.16666666666666666
   },
   {
     "buildingid": "51024",
@@ -17876,8 +17866,8 @@
   },
   {
     "buildingid": "65957",
-    "eligible_count": 54,
-    "recurrence_rate": 0.6296296296296297
+    "eligible_count": 50,
+    "recurrence_rate": 0.68
   },
   {
     "buildingid": "101856",
@@ -18116,8 +18106,8 @@
   },
   {
     "buildingid": "95905",
-    "eligible_count": 11,
-    "recurrence_rate": 0.7272727272727273
+    "eligible_count": 10,
+    "recurrence_rate": 0.8
   },
   {
     "buildingid": "104264",
@@ -18126,8 +18116,8 @@
   },
   {
     "buildingid": "119186",
-    "eligible_count": 47,
-    "recurrence_rate": 0.6382978723404256
+    "eligible_count": 45,
+    "recurrence_rate": 0.6666666666666666
   },
   {
     "buildingid": "110157",
@@ -18376,8 +18366,8 @@
   },
   {
     "buildingid": "112040",
-    "eligible_count": 58,
-    "recurrence_rate": 0.896551724137931
+    "eligible_count": 57,
+    "recurrence_rate": 0.9122807017543859
   },
   {
     "buildingid": "78834",
@@ -18476,8 +18466,8 @@
   },
   {
     "buildingid": "85789",
-    "eligible_count": 97,
-    "recurrence_rate": 0.6391752577319587
+    "eligible_count": 96,
+    "recurrence_rate": 0.6458333333333334
   },
   {
     "buildingid": "945955",
@@ -18576,12 +18566,12 @@
   },
   {
     "buildingid": "81744",
-    "eligible_count": 34,
-    "recurrence_rate": 0.4117647058823529
+    "eligible_count": 31,
+    "recurrence_rate": 0.45161290322580644
   },
   {
     "buildingid": "60156",
-    "eligible_count": 2,
+    "eligible_count": 1,
     "recurrence_rate": 0
   },
   {
@@ -18631,8 +18621,8 @@
   },
   {
     "buildingid": "120452",
-    "eligible_count": 11,
-    "recurrence_rate": 0.5454545454545454
+    "eligible_count": 10,
+    "recurrence_rate": 0.6
   },
   {
     "buildingid": "120568",
@@ -18966,8 +18956,8 @@
   },
   {
     "buildingid": "998343",
-    "eligible_count": 33,
-    "recurrence_rate": 0.9696969696969697
+    "eligible_count": 32,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "53088",
@@ -19066,8 +19056,8 @@
   },
   {
     "buildingid": "63753",
-    "eligible_count": 29,
-    "recurrence_rate": 0.6551724137931034
+    "eligible_count": 25,
+    "recurrence_rate": 0.76
   },
   {
     "buildingid": "67052",
@@ -19471,8 +19461,8 @@
   },
   {
     "buildingid": "52044",
-    "eligible_count": 208,
-    "recurrence_rate": 0.9759615384615384
+    "eligible_count": 207,
+    "recurrence_rate": 0.9806763285024155
   },
   {
     "buildingid": "65478",
@@ -19486,8 +19476,8 @@
   },
   {
     "buildingid": "889796",
-    "eligible_count": 79,
-    "recurrence_rate": 0.7468354430379747
+    "eligible_count": 78,
+    "recurrence_rate": 0.7564102564102564
   },
   {
     "buildingid": "70669",
@@ -19636,8 +19626,8 @@
   },
   {
     "buildingid": "116677",
-    "eligible_count": 57,
-    "recurrence_rate": 0.8596491228070176
+    "eligible_count": 54,
+    "recurrence_rate": 0.9074074074074074
   },
   {
     "buildingid": "116878",
@@ -20291,8 +20281,8 @@
   },
   {
     "buildingid": "62702",
-    "eligible_count": 25,
-    "recurrence_rate": 0.76
+    "eligible_count": 24,
+    "recurrence_rate": 0.7916666666666666
   },
   {
     "buildingid": "930941",
@@ -20471,8 +20461,8 @@
   },
   {
     "buildingid": "841075",
-    "eligible_count": 9,
-    "recurrence_rate": 0.3333333333333333
+    "eligible_count": 8,
+    "recurrence_rate": 0.375
   },
   {
     "buildingid": "59964",
@@ -20696,8 +20686,8 @@
   },
   {
     "buildingid": "116921",
-    "eligible_count": 52,
-    "recurrence_rate": 0.5192307692307693
+    "eligible_count": 48,
+    "recurrence_rate": 0.5625
   },
   {
     "buildingid": "100100",
@@ -21486,8 +21476,8 @@
   },
   {
     "buildingid": "66780",
-    "eligible_count": 77,
-    "recurrence_rate": 0.8961038961038961
+    "eligible_count": 75,
+    "recurrence_rate": 0.92
   },
   {
     "buildingid": "93388",
@@ -21750,6 +21740,11 @@
     "recurrence_rate": 1
   },
   {
+    "buildingid": "83651",
+    "eligible_count": 13,
+    "recurrence_rate": 0.8461538461538461
+  },
+  {
     "buildingid": "109532",
     "eligible_count": 7,
     "recurrence_rate": 0
@@ -21916,8 +21911,8 @@
   },
   {
     "buildingid": "77228",
-    "eligible_count": 51,
-    "recurrence_rate": 0.45098039215686275
+    "eligible_count": 50,
+    "recurrence_rate": 0.46
   },
   {
     "buildingid": "64966",
@@ -21976,8 +21971,8 @@
   },
   {
     "buildingid": "59146",
-    "eligible_count": 82,
-    "recurrence_rate": 0.8902439024390244
+    "eligible_count": 80,
+    "recurrence_rate": 0.9125
   },
   {
     "buildingid": "71379",
@@ -22241,8 +22236,8 @@
   },
   {
     "buildingid": "85942",
-    "eligible_count": 36,
-    "recurrence_rate": 0.6944444444444444
+    "eligible_count": 35,
+    "recurrence_rate": 0.7142857142857143
   },
   {
     "buildingid": "125016",
@@ -22296,8 +22291,8 @@
   },
   {
     "buildingid": "97420",
-    "eligible_count": 68,
-    "recurrence_rate": 0.8382352941176471
+    "eligible_count": 66,
+    "recurrence_rate": 0.8636363636363636
   },
   {
     "buildingid": "112785",
@@ -23366,7 +23361,7 @@
   },
   {
     "buildingid": "1013119",
-    "eligible_count": 10,
+    "eligible_count": 9,
     "recurrence_rate": 0
   },
   {
@@ -24006,8 +24001,8 @@
   },
   {
     "buildingid": "66589",
-    "eligible_count": 110,
-    "recurrence_rate": 0.8272727272727273
+    "eligible_count": 109,
+    "recurrence_rate": 0.8348623853211009
   },
   {
     "buildingid": "117110",
@@ -24241,8 +24236,8 @@
   },
   {
     "buildingid": "108643",
-    "eligible_count": 8,
-    "recurrence_rate": 0.875
+    "eligible_count": 7,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "937485",
@@ -24486,7 +24481,7 @@
   },
   {
     "buildingid": "63480",
-    "eligible_count": 15,
+    "eligible_count": 14,
     "recurrence_rate": 0
   },
   {
@@ -24706,11 +24701,6 @@
   },
   {
     "buildingid": "119024",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
-    "buildingid": "125628",
     "eligible_count": 1,
     "recurrence_rate": 0
   },
@@ -25936,7 +25926,7 @@
   },
   {
     "buildingid": "846697",
-    "eligible_count": 2,
+    "eligible_count": 1,
     "recurrence_rate": 0
   },
   {
@@ -25991,8 +25981,8 @@
   },
   {
     "buildingid": "902260",
-    "eligible_count": 2,
-    "recurrence_rate": 0.5
+    "eligible_count": 1,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "902262",
@@ -27721,7 +27711,7 @@
   },
   {
     "buildingid": "993468",
-    "eligible_count": 3,
+    "eligible_count": 2,
     "recurrence_rate": 0
   },
   {
@@ -28221,8 +28211,8 @@
   },
   {
     "buildingid": "928505",
-    "eligible_count": 2,
-    "recurrence_rate": 0.5
+    "eligible_count": 1,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "931309",
@@ -29770,11 +29760,6 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "47805",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "47902",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -29846,8 +29831,8 @@
   },
   {
     "buildingid": "55165",
-    "eligible_count": 18,
-    "recurrence_rate": 0.6111111111111112
+    "eligible_count": 16,
+    "recurrence_rate": 0.6875
   },
   {
     "buildingid": "55167",
@@ -30950,11 +30935,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "100347",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "100452",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -31083,11 +31063,6 @@
     "buildingid": "123360",
     "eligible_count": 2,
     "recurrence_rate": 0
-  },
-  {
-    "buildingid": "123361",
-    "eligible_count": 2,
-    "recurrence_rate": 0.5
   },
   {
     "buildingid": "123364",
@@ -31446,7 +31421,7 @@
   },
   {
     "buildingid": "119171",
-    "eligible_count": 4,
+    "eligible_count": 3,
     "recurrence_rate": 0
   },
   {
@@ -31791,7 +31766,7 @@
   },
   {
     "buildingid": "90188",
-    "eligible_count": 6,
+    "eligible_count": 4,
     "recurrence_rate": 0
   },
   {
@@ -34270,11 +34245,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "60967",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "50423",
     "eligible_count": 14,
     "recurrence_rate": 0.14285714285714285
@@ -34361,8 +34331,8 @@
   },
   {
     "buildingid": "104547",
-    "eligible_count": 21,
-    "recurrence_rate": 0.3333333333333333
+    "eligible_count": 20,
+    "recurrence_rate": 0.35
   },
   {
     "buildingid": "78342",
@@ -34506,8 +34476,8 @@
   },
   {
     "buildingid": "102154",
-    "eligible_count": 14,
-    "recurrence_rate": 0.14285714285714285
+    "eligible_count": 13,
+    "recurrence_rate": 0.15384615384615385
   },
   {
     "buildingid": "99233",
@@ -35835,11 +35805,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "100365",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "100504",
     "eligible_count": 1,
     "recurrence_rate": 0
@@ -36656,8 +36621,8 @@
   },
   {
     "buildingid": "46502",
-    "eligible_count": 146,
-    "recurrence_rate": 0.8013698630136986
+    "eligible_count": 145,
+    "recurrence_rate": 0.8068965517241379
   },
   {
     "buildingid": "911525",
@@ -37151,8 +37116,8 @@
   },
   {
     "buildingid": "120576",
-    "eligible_count": 9,
-    "recurrence_rate": 0.5555555555555556
+    "eligible_count": 8,
+    "recurrence_rate": 0.625
   },
   {
     "buildingid": "49172",
@@ -37826,8 +37791,8 @@
   },
   {
     "buildingid": "69077",
-    "eligible_count": 6,
-    "recurrence_rate": 0.16666666666666666
+    "eligible_count": 5,
+    "recurrence_rate": 0.2
   },
   {
     "buildingid": "53168",
@@ -38281,8 +38246,8 @@
   },
   {
     "buildingid": "114433",
-    "eligible_count": 10,
-    "recurrence_rate": 0.5
+    "eligible_count": 9,
+    "recurrence_rate": 0.5555555555555556
   },
   {
     "buildingid": "903394",
@@ -38366,8 +38331,8 @@
   },
   {
     "buildingid": "1004926",
-    "eligible_count": 19,
-    "recurrence_rate": 0.8421052631578947
+    "eligible_count": 17,
+    "recurrence_rate": 0.9411764705882353
   },
   {
     "buildingid": "102405",
@@ -38786,8 +38751,8 @@
   },
   {
     "buildingid": "92572",
-    "eligible_count": 23,
-    "recurrence_rate": 0.782608695652174
+    "eligible_count": 18,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "51091",
@@ -39221,8 +39186,8 @@
   },
   {
     "buildingid": "66602",
-    "eligible_count": 16,
-    "recurrence_rate": 0.625
+    "eligible_count": 15,
+    "recurrence_rate": 0.6666666666666666
   },
   {
     "buildingid": "927743",
@@ -39280,14 +39245,9 @@
     "recurrence_rate": 0.5
   },
   {
-    "buildingid": "59162",
-    "eligible_count": 9,
-    "recurrence_rate": 0.6666666666666666
-  },
-  {
     "buildingid": "77305",
-    "eligible_count": 4,
-    "recurrence_rate": 0.75
+    "eligible_count": 3,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "903178",
@@ -40256,8 +40216,8 @@
   },
   {
     "buildingid": "89456",
-    "eligible_count": 21,
-    "recurrence_rate": 0.8095238095238095
+    "eligible_count": 20,
+    "recurrence_rate": 0.85
   },
   {
     "buildingid": "57169",
@@ -40326,8 +40286,8 @@
   },
   {
     "buildingid": "59911",
-    "eligible_count": 56,
-    "recurrence_rate": 0.9464285714285714
+    "eligible_count": 55,
+    "recurrence_rate": 0.9636363636363636
   },
   {
     "buildingid": "61860",
@@ -40806,7 +40766,7 @@
   },
   {
     "buildingid": "97302",
-    "eligible_count": 6,
+    "eligible_count": 4,
     "recurrence_rate": 0
   },
   {
@@ -41476,8 +41436,8 @@
   },
   {
     "buildingid": "116098",
-    "eligible_count": 64,
-    "recurrence_rate": 0.84375
+    "eligible_count": 63,
+    "recurrence_rate": 0.8571428571428571
   },
   {
     "buildingid": "111949",
@@ -41606,7 +41566,7 @@
   },
   {
     "buildingid": "61695",
-    "eligible_count": 2,
+    "eligible_count": 1,
     "recurrence_rate": 0
   },
   {
@@ -42346,8 +42306,8 @@
   },
   {
     "buildingid": "63571",
-    "eligible_count": 16,
-    "recurrence_rate": 0.5
+    "eligible_count": 13,
+    "recurrence_rate": 0.6153846153846154
   },
   {
     "buildingid": "99947",
@@ -42720,11 +42680,6 @@
     "recurrence_rate": 0.14285714285714285
   },
   {
-    "buildingid": "98822",
-    "eligible_count": 2,
-    "recurrence_rate": 0.5
-  },
-  {
     "buildingid": "60419",
     "eligible_count": 4,
     "recurrence_rate": 0
@@ -42761,8 +42716,8 @@
   },
   {
     "buildingid": "1004918",
-    "eligible_count": 48,
-    "recurrence_rate": 0.8958333333333334
+    "eligible_count": 45,
+    "recurrence_rate": 0.9555555555555556
   },
   {
     "buildingid": "94328",
@@ -42915,6 +42870,11 @@
     "recurrence_rate": 0
   },
   {
+    "buildingid": "59162",
+    "eligible_count": 8,
+    "recurrence_rate": 0.75
+  },
+  {
     "buildingid": "51236",
     "eligible_count": 2,
     "recurrence_rate": 1
@@ -43056,8 +43016,8 @@
   },
   {
     "buildingid": "65086",
-    "eligible_count": 4,
-    "recurrence_rate": 0.5
+    "eligible_count": 3,
+    "recurrence_rate": 0.6666666666666666
   },
   {
     "buildingid": "48007",
@@ -43716,8 +43676,8 @@
   },
   {
     "buildingid": "72978",
-    "eligible_count": 3,
-    "recurrence_rate": 0.3333333333333333
+    "eligible_count": 2,
+    "recurrence_rate": 0.5
   },
   {
     "buildingid": "109255",
@@ -44736,7 +44696,7 @@
   },
   {
     "buildingid": "57683",
-    "eligible_count": 3,
+    "eligible_count": 1,
     "recurrence_rate": 0
   },
   {
@@ -45181,8 +45141,8 @@
   },
   {
     "buildingid": "102861",
-    "eligible_count": 13,
-    "recurrence_rate": 0.7692307692307693
+    "eligible_count": 12,
+    "recurrence_rate": 0.8333333333333334
   },
   {
     "buildingid": "58091",
@@ -45316,7 +45276,7 @@
   },
   {
     "buildingid": "60640",
-    "eligible_count": 3,
+    "eligible_count": 2,
     "recurrence_rate": 0
   },
   {
@@ -46001,8 +45961,8 @@
   },
   {
     "buildingid": "806221",
-    "eligible_count": 13,
-    "recurrence_rate": 0.5384615384615384
+    "eligible_count": 8,
+    "recurrence_rate": 0.875
   },
   {
     "buildingid": "45443",
@@ -46033,11 +45993,6 @@
     "buildingid": "999436",
     "eligible_count": 3,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "110200",
-    "eligible_count": 3,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "1008790",
@@ -46385,11 +46340,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "100658",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "120360",
     "eligible_count": 1,
     "recurrence_rate": 0
@@ -46408,11 +46358,6 @@
     "buildingid": "61036",
     "eligible_count": 3,
     "recurrence_rate": 0.3333333333333333
-  },
-  {
-    "buildingid": "1010097",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "64978",
@@ -46462,6 +46407,11 @@
   {
     "buildingid": "59258",
     "eligible_count": 3,
+    "recurrence_rate": 0
+  },
+  {
+    "buildingid": "110200",
+    "eligible_count": 2,
     "recurrence_rate": 0
   },
   {
@@ -46728,11 +46678,6 @@
     "buildingid": "57734",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "57743",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "57747",
@@ -47103,11 +47048,6 @@
     "buildingid": "47439",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "49538",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "49544",
@@ -47848,11 +47788,6 @@
     "buildingid": "53813",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "53815",
-    "eligible_count": 3,
-    "recurrence_rate": 0.6666666666666666
   },
   {
     "buildingid": "48117",
@@ -48610,11 +48545,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "64780",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "64809",
     "eligible_count": 1,
     "recurrence_rate": 0
@@ -48718,11 +48648,6 @@
     "buildingid": "82084",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "82124",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "97296",
@@ -49375,11 +49300,6 @@
     "recurrence_rate": 0.5
   },
   {
-    "buildingid": "89427",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "89449",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -49733,11 +49653,6 @@
     "buildingid": "117466",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "118474",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "118489",
@@ -50113,11 +50028,6 @@
     "buildingid": "86791",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "86886",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "90389",
@@ -51255,16 +51165,6 @@
     "recurrence_rate": 0
   },
   {
-    "buildingid": "70523",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
-    "buildingid": "70596",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "70615",
     "eligible_count": 1,
     "recurrence_rate": 0
@@ -51563,11 +51463,6 @@
     "buildingid": "94535",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "98620",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "98626",
@@ -52175,6 +52070,11 @@
     "recurrence_rate": 1
   },
   {
+    "buildingid": "123361",
+    "eligible_count": 1,
+    "recurrence_rate": 1
+  },
+  {
     "buildingid": "59228",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -52541,6 +52441,11 @@
   },
   {
     "buildingid": "96240",
+    "eligible_count": 1,
+    "recurrence_rate": 1
+  },
+  {
+    "buildingid": "98822",
     "eligible_count": 1,
     "recurrence_rate": 1
   },
@@ -53520,11 +53425,6 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "107498",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "107504",
     "eligible_count": 1,
     "recurrence_rate": 0
@@ -53543,11 +53443,6 @@
     "buildingid": "110597",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "110643",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "110658",
@@ -55020,11 +54915,6 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "881036",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "890238",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -55086,11 +54976,6 @@
   },
   {
     "buildingid": "881176",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
-    "buildingid": "896930",
     "eligible_count": 1,
     "recurrence_rate": 0
   },
@@ -56095,11 +55980,6 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "932777",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "955825",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -56733,11 +56613,6 @@
     "buildingid": "957330",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "886077",
-    "eligible_count": 1,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "876463",
@@ -57541,7 +57416,7 @@
   },
   {
     "buildingid": "90782",
-    "eligible_count": 4,
+    "eligible_count": 3,
     "recurrence_rate": 0
   },
   {
@@ -57990,19 +57865,9 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "56950",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "99973",
     "eligible_count": 3,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "81679",
-    "eligible_count": 6,
-    "recurrence_rate": 0
   },
   {
     "buildingid": "58993",
@@ -58071,8 +57936,8 @@
   },
   {
     "buildingid": "89755",
-    "eligible_count": 6,
-    "recurrence_rate": 0.6666666666666666
+    "eligible_count": 4,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "52048",
@@ -58121,8 +57986,8 @@
   },
   {
     "buildingid": "119099",
-    "eligible_count": 6,
-    "recurrence_rate": 0.6666666666666666
+    "eligible_count": 4,
+    "recurrence_rate": 1
   },
   {
     "buildingid": "882148",
@@ -58135,19 +58000,9 @@
     "recurrence_rate": 1
   },
   {
-    "buildingid": "66477",
-    "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
     "buildingid": "986730",
     "eligible_count": 1,
     "recurrence_rate": 1
-  },
-  {
-    "buildingid": "806292",
-    "eligible_count": 6,
-    "recurrence_rate": 0.8333333333333334
   },
   {
     "buildingid": "101384",
@@ -58162,11 +58017,6 @@
   {
     "buildingid": "55298",
     "eligible_count": 1,
-    "recurrence_rate": 0
-  },
-  {
-    "buildingid": "64125",
-    "eligible_count": 5,
     "recurrence_rate": 0
   },
   {
@@ -58380,6 +58230,11 @@
     "recurrence_rate": 1
   },
   {
+    "buildingid": "99203",
+    "eligible_count": 1,
+    "recurrence_rate": 1
+  },
+  {
     "buildingid": "56804",
     "eligible_count": 1,
     "recurrence_rate": 1
@@ -58467,6 +58322,11 @@
   {
     "buildingid": "78265",
     "eligible_count": 4,
+    "recurrence_rate": 1
+  },
+  {
+    "buildingid": "806292",
+    "eligible_count": 5,
     "recurrence_rate": 1
   },
   {
@@ -60112,6 +59972,11 @@
   {
     "buildingid": "903920",
     "eligible_count": 1,
+    "recurrence_rate": 1
+  },
+  {
+    "buildingid": "53815",
+    "eligible_count": 2,
     "recurrence_rate": 1
   },
   {

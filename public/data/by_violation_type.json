@@ -14,60 +14,60 @@
     "description": "HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF ROACHES IN THE ENTIRE APARTMENT LOCATED AT APT 4H, 4th STORY, 1st APARTMENT FR",
     "is_compliance_cadence": false,
     "recurred": 24627,
-    "no_recurrence": 3463,
-    "censored": 6507,
+    "no_recurrence": 3448,
+    "censored": 6522,
     "total": 34597,
-    "rate": 0.8767176931292275
+    "rate": 0.877186108637578
   },
   {
     "code": "§27-2045",
     "description": "§ 27-2045 ADM CODE REPAIR OR REPLACE THE SMOKE DETECTOR MISSING IN THE ENTIRE APARTMENT LOCATED AT APT 1B, 1st STORY, 1st APARTMENT FROM NOR",
     "is_compliance_cadence": false,
     "recurred": 14022,
-    "no_recurrence": 2036,
-    "censored": 7993,
+    "no_recurrence": 2030,
+    "censored": 7999,
     "total": 24051,
-    "rate": 0.873209615145099
+    "rate": 0.8735360079740843
   },
   {
     "code": "§27-2013",
     "description": "§ 27-2013 ADM CODE PAINT WITH LIGHT COLORED PAINT TO THE SATISFACTION OF THIS DEPARTMENT WALLS AND CEILING IN THE ENTIRE APARTMENT LOCATED A",
     "is_compliance_cadence": false,
     "recurred": 14678,
-    "no_recurrence": 2184,
-    "censored": 5696,
+    "no_recurrence": 2169,
+    "censored": 5711,
     "total": 22558,
-    "rate": 0.8704779978650219
+    "rate": 0.8712530420846442
   },
   {
     "code": "§27-2005",
     "description": "§ 27-2005 HMC: PROPERLY REPAIR OR REPLACE THE BROKEN OR DEFECTIVE BURNERS TO STOVE REAR AND FRONT AT RIGHT SIDE IN THE KITCHEN LOCATED AT AP",
     "is_compliance_cadence": false,
     "recurred": 140075,
-    "no_recurrence": 20844,
-    "censored": 48004,
+    "no_recurrence": 20745,
+    "censored": 48103,
     "total": 208923,
-    "rate": 0.8704689937173361
+    "rate": 0.871004850143017
   },
   {
     "code": "§27-2017.3",
     "description": "§ 27-2017.3 HMC: TRACE AND REPAIR THE SOURCE AND ABATE THE VISIBLE MOLD CONDITION... LESS THAN 10SQ. FT. AT WINDOW CASING NORTH WALL IN THE",
     "is_compliance_cadence": false,
     "recurred": 11501,
-    "no_recurrence": 2198,
-    "censored": 5122,
+    "no_recurrence": 2193,
+    "censored": 5127,
     "total": 18821,
-    "rate": 0.8395503321410321
+    "rate": 0.8398568716226085
   },
   {
     "code": "§27-2026",
     "description": "§ 27-2026, 2027 HMC: PROPERLY REPAIR THE SOURCE AND ABATE THE EVIDENCE OF A WATER LEAK AT CEILING IN THE BATHROOM LOCATED AT APT 4A, 1st STO",
     "is_compliance_cadence": false,
     "recurred": 17715,
-    "no_recurrence": 5423,
-    "censored": 10315,
+    "no_recurrence": 5403,
+    "censored": 10335,
     "total": 33453,
-    "rate": 0.7656236494079004
+    "rate": 0.7662860109005969
   },
   {
     "code": "§27-2046.1",
@@ -94,20 +94,20 @@
     "description": "§ 27-2033 ADM CODE PROVIDE READY ACCESS TO BUILDINGS HEATING SYSTEM LOCKED DOOR SUPER STATED WOULD GIVE ME ACCESS BUT DID NOT COMPLY AT BOIL",
     "is_compliance_cadence": false,
     "recurred": 4092,
-    "no_recurrence": 1777,
-    "censored": 3325,
+    "no_recurrence": 1772,
+    "censored": 3330,
     "total": 9194,
-    "rate": 0.6972226955188278
+    "rate": 0.6978171896316507
   },
   {
     "code": "UNKNOWN",
     "description": "(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR AS DESCRIBED ON HPD\u001a",
     "is_compliance_cadence": false,
     "recurred": 2525,
-    "no_recurrence": 1167,
-    "censored": 5815,
+    "no_recurrence": 1144,
+    "censored": 5838,
     "total": 9507,
-    "rate": 0.683911159263272
+    "rate": 0.6881984191877896
   },
   {
     "code": "§27-2029",
@@ -124,20 +124,20 @@
     "description": "567 (C) § 27-2017, 27-2017.1, 27-2017.4, 27-2017.5, 27-2017.8, 27-2019, 27-2021 HMC: ABATE THE NUISANCE CONSISTING OF EVIDENCE OF RATS AND A",
     "is_compliance_cadence": false,
     "recurred": 434,
-    "no_recurrence": 254,
-    "censored": 546,
+    "no_recurrence": 249,
+    "censored": 551,
     "total": 1234,
-    "rate": 0.6308139534883721
+    "rate": 0.6354319180087847
   },
   {
     "code": "§27-2010",
     "description": "§ 27-2010, 2011, 2012 ADM CODE REMOVE THE ACCUMULATION OF REFUSE AND/OR RUBBISH AND MAINTAIN IN A CLEAN CONDITION THE FLOOR AT COMPACTOR CLO",
     "is_compliance_cadence": false,
     "recurred": 975,
-    "no_recurrence": 682,
-    "censored": 1099,
+    "no_recurrence": 679,
+    "censored": 1102,
     "total": 2756,
-    "rate": 0.5884127942063971
+    "rate": 0.5894800483675937
   },
   {
     "code": "§27-2070",
@@ -154,80 +154,90 @@
     "description": "§ 27-2043.1 HMC INSTALL THE MISSING OR REPAIR/REPLACE THE DEFECTIVE WINDOW GUARD(S) IN ACCORDANCE WITH THE SPECIFICATIONS OF THE NEW YORK CI",
     "is_compliance_cadence": false,
     "recurred": 970,
-    "no_recurrence": 904,
-    "censored": 1307,
+    "no_recurrence": 901,
+    "censored": 1310,
     "total": 3181,
-    "rate": 0.5176093916755603
-  },
-  {
-    "code": "§27-2056.6",
-    "description": "§ 27-2056.6 ADM CODE - CORRECT THE LEAD-BASED PAINT HAZARD - PRESUMED LEAD PAINT THAT IS PEELING OR ON A DETERIORATED SUBSURFACE USING WORK",
-    "is_compliance_cadence": false,
-    "recurred": 2868,
-    "no_recurrence": 2706,
-    "censored": 4161,
-    "total": 9735,
-    "rate": 0.5145317545748116
+    "rate": 0.518439337252806
   },
   {
     "code": "§27-2011",
     "description": "§ 27-2011 ADM CODE CLEANSE TO THE SATISFACTION OF THIS DEPARTMENT THE NORTH AND EAST YARD",
     "is_compliance_cadence": false,
     "recurred": 572,
-    "no_recurrence": 545,
-    "censored": 844,
+    "no_recurrence": 538,
+    "censored": 851,
     "total": 1961,
-    "rate": 0.5120859444941809
+    "rate": 0.5153153153153153
+  },
+  {
+    "code": "§27-2056.6",
+    "description": "§ 27-2056.6 ADM CODE - CORRECT THE LEAD-BASED PAINT HAZARD - PRESUMED LEAD PAINT THAT IS PEELING OR ON A DETERIORATED SUBSURFACE USING WORK",
+    "is_compliance_cadence": false,
+    "recurred": 2868,
+    "no_recurrence": 2700,
+    "censored": 4167,
+    "total": 9735,
+    "rate": 0.5150862068965517
   },
   {
     "code": "§300",
     "description": "§ 300 M/D LAW FILE PLANS AND APPLICATION AND LEGALIZE THE FOLLOWING ALTERATION OR RESTORE TO THE LEGAL CONDITION EXISTING PRIOR TO THE MAKIN",
     "is_compliance_cadence": false,
     "recurred": 265,
-    "no_recurrence": 379,
-    "censored": 575,
+    "no_recurrence": 376,
+    "censored": 578,
     "total": 1219,
-    "rate": 0.4114906832298137
+    "rate": 0.41341653666146644
   },
   {
     "code": "§27-2037",
     "description": "§ 27-2037, 2038 HMC: PROVIDE A SAFE AND ADEQUATE SUPPLY OF ELECTRIC SERVICE TO THE FIXTURES ELECTRICAL LIGHT FIXTURE AT CEILING IN THE 2nd R",
     "is_compliance_cadence": false,
     "recurred": 395,
-    "no_recurrence": 628,
-    "censored": 771,
+    "no_recurrence": 627,
+    "censored": 772,
     "total": 1794,
-    "rate": 0.386119257086999
+    "rate": 0.38649706457925637
   },
   {
     "code": "§27-2104",
     "description": "§ 27-2104 ADM CODE POST AND MAINTAIN A PROPER SIGN ON WALL OF ENTRANCE STORY SHOWING THE REGISTRATION NUMBER ASSIGNED BY THE DEPARTMENT AND",
     "is_compliance_cadence": false,
     "recurred": 206,
-    "no_recurrence": 380,
-    "censored": 1213,
+    "no_recurrence": 379,
+    "censored": 1214,
     "total": 1799,
-    "rate": 0.3515358361774744
+    "rate": 0.35213675213675216
   },
   {
     "code": "§27-2021",
     "description": "§ 27-2021 ADM CODE PROVIDE SUFFICIENT, PROPER AND SEPARATE METAL RECEPTACLES FOR THE DEPOSIT OF GARBAGE, RUBBISH AND OTHER WASTE MATERIAL AN",
     "is_compliance_cadence": false,
     "recurred": 131,
-    "no_recurrence": 257,
-    "censored": 342,
+    "no_recurrence": 256,
+    "censored": 343,
     "total": 730,
-    "rate": 0.33762886597938147
+    "rate": 0.3385012919896641
   },
   {
     "code": "§27-2024",
     "description": "§ 27-2024 ADM CODE PROVIDE ADEQUATE SUPPLY OF COLD WATER FOR THE FIXTURES AT BATHTUB IN THE BATHROOM LOCATED AT APT 6K, 6th STORY, 1st APART",
     "is_compliance_cadence": false,
     "recurred": 386,
-    "no_recurrence": 767,
-    "censored": 1244,
+    "no_recurrence": 764,
+    "censored": 1247,
     "total": 2397,
-    "rate": 0.3347788378143972
+    "rate": 0.3356521739130435
+  },
+  {
+    "code": "§27-2107",
+    "description": "§27-2107 ADM CODE OWNER FAILED TO FILE A VALID REGISTRATION STATEMENT WITH THE DEPARTMENT AS REQUIRED BY ADM CODE §27-2097 AND IS THEREFORE",
+    "is_compliance_cadence": false,
+    "recurred": 795,
+    "no_recurrence": 1681,
+    "censored": 4661,
+    "total": 7137,
+    "rate": 0.3210823909531502
   },
   {
     "code": "§27-2053",
@@ -240,24 +250,14 @@
     "rate": 0.32033898305084746
   },
   {
-    "code": "§27-2107",
-    "description": "§27-2107 ADM CODE OWNER FAILED TO FILE A VALID REGISTRATION STATEMENT WITH THE DEPARTMENT AS REQUIRED BY ADM CODE §27-2097 AND IS THEREFORE",
-    "is_compliance_cadence": false,
-    "recurred": 795,
-    "no_recurrence": 1687,
-    "censored": 4655,
-    "total": 7137,
-    "rate": 0.3203062046736503
-  },
-  {
     "code": "§53",
     "description": "§ 53, 187, 231 M/D LAW AND DEPARTMENT RULES AND REGULATIONS. PROVIDE A SHOE PROPERLY SECURED TO BOTTOM OF STRING OF DROPLADDER TACK WELDED,",
     "is_compliance_cadence": false,
     "recurred": 262,
-    "no_recurrence": 679,
-    "censored": 782,
+    "no_recurrence": 674,
+    "censored": 787,
     "total": 1723,
-    "rate": 0.2784272051009564
+    "rate": 0.2799145299145299
   },
   {
     "code": "§25-171",
@@ -274,20 +274,20 @@
     "description": "§ 27-2042 ADM CODE PROVIDE A MIRROR IN SELF-SERVICE ELEVATOR ARRANGED SO AS TO ENABLE A PERSON ENTERING, TO VIEW INSIDE OF ELEVATOR NUMBER 2",
     "is_compliance_cadence": false,
     "recurred": 24,
-    "no_recurrence": 68,
-    "censored": 48,
+    "no_recurrence": 67,
+    "censored": 49,
     "total": 140,
-    "rate": 0.2608695652173913
+    "rate": 0.26373626373626374
   },
   {
     "code": "§27-2014",
     "description": "§ 27-2014 ADM CODE AND DEPT. RULES AND REGULATIONS. SCRAPE AND REMOVE RUST SCALES AND PAINT WITH 2 COATS OF PAINT ALL STORIES AND ALL BALCON",
     "is_compliance_cadence": false,
     "recurred": 40,
-    "no_recurrence": 118,
-    "censored": 209,
+    "no_recurrence": 117,
+    "censored": 210,
     "total": 367,
-    "rate": 0.25316455696202533
+    "rate": 0.25477707006369427
   },
   {
     "code": "§26-1103",
@@ -304,10 +304,10 @@
     "description": "§ 329, M/D LAW AND DEPT. RULES AND REGS. PROVIDE A COMPLETED CERTIFICATE OF INSPECTION VISITS IN A PROPER FRAME AT OR NEAR MAILBOXES, BOTTOM",
     "is_compliance_cadence": false,
     "recurred": 95,
-    "no_recurrence": 364,
-    "censored": 490,
+    "no_recurrence": 363,
+    "censored": 491,
     "total": 949,
-    "rate": 0.20697167755991286
+    "rate": 0.2074235807860262
   },
   {
     "code": "§27-2081",
@@ -324,10 +324,10 @@
     "description": "§ 27-2073 ADM CODE - PROVIDE AN ADEQUATE SUPPLY OF GAS TO THE FIXTURES NO COOKING GAS AT RANGE IN THE ENTIRE APARTMENT LOCATED AT APT FL1, 1",
     "is_compliance_cadence": false,
     "recurred": 11,
-    "no_recurrence": 53,
-    "censored": 60,
+    "no_recurrence": 52,
+    "censored": 61,
     "total": 124,
-    "rate": 0.171875
+    "rate": 0.1746031746031746
   },
   {
     "code": "§27-2039",
@@ -454,8 +454,8 @@
     "description": "§ 27-848 ADMIN CODE & DEPT. RULES AND REGS. REPLACE REFUSE CHUTE WARNING SIGN PUBLIC HALL DOOR TO SERVICE CLOSET OR ON WALL OVER HOPPER DOOR",
     "is_compliance_cadence": false,
     "recurred": 0,
-    "no_recurrence": 65,
-    "censored": 44,
+    "no_recurrence": 63,
+    "censored": 46,
     "total": 109,
     "rate": 0
   },
@@ -474,8 +474,8 @@
     "description": "§ 27-2077 ADM CODE DISCONTINUE THE ROOMING UNIT DUPLEX LOWER LEVEL IN THE 4th ROOM FROM NORTH LOCATED AT APT 1B, 1st STORY, 1st APARTMENT FR",
     "is_compliance_cadence": false,
     "recurred": 0,
-    "no_recurrence": 41,
-    "censored": 30,
+    "no_recurrence": 38,
+    "censored": 33,
     "total": 71,
     "rate": 0
   }

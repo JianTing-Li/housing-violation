@@ -38,28 +38,28 @@ export function Methodology() {
   return (
     <section id="methodology" className="section">
       <details className="methodology" onToggle={(e) => setExpanded(e.target.open)}>
-        <summary>Methodology &amp; limitations</summary>
+        <summary>What this does—and doesn’t—tell us</summary>
 
         <div className="methodology__body">
           <p>
-            A violation "recurs" if a later violation with the same building ID and order number
-            has an inspection date within <strong>365 days</strong> of the prior one's effective
-            close date (the certified date, or the status-change date if no certification exists).
+            In this analysis, a repeat means that a later violation has the same building ID and
+            HPD order number, with an inspection date within <strong>365 days</strong> of the first
+            record’s effective close date. The effective close date is the certified date, or the
+            status-change date when no certified date is available. The order number identifies a
+            kind of violation; it does not identify a specific apartment or physical condition.
           </p>
           <p>
-            Violations closed too recently to have had a full 365-day window are{' '}
-            <strong>censored</strong> — excluded from the rate rather than counted as "no
-            recurrence," since we don't yet know how they'll turn out. This is a standard
-            survival-analysis approach: counting an unresolved case as a negative would bias the
-            rate downward.
+            A case is classified as a repeat as soon as a matching record appears within that
+            year. A case counts as “no repeat” only after the full year passes without a match.
+            Newer cases with no match yet are <strong>censored</strong>, meaning they are left out
+            of the rate until there is enough follow-up time. Counting them as “no repeat” now
+            would make the rate look lower simply because they are newer.
           </p>
           <p>
-            Rankings by rate (violation type, neighborhood, owner) apply a minimum volume floor of
-            25 eligible closed violations before a rate is shown — a building or category with a
-            handful of violations can swing from 0% to 100% on a single case, which isn't a
-            meaningful signal. The scatterplot below shows why: rates for buildings with few
-            eligible violations are scattered across the full range, while buildings with more
-            history cluster more tightly.
+            Rate rankings include only violation types, neighborhoods, and registrations with at
+            least 25 classifiable closed violations. With only a few records, one case can move a
+            rate sharply. The chart below shows the same issue at the building level: rates vary
+            widely when there are few records, then bunch together as the record count grows.
           </p>
 
           {sampledScatter && (
@@ -69,8 +69,8 @@ export function Methodology() {
                   <XAxis
                     type="number"
                     dataKey="eligible_count"
-                    name="Eligible closed violations"
-                    label={{ value: 'Eligible closed violations (log scale)', position: 'bottom', fontSize: 12 }}
+                    name="Classifiable closed violations"
+                    label={{ value: 'Classifiable closed violations (log scale)', position: 'bottom', fontSize: 12 }}
                     scale="log"
                     domain={[1, xTicks[xTicks.length - 1] ?? 'auto']}
                     ticks={xTicks}
@@ -79,7 +79,7 @@ export function Methodology() {
                   <YAxis
                     type="number"
                     dataKey="recurrence_rate"
-                    name="Recurrence rate"
+                    name="Same-type repeat rate"
                     tickFormatter={(v) => `${Math.round(v * 100)}%`}
                     domain={[0, 1]}
                     tickLine={false}
@@ -91,10 +91,9 @@ export function Methodology() {
               </ResponsiveContainer>
               <p className="chart-caption">
                 Each point is one building ({formatNumber(sampledScatter.length)} of{' '}
-                {formatNumber(scatter.length)} shown). Buildings with few eligible violations
-                (left side) scatter across the full rate range; buildings with more history
-                (right side) converge — a visual case for the volume floor used elsewhere on this
-                page.
+                {formatNumber(scatter.length)} shown). Buildings with few classifiable violations
+                are on the left, where rates cover nearly the full range. Buildings with more
+                records are on the right, where the rates cluster more closely.
               </p>
             </div>
           )}
@@ -106,7 +105,7 @@ export function Methodology() {
                 NYC HPD Housing Maintenance Code Violations (wvxf-dwi5)
               </a>
               . Covers {summary.date_range_start.slice(0, 10)} through{' '}
-              {summary.last_updated.slice(0, 10)}, Bronx only.
+              {summary.data_cutoff.slice(0, 10)}, Bronx only.
             </p>
           )}
         </div>

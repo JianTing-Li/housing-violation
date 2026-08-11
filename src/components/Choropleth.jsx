@@ -20,7 +20,7 @@ export function Choropleth({ boundaries, ratesByNta }) {
   function onEachFeature(feature, layer) {
     const entry = ratesByNta[feature.properties.ntaname];
     const label = entry
-      ? `<strong>${feature.properties.ntaname}</strong><br/>${formatPct(entry.rate)} recurrence rate<br/>${formatNumber(entry.recurred + entry.no_recurrence)} eligible closed violations`
+      ? `<strong>${feature.properties.ntaname}</strong><br/>${formatPct(entry.rate)} same-type repeat rate<br/>${formatNumber(entry.recurred + entry.no_recurrence)} classifiable closed violations`
       : `<strong>${feature.properties.ntaname}</strong><br/>No violation data`;
     layer.bindTooltip(label, { sticky: true });
   }

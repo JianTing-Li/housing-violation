@@ -48,31 +48,33 @@ export function Owners() {
 
   return (
     <section id="owners" className="section section--wide">
-      <h2>Which owners drive this?</h2>
+      <h2>Which owners account for the most repeat violations?</h2>
       <p>
-        Every owner here is identified only by their HPD registration number — this data doesn't
-        include owner names or portfolio info, so these two charts answer different questions
-        rather than pointing at the same list.
+        The violations data identifies owners only by HPD registration number. It does not include
+        names or show whether several registrations belong to the same owner. The charts therefore
+        compare registrations, not full ownership portfolios.
       </p>
 
       <div className="owner-charts">
         <div className="owner-chart">
-          <h3>Biggest contributor to volume</h3>
-          <p className="owner-chart__subtitle">Most closed violations, regardless of rate</p>
+          <h3>Most closed violations</h3>
+          <p className="owner-chart__subtitle">Total records, regardless of repeat rate</p>
           <OwnerBarChart data={countData} dataKey="total" valueFormatter={formatNumber} barColor="#1a1a1a" />
         </div>
         <div className="owner-chart">
-          <h3>Worst recurrence rate</h3>
-          <p className="owner-chart__subtitle">Among owners with at least 25 eligible violations</p>
+          <h3>Highest same-type repeat rate</h3>
+          <p className="owner-chart__subtitle">
+            Among registrations with at least 25 classifiable violations
+          </p>
           <OwnerBarChart data={rateData} dataKey="ratePct" valueFormatter={(v) => `${v}%`} barColor="#b3401f" />
         </div>
       </div>
 
       <ChartTakeaway>
-        The single largest owner by volume (Reg #{countData[0]?.registrationid}) has{' '}
-        {formatNumber(countData[0]?.total)} closed violations at a {formatPct(countData[0]?.rate)}{' '}
-        recurrence rate — high volume and a high rate aren't the same finding, and don't always
-        point at the same owner.
+        Registration #{countData[0]?.registrationid} has the most closed violations:{' '}
+        {formatNumber(countData[0]?.total)}. Its same-type repeat rate is{' '}
+        {formatPct(countData[0]?.rate)}. A high count and a high rate are different measures, and
+        they do not always point to the same registration.
       </ChartTakeaway>
 
       <Callout>{getRecommendation('owner-accountability')}</Callout>

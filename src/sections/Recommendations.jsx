@@ -3,10 +3,10 @@ import { RECOMMENDATIONS } from '../lib/recommendations.js';
 export function Recommendations() {
   return (
     <section id="recommendations" className="section">
-      <h2>What this suggests</h2>
+      <h2>What could HPD test next?</h2>
       <p>
-        None of these findings say a given owner or neighborhood is acting in bad faith — they
-        point at where the current close-out process isn't confirming that a fix actually held.
+        These patterns do not show why a violation type was recorded again. They can help shape
+        follow-up tests—and show where a closer look may be most useful.
       </p>
       <ol className="recommendations-list">
         {RECOMMENDATIONS.map((r) => (

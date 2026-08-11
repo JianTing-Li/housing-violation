@@ -2,25 +2,25 @@
   {
     "class": "A",
     "recurred": 38445,
-    "no_recurrence": 13097,
-    "censored": 27747,
+    "no_recurrence": 13013,
+    "censored": 27831,
     "total": 79289,
-    "rate": 0.7458965503860929
+    "rate": 0.7471141513467293
   },
   {
     "class": "B",
     "recurred": 116084,
-    "no_recurrence": 22876,
-    "censored": 48186,
+    "no_recurrence": 22806,
+    "censored": 48256,
     "total": 187146,
-    "rate": 0.835377086931491
+    "rate": 0.835798113615091
   },
   {
     "class": "C",
     "recurred": 97232,
-    "no_recurrence": 20299,
-    "censored": 39915,
+    "no_recurrence": 20216,
+    "censored": 39998,
     "total": 157446,
-    "rate": 0.8272881197301137
+    "rate": 0.8278727607111233
   }
 ]

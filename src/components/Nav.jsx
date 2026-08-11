@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 const LINKS = [
   { id: 'overview', label: 'Overview' },
   { id: 'severity', label: 'Severity' },
-  { id: 'violation-types', label: 'Violation Types' },
+  { id: 'violation-types', label: 'Violation types' },
   { id: 'neighborhoods', label: 'Neighborhoods' },
   { id: 'owners', label: 'Owners' },
-  { id: 'recommendations', label: 'Recommendations' },
+  { id: 'recommendations', label: 'Next steps' },
 ];
 
 export function Nav() {

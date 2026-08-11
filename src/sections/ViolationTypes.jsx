@@ -24,7 +24,7 @@ export function ViolationTypes() {
 
   return (
     <section id="violation-types" className="section">
-      <h2>Which kinds of violations keep coming back?</h2>
+      <h2>Which problems return most often?</h2>
 
       <div className="chart-block chart-block--tall">
         <ResponsiveContainer width="100%" height={chartData.length * 46 + 20}>
@@ -55,17 +55,17 @@ export function ViolationTypes() {
       <ChartTakeaway>
         {top.length > 0 && (
           <>
-            "{cleanViolationLabel(top[0].description)}" recurs at {formatPct(top[0].rate)} — the
-            highest rate among violation types with enough volume to measure reliably.
+            “{cleanViolationLabel(top[0].description)}” has a {formatPct(top[0].rate)} same-type
+            repeat rate, the highest among categories with enough records to compare.
           </>
         )}
       </ChartTakeaway>
 
       <p>
-        Ranked by recurrence rate among categories with at least 25 eligible closed violations, so
-        rare violation types don't produce misleadingly extreme rates. The muted bar is the annual
-        bedbug-notice filing (§27-2018.1) — a recurring paperwork requirement, not a
-        repaired-and-failed-again violation, so it's expected to look different from the rest.
+        The chart includes only categories with at least 25 classifiable closed violations. That
+        keeps a handful of records from producing an extreme rate. If the annual bedbug-notice
+        filing (§27-2018.1) appears, it is shown in gray because it is a recurring paperwork
+        requirement, not a repair record.
       </p>
 
       <Callout>{getRecommendation('violation-targeting')}</Callout>
