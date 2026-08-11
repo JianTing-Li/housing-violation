@@ -5,7 +5,8 @@
     "no_recurrence": 508,
     "censored": 1382,
     "total": 5578,
-    "rate": 0.8789323164918971
+    "rate": 0.8789323164918971,
+    "sufficient_data": true
   },
   {
     "nta": "Highbridge",
@@ -13,7 +14,8 @@
     "no_recurrence": 1599,
     "censored": 4380,
     "total": 17204,
-    "rate": 0.8753119151590767
+    "rate": 0.8753119151590767,
+    "sufficient_data": true
   },
   {
     "nta": "Fordham Heights",
@@ -21,7 +23,8 @@
     "no_recurrence": 1972,
     "censored": 4603,
     "total": 19296,
-    "rate": 0.8657864289117266
+    "rate": 0.8657864289117266,
+    "sufficient_data": true
   },
   {
     "nta": "West Farms",
@@ -29,7 +32,8 @@
     "no_recurrence": 1181,
     "censored": 2912,
     "total": 11438,
-    "rate": 0.8614825240441004
+    "rate": 0.8614825240441004,
+    "sufficient_data": true
   },
   {
     "nta": "Allerton",
@@ -37,7 +41,8 @@
     "no_recurrence": 1271,
     "censored": 2902,
     "total": 11717,
-    "rate": 0.8558139534883721
+    "rate": 0.8558139534883721,
+    "sufficient_data": true
   },
   {
     "nta": "Mount Hope",
@@ -45,7 +50,8 @@
     "no_recurrence": 2993,
     "censored": 7048,
     "total": 27368,
-    "rate": 0.8527066929133859
+    "rate": 0.8527066929133859,
+    "sufficient_data": true
   },
   {
     "nta": "Mount Eden-Claremont (West)",
@@ -53,7 +59,8 @@
     "no_recurrence": 2627,
     "censored": 5498,
     "total": 23307,
-    "rate": 0.8524903138862373
+    "rate": 0.8524903138862373,
+    "sufficient_data": true
   },
   {
     "nta": "University Heights (South)-Morris Heights",
@@ -61,7 +68,8 @@
     "no_recurrence": 2567,
     "censored": 5804,
     "total": 22699,
-    "rate": 0.8480615566735721
+    "rate": 0.8480615566735721,
+    "sufficient_data": true
   },
   {
     "nta": "Concourse-Concourse Village",
@@ -69,7 +77,8 @@
     "no_recurrence": 3664,
     "censored": 7527,
     "total": 30901,
-    "rate": 0.8432446307863438
+    "rate": 0.8432446307863438,
+    "sufficient_data": true
   },
   {
     "nta": "Melrose",
@@ -77,7 +86,8 @@
     "no_recurrence": 1526,
     "censored": 3655,
     "total": 13229,
-    "rate": 0.8406099853770629
+    "rate": 0.8406099853770629,
+    "sufficient_data": true
   },
   {
     "nta": "Castle Hill-Unionport",
@@ -85,7 +95,8 @@
     "no_recurrence": 768,
     "censored": 1352,
     "total": 5850,
-    "rate": 0.8292574477545576
+    "rate": 0.8292574477545576,
+    "sufficient_data": true
   },
   {
     "nta": "Kingsbridge Heights-Van Cortlandt Village",
@@ -93,7 +104,8 @@
     "no_recurrence": 1479,
     "censored": 3177,
     "total": 11732,
-    "rate": 0.8271186440677966
+    "rate": 0.8271186440677966,
+    "sufficient_data": true
   },
   {
     "nta": "Pelham Parkway-Van Nest",
@@ -101,7 +113,8 @@
     "no_recurrence": 1041,
     "censored": 2344,
     "total": 8173,
-    "rate": 0.8214101904271744
+    "rate": 0.8214101904271744,
+    "sufficient_data": true
   },
   {
     "nta": "Tremont",
@@ -109,7 +122,8 @@
     "no_recurrence": 2148,
     "censored": 4709,
     "total": 16722,
-    "rate": 0.8211937068176143
+    "rate": 0.8211937068176143,
+    "sufficient_data": true
   },
   {
     "nta": "Belmont",
@@ -117,7 +131,8 @@
     "no_recurrence": 2881,
     "censored": 5712,
     "total": 21655,
-    "rate": 0.8192937339271154
+    "rate": 0.8192937339271154,
+    "sufficient_data": true
   },
   {
     "nta": "Bedford Park",
@@ -125,7 +140,8 @@
     "no_recurrence": 3147,
     "censored": 7014,
     "total": 23650,
-    "rate": 0.8108319307525848
+    "rate": 0.8108319307525848,
+    "sufficient_data": true
   },
   {
     "nta": "Longwood",
@@ -133,7 +149,8 @@
     "no_recurrence": 2201,
     "censored": 4283,
     "total": 15376,
-    "rate": 0.8015865861354007
+    "rate": 0.8015865861354007,
+    "sufficient_data": true
   },
   {
     "nta": "Crotona Park East",
@@ -141,7 +158,8 @@
     "no_recurrence": 1185,
     "censored": 2804,
     "total": 8751,
-    "rate": 0.8007398688414327
+    "rate": 0.8007398688414327,
+    "sufficient_data": true
   },
   {
     "nta": "Norwood",
@@ -149,7 +167,8 @@
     "no_recurrence": 2182,
     "censored": 3896,
     "total": 14844,
-    "rate": 0.8006941907197662
+    "rate": 0.8006941907197662,
+    "sufficient_data": true
   },
   {
     "nta": "University Heights (North)-Fordham",
@@ -157,7 +176,8 @@
     "no_recurrence": 2666,
     "censored": 5094,
     "total": 18049,
-    "rate": 0.7942107294480896
+    "rate": 0.7942107294480896,
+    "sufficient_data": true
   },
   {
     "nta": "Kingsbridge-Marble Hill",
@@ -165,7 +185,8 @@
     "no_recurrence": 427,
     "censored": 924,
     "total": 2900,
-    "rate": 0.7839068825910931
+    "rate": 0.7839068825910931,
+    "sufficient_data": true
   },
   {
     "nta": "Westchester Square",
@@ -173,7 +194,8 @@
     "no_recurrence": 586,
     "censored": 1869,
     "total": 4572,
-    "rate": 0.7832038475767665
+    "rate": 0.7832038475767665,
+    "sufficient_data": true
   },
   {
     "nta": "Morrisania",
@@ -181,7 +203,8 @@
     "no_recurrence": 2165,
     "censored": 3802,
     "total": 13685,
-    "rate": 0.7809369624607913
+    "rate": 0.7809369624607913,
+    "sufficient_data": true
   },
   {
     "nta": "Mott Haven-Port Morris",
@@ -189,7 +212,8 @@
     "no_recurrence": 2125,
     "censored": 5036,
     "total": 14543,
-    "rate": 0.7764804880614284
+    "rate": 0.7764804880614284,
+    "sufficient_data": true
   },
   {
     "nta": "Hunts Point",
@@ -197,7 +221,8 @@
     "no_recurrence": 936,
     "censored": 1640,
     "total": 5719,
-    "rate": 0.7705319931355724
+    "rate": 0.7705319931355724,
+    "sufficient_data": true
   },
   {
     "nta": "Soundview-Bruckner-Bronx River",
@@ -205,7 +230,8 @@
     "no_recurrence": 2887,
     "censored": 5255,
     "total": 17735,
-    "rate": 0.7686698717948718
+    "rate": 0.7686698717948718,
+    "sufficient_data": true
   },
   {
     "nta": "Wakefield-Woodlawn",
@@ -213,7 +239,8 @@
     "no_recurrence": 1545,
     "censored": 3032,
     "total": 9230,
-    "rate": 0.7507260406582769
+    "rate": 0.7507260406582769,
+    "sufficient_data": true
   },
   {
     "nta": "Williamsbridge-Olinville",
@@ -221,7 +248,8 @@
     "no_recurrence": 2724,
     "censored": 4946,
     "total": 14827,
-    "rate": 0.7243194008703573
+    "rate": 0.7243194008703573,
+    "sufficient_data": true
   },
   {
     "nta": "Riverdale-Spuyten Duyvil",
@@ -229,7 +257,8 @@
     "no_recurrence": 585,
     "censored": 1045,
     "total": 2990,
-    "rate": 0.699228791773779
+    "rate": 0.699228791773779,
+    "sufficient_data": true
   },
   {
     "nta": "Soundview-Clason Point",
@@ -237,7 +266,8 @@
     "no_recurrence": 414,
     "censored": 852,
     "total": 2117,
-    "rate": 0.6727272727272727
+    "rate": 0.6727272727272727,
+    "sufficient_data": true
   },
   {
     "nta": "Parkchester",
@@ -245,7 +275,8 @@
     "no_recurrence": 1038,
     "censored": 1544,
     "total": 4547,
-    "rate": 0.6543456543456544
+    "rate": 0.6543456543456544,
+    "sufficient_data": true
   },
   {
     "nta": "UNKNOWN",
@@ -253,7 +284,8 @@
     "no_recurrence": 11,
     "censored": 5,
     "total": 33,
-    "rate": 0.6071428571428571
+    "rate": 0.6071428571428571,
+    "sufficient_data": true
   },
   {
     "nta": "Pelham Bay-Country Club-City Island",
@@ -261,7 +293,8 @@
     "no_recurrence": 659,
     "censored": 1177,
     "total": 2794,
-    "rate": 0.5924551638837353
+    "rate": 0.5924551638837353,
+    "sufficient_data": true
   },
   {
     "nta": "Morris Park",
@@ -269,7 +302,8 @@
     "no_recurrence": 342,
     "censored": 699,
     "total": 1513,
-    "rate": 0.5798525798525799
+    "rate": 0.5798525798525799,
+    "sufficient_data": true
   },
   {
     "nta": "Eastchester-Edenwald-Baychester",
@@ -277,7 +311,8 @@
     "no_recurrence": 1055,
     "censored": 1735,
     "total": 3851,
-    "rate": 0.5014177693761814
+    "rate": 0.5014177693761814,
+    "sufficient_data": true
   },
   {
     "nta": "Throgs Neck-Schuylerville",
@@ -285,7 +320,8 @@
     "no_recurrence": 527,
     "censored": 783,
     "total": 1816,
-    "rate": 0.4898354307841239
+    "rate": 0.4898354307841239,
+    "sufficient_data": true
   },
   {
     "nta": "Pelham Gardens",
@@ -293,7 +329,8 @@
     "no_recurrence": 146,
     "censored": 512,
     "total": 787,
-    "rate": 0.4690909090909091
+    "rate": 0.4690909090909091,
+    "sufficient_data": true
   },
   {
     "nta": "Co-op City",
@@ -301,7 +338,8 @@
     "no_recurrence": 116,
     "censored": 155,
     "total": 371,
-    "rate": 0.46296296296296297
+    "rate": 0.46296296296296297,
+    "sufficient_data": true
   },
   {
     "nta": "Hutchinson Metro Center",
@@ -309,6 +347,7 @@
     "no_recurrence": 0,
     "censored": 3,
     "total": 3,
-    "rate": null
+    "rate": null,
+    "sufficient_data": false
   }
 ]

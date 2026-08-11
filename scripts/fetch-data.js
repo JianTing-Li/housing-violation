@@ -111,107 +111,191 @@ function effectiveCloseDate(row) {
   return null;
 }
 
-// HPD's annual bedbug report filing ("(A) § HMC:FILE ANNUAL BEDBUG REPORT
-// IN ACCORDANCE WITH HPD RULE...") cites "HPD RULE" instead of an Admin
-// Code section number — confirmed against the raw data (21,415 rows), not
-// a rare edge case — so the §-regex below never matches it and it would
-// otherwise fall into the generic UNKNOWN bucket alongside genuinely
-// uncategorized future violations. Giving it its own stable synthetic code
-// keeps it correctly and consistently classified without widening UNKNOWN
-// into a mixed bag that silently inherits whatever category UNKNOWN gets.
+// Every row from the source dataset is an HPD violation or enforcement
+// record. Categorization below determines what KIND of record it is and
+// which comparisons it's appropriate for — it is not a judgment about
+// whether the record is a "real" violation. All records remain in the
+// data; category only controls which chart/ranking a record is eligible
+// for (see chartEligibilityFor).
+//
+//   'physical_condition'        — a tangible defect/condition in the unit
+//                                  or building requiring repair, replacement,
+//                                  extermination, or similar corrective work.
+//   'administrative_or_posting' — a valid HPD violation for a report,
+//                                  registration, certificate, notice, or
+//                                  required sign. Some recur on a schedule
+//                                  (e.g. an annual filing); others don't.
+//                                  Excluded from the physical-condition
+//                                  ranking because the record describes a
+//                                  paperwork/posting obligation, not a
+//                                  physical condition.
+//   'enforcement_or_legal_status' — a regulatory/legal-status record (a
+//                                  vacate order, a dismissal filing tied to
+//                                  one, an enforcement-program notice) —
+//                                  distinct from both an ongoing physical
+//                                  condition and a routine posting duty.
+//   'mixed_or_unresolved'       — doesn't cleanly fit the above from the
+//                                  NOV text alone; judgment call documented
+//                                  inline below, or a code nobody has
+//                                  reviewed yet (see categoryFor default).
+
+// --- HPD text variants that don't carry a parseable "§ <digits>" citation ---
+// Confirmed against the full raw dataset (see the project conversation this
+// was built from) — every one of these is real, recurring text, not a
+// one-off OCR artifact. Matched with narrow, content-specific patterns
+// (not a broad keyword scan) so they can't accidentally capture unrelated
+// text, and checked before the general §-regex and before the generic
+// missing-§ fallback below.
+
+// "(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE..." —
+// cites "HPD RULE", not an Admin Code section number, so it never matches
+// the §-regex (21,415 raw rows — not a rare edge case).
 const BEDBUG_ANNUAL_REPORT_PATTERN = /FILE\s+ANNUAL\s+BEDBUG\s+REPORT/i;
 const BEDBUG_ANNUAL_REPORT_CODE = 'BEDBUG-ANNUAL-REPORT';
 
+// "(A) § HMC: POST AT OR NEAR THE MAILBOXES OR DISTRIBUTE TO EACH
+// TENANT...THE ANNUAL BEDBUG REPORT AND A COPY..." — a third, distinct
+// bedbug-law requirement (distributing the report/guide to tenants), not
+// the same action as filing the report or posting the prevention notice.
+const BEDBUG_DISTRIBUTION_PATTERN = /POST AT OR NEAR THE MAILBOXES OR DISTRIBUTE[\s\S]{0,160}ANNUAL BEDBUG REPORT/i;
+const BEDBUG_DISTRIBUTION_CODE = 'BEDBUG-REPORT-DISTRIBUTION';
+
+// "(B) 27-2142(A) HMC: THE FOLLOWING DWELLING UNITS WERE REOCCUPIED WHILE
+// BEING SUBJECT TO AN ORDER TO REPAIR/VACATE ORDER ISSUED BY THE
+// DEPARTMENT; FILE FOR A DISMISSAL REQUEST..." — cites the same section
+// number as the standard vacate-order text but describes a different
+// action (filing a dismissal request after reoccupying), so it's kept as
+// its own code rather than merged into §27-2142.
+const VACATE_DISMISSAL_PATTERN = /27-?2142[\s\S]{0,60}REOCCUPIED[\s\S]{0,120}DISMISSAL/i;
+const VACATE_DISMISSAL_CODE = 'VACATE-DISMISSAL-FILING';
+
+// Generic fallback for any other text missing a "§": requires the bare
+// "NN-NNNN(.N)?" citation near the START of the string (allowing an
+// optional leading item number and/or "(A)"/"(B)"/"(C)" sub-item marker,
+// e.g. "566 (B) 27-2021.4 HMC:..."), immediately followed by "HMC",
+// "ADM CODE", or "M/D LAW". This narrow shape — citation right at the
+// start, legal-code keyword right after — is what distinguishes a missing
+// "§" from an ordinary number appearing later in address/apartment text.
+// Matches normalize to the same "§..." code format so a missing-§ variant
+// of an already-known section (e.g. plain "27-2142 ADM CODE...") merges
+// into that section's existing category instead of creating a duplicate.
+const MISSING_SECTION_SYMBOL_PATTERN =
+  /^(?:\d{2,4}\s*)?\(?[A-C]?\)?\s*(\d{2,3}-\d{3,4}(?:\.\d+)?)\s*\(?[A-C]?\)?\s*(?:HMC|ADM\.?\s?CODE|M\/D LAW)/i;
+
 function classifyViolationType(novdescription) {
   const description = novdescription || '';
-  if (BEDBUG_ANNUAL_REPORT_PATTERN.test(description)) {
-    return { code: BEDBUG_ANNUAL_REPORT_CODE };
-  }
-  const match = /§\s?[\d]+(?:\.\d+)?(?:-[\d]+(?:\.\d+)?)?/.exec(description);
-  const code = match ? match[0].replace(/\s/g, '') : 'UNKNOWN';
-  return { code };
+
+  if (BEDBUG_ANNUAL_REPORT_PATTERN.test(description)) return { code: BEDBUG_ANNUAL_REPORT_CODE };
+  if (BEDBUG_DISTRIBUTION_PATTERN.test(description)) return { code: BEDBUG_DISTRIBUTION_CODE };
+  if (VACATE_DISMISSAL_PATTERN.test(description)) return { code: VACATE_DISMISSAL_CODE };
+
+  const sectionMatch = /§\s?[\d]+(?:\.\d+)?(?:-[\d]+(?:\.\d+)?)?/.exec(description);
+  if (sectionMatch) return { code: sectionMatch[0].replace(/\s/g, '') };
+
+  const missingSymbolMatch = MISSING_SECTION_SYMBOL_PATTERN.exec(description);
+  if (missingSymbolMatch) return { code: `§${missingSymbolMatch[1]}` };
+
+  return { code: 'UNKNOWN' };
 }
 
-// Category classification is a hand-reviewed lookup, not a live keyword
-// scan — every code below was checked against its actual NOV text before
-// being placed here (see the audit notes in the project conversation this
-// was built from). Buckets:
-//   'physical'       — a tangible defect/condition in the unit or building
-//                       that requires repair, replacement, extermination,
-//                       or similar corrective physical work.
-//   'administrative' — a paperwork, posting, filing, or registration
-//                       obligation. These recur because they're a
-//                       recordkeeping/compliance process (e.g. an annual
-//                       filing), not because a physical condition broke
-//                       again — so they don't belong in a ranking meant to
-//                       represent unresolved physical conditions.
-//   'ambiguous'       — doesn't cleanly fit either bucket from the NOV text
-//                       alone; judgment call documented inline below.
-// Codes not listed here default to 'ambiguous' (see categoryFor) rather
-// than 'physical', so a future re-fetch surfaces new/unrecognized codes for
-// human review instead of silently asserting they represent a physical
-// condition.
 const VIOLATION_CATEGORY = {
-  // --- administrative: recurring paperwork/posting/filing obligations ---
-  [BEDBUG_ANNUAL_REPORT_CODE]: 'administrative', // annual filing to HPD
-  '§27-2018.1': 'administrative', // post & maintain bedbug prevention notice
-  '§27-2104': 'administrative', // post & maintain registration-number sign
-  '§27-2053': 'administrative', // post sign with super's name/address/phone
-  '§26-1103': 'administrative', // post & maintain housing info guide notice
-  '§329': 'administrative', // provide/post certificate of inspection visits
-  '§27-2022': 'administrative', // post sign with waste collection hours
-  '§67': 'administrative', // post printed egress floor plan
-  '§27-848': 'administrative', // replace refuse chute warning sign
-  '§27-2048': 'administrative', // paint or post floor-number signage
-  '§27-2107': 'administrative', // owner failed to file registration statement
-  '§27-2056.7': 'administrative', // certify lead-paint hazard control compliance
+  // --- administrative_or_posting: valid HPD violations for a report,
+  // registration, certificate, notice, or required sign. Excluded from the
+  // physical-condition ranking because the record itself describes a
+  // paperwork/posting obligation, not a physical condition — not because
+  // it's a lesser or invalid violation. ---
+  [BEDBUG_ANNUAL_REPORT_CODE]: 'administrative_or_posting', // annual filing to HPD
+  [BEDBUG_DISTRIBUTION_CODE]: 'administrative_or_posting', // distribute report/guide to tenants
+  '§27-2018.1': 'administrative_or_posting', // post & maintain bedbug prevention notice
+  '§27-2104': 'administrative_or_posting', // post & maintain registration-number sign
+  '§27-2053': 'administrative_or_posting', // post sign with super's name/address/phone
+  '§26-1103': 'administrative_or_posting', // post & maintain housing info guide notice
+  '§329': 'administrative_or_posting', // provide/post certificate of inspection visits
+  '§27-2022': 'administrative_or_posting', // post sign with waste collection hours
+  '§67': 'administrative_or_posting', // post printed egress floor plan
+  '§27-848': 'administrative_or_posting', // replace refuse chute warning sign
+  '§27-2048': 'administrative_or_posting', // paint or post floor-number signage
+  '§27-2107': 'administrative_or_posting', // owner failed to file registration statement
+  '§27-2056.7': 'administrative_or_posting', // certify lead-paint hazard control compliance
 
-  // --- ambiguous: mixed or unclear from NOV text alone ---
-  '§27-2033': 'ambiguous', // access/compliance failure during inspection, not a decaying condition or a filing
-  '§300': 'ambiguous', // requires EITHER filing paperwork to legalize OR physically restoring — text offers both paths
-  '§27-2142': 'ambiguous', // vacate order: a regulatory status tied to an underlying condition, not itself a repair action
-  '§27-2153': 'ambiguous', // one-time enforcement-program enrollment notice — not physical, but not a recurring filing either
+  // --- enforcement_or_legal_status: a regulatory/legal-status record, not
+  // an ongoing physical condition and not a routine posting duty. ---
+  '§27-2142': 'enforcement_or_legal_status', // vacate order: apartments vacated, cannot be reoccupied until so ordered
+  [VACATE_DISMISSAL_CODE]: 'enforcement_or_legal_status', // dismissal request filed after reoccupying under a vacate/repair order
+  '§27-2153': 'enforcement_or_legal_status', // building selected for the Alternative Enforcement Program
 
-  // --- physical: a tangible defect/condition requiring repair, replacement,
-  // extermination, or similar corrective physical work. Listed explicitly
-  // (rather than left to the default) so the default only ever applies to
-  // codes nobody has reviewed yet — see categoryFor below.
-  '§27-2033.3': 'physical', // missing temperature-reporting device
-  '§27-2017.4': 'physical', // roach infestation
-  '§27-2045': 'physical', // missing/defective smoke detector
-  '§27-2013': 'physical', // repaint required
-  '§27-2005': 'physical', // broken stove burners
-  '§27-2017.3': 'physical', // mold condition
-  '§27-2026': 'physical', // water leak
-  '§27-2046.1': 'physical', // missing/defective CO detector
-  '§27-2031': 'physical', // no hot water
-  '§27-2029': 'physical', // inadequate heat
-  '§27-2017': 'physical', // rodent infestation
-  '§27-2010': 'physical', // trash/refuse buildup
-  '§27-2070': 'physical', // no gas supply
-  '§27-2043.1': 'physical', // missing/defective window guard
-  '§27-2011': 'physical', // yard not maintained
-  '§27-2056.6': 'physical', // lead paint hazard
-  '§27-2037': 'physical', // electrical fixture defect
-  '§27-2021': 'physical', // missing trash receptacles
-  '§27-2024': 'physical', // no cold water
-  '§53': 'physical', // fire escape hardware defect
-  '§25-171': 'physical', // fire door gap
-  '§27-2042': 'physical', // missing elevator mirror
-  '§27-2014': 'physical', // rust/paint maintenance
-  '§27-2081': 'physical', // illegal room occupancy (requires physical plumbing disconnection)
-  '§27-2073': 'physical', // no cooking gas
-  '§27-2039': 'physical', // missing mailbox light
-  '§27-2041': 'physical', // missing door peephole
-  '§27-2028': 'physical', // heating system defect
-  '§27-2040': 'physical', // missing entrance lighting
-  '§27-2043': 'physical', // missing door lock
-  '§27-2038': 'physical', // missing passage lighting
-  '§27-2077': 'physical', // illegal rooming unit (requires physical work to discontinue)
+  // --- mixed_or_unresolved: doesn't cleanly fit the above from the NOV
+  // text alone. Each judgment call documented at the point of decision. ---
+  '§27-2033': 'mixed_or_unresolved', // Inspected the full text: this single code covers TWO different actions —
+  // "POST NOTICE...NAME AND LOCATION OF THE PERSON DESIGNATED...TO HAVE KEY
+  // TO BUILDINGS HEATING SYSTEM" (a posting duty) and "PROVIDE READY ACCESS
+  // TO BUILDINGS HEATING SYSTEM...LOCKED DOOR...DID NOT COMPLY AT BOILER
+  // ROOM" (an access obstruction found during inspection, not a filing and
+  // not a decaying condition). Since the code conflates two different kinds
+  // of record and the source doesn't let them be told apart without further
+  // text-pattern work not yet done, it's held out of the physical ranking
+  // rather than assigned to either bucket.
+  '§300': 'mixed_or_unresolved', // text offers EITHER a paperwork path ("FILE PLANS AND APPLICATION AND
+  // LEGALIZE...") OR a physical one ("...OR RESTORE TO THE LEGAL CONDITION
+  // EXISTING PRIOR TO THE MAKING OF SAID ALTERATION") — the source doesn't
+  // distinguish which applies to a given record.
+
+  // --- physical_condition: a tangible defect/condition requiring repair,
+  // replacement, extermination, or similar corrective physical work.
+  // Listed explicitly (rather than left to the default) so the default
+  // only ever applies to codes nobody has reviewed yet. ---
+  '§27-2033.3': 'physical_condition', // missing temperature-reporting device
+  '§27-2017.4': 'physical_condition', // roach infestation
+  '§27-2045': 'physical_condition', // missing/defective smoke detector
+  '§27-2013': 'physical_condition', // repaint required
+  '§27-2005': 'physical_condition', // broken stove burners
+  '§27-2017.3': 'physical_condition', // mold condition
+  '§27-2026': 'physical_condition', // water leak
+  '§27-2046.1': 'physical_condition', // missing/defective CO detector
+  '§27-2031': 'physical_condition', // no hot water
+  '§27-2029': 'physical_condition', // inadequate heat
+  '§27-2017': 'physical_condition', // rodent infestation
+  '§27-2021.4': 'physical_condition', // general pest nuisance (ants, flies, mice, mold, water — same family as roach/rodent infestation)
+  '§27-2010': 'physical_condition', // trash/refuse buildup
+  '§27-2070': 'physical_condition', // no gas supply
+  '§27-2043.1': 'physical_condition', // missing/defective window guard
+  '§27-2011': 'physical_condition', // yard not maintained
+  '§27-2056.6': 'physical_condition', // lead paint hazard
+  '§27-2037': 'physical_condition', // electrical fixture defect
+  '§27-2021': 'physical_condition', // missing trash receptacles
+  '§27-2024': 'physical_condition', // no cold water
+  '§53': 'physical_condition', // fire escape hardware defect
+  '§25-171': 'physical_condition', // fire door gap
+  '§27-2042': 'physical_condition', // missing elevator mirror
+  '§27-2014': 'physical_condition', // rust/paint maintenance
+  '§27-2081': 'physical_condition', // illegal room occupancy (requires physical plumbing disconnection)
+  '§27-2073': 'physical_condition', // no cooking gas
+  '§27-2039': 'physical_condition', // missing mailbox light
+  '§27-2041': 'physical_condition', // missing door peephole
+  '§27-2028': 'physical_condition', // heating system defect
+  '§27-2040': 'physical_condition', // missing entrance lighting
+  '§27-2043': 'physical_condition', // missing door lock
+  '§27-2038': 'physical_condition', // missing passage lighting
+  '§27-2077': 'physical_condition', // illegal rooming unit (requires physical work to discontinue)
 };
 
+// Unseen codes default to 'mixed_or_unresolved', not 'physical_condition',
+// so a future re-fetch surfaces new/unrecognized codes for human review
+// instead of silently asserting they represent a physical condition. (For
+// example, "(B) 27-2141(C) HMC: ORDER TO REPAIR/VACATE ORDER MUST REMAIN
+// POSTED..." — a real, missing-§ code this fetch surfaced — lands here
+// rather than being force-classified.)
 function categoryFor(code) {
-  return VIOLATION_CATEGORY[code] ?? 'ambiguous';
+  return VIOLATION_CATEGORY[code] ?? 'mixed_or_unresolved';
+}
+
+// A record's category describes what KIND of record it is. Chart
+// eligibility — whether it belongs in the physical-condition ranking — is
+// stored as its own field rather than inferred inline at render time, so
+// the "which categories count as physical" rule lives in one place and
+// isn't silently re-derived differently in different charts.
+function chartEligibilityFor(category) {
+  return category === 'physical_condition' ? 'physical_condition_ranking' : 'excluded';
 }
 
 // Plain-language chart labels, hand-curated per §-code (the group key this
@@ -266,27 +350,26 @@ const DISPLAY_NAMES = {
   '§27-848': 'Missing chute sign',
   '§27-2038': 'Missing passage lighting',
   '§27-2077': 'Illegal rooming unit',
+  '§27-2021.4': 'Pest infestation',
   [BEDBUG_ANNUAL_REPORT_CODE]: 'Annual bedbug report',
+  [BEDBUG_DISTRIBUTION_CODE]: 'Bedbug report distribution',
+  [VACATE_DISMISSAL_CODE]: 'Vacate order dismissal filing',
 };
 
-// Fallback for any future code not yet hand-curated above: strip the
-// citation prefix and hard-truncate at a word boundary. No ellipsis — the
-// full text is still available in the chart tooltip, so this only needs to
-// be "good enough to not be blank," not polished.
-function fallbackDisplayName(description) {
-  let s = (description || '').replace(/^§+\s?[\d.\-()A-Za-z]*\s*(,\s*[\d.\-()A-Za-z]+\s*)*(ADM\.?\s?CODE|HMC|M\/D LAW)?:?\s*/i, '');
-  s = s.trim();
-  if (s.length > 32) {
-    const truncated = s.slice(0, 32);
-    const lastSpace = truncated.lastIndexOf(' ');
-    s = lastSpace > 12 ? truncated.slice(0, lastSpace) : truncated;
-  }
-  s = s.toLowerCase();
-  return s.charAt(0).toUpperCase() + s.slice(1);
+// Fallback for any code not yet hand-curated above. Deliberately does NOT
+// use the raw NOV text — a truncated legal citation isn't a reviewed label
+// and shouldn't be shown as one. The generic "Uncategorized violation"
+// label is paired with the internal code in parentheses so it stays
+// identifiable in the UI (and easy to find here for curation) without
+// exposing unreviewed source text as a public-facing name. The full NOV
+// text is still available in the chart tooltip's "description" field for
+// anyone who wants it.
+function fallbackDisplayName(code) {
+  return `Uncategorized violation (${code})`;
 }
 
-function displayNameFor(code, description) {
-  return DISPLAY_NAMES[code] ?? fallbackDisplayName(description);
+function displayNameFor(code) {
+  return DISPLAY_NAMES[code] ?? fallbackDisplayName(code);
 }
 
 // The "how much time has passed" reference for censoring should be the
@@ -406,13 +489,17 @@ function buildByViolationType(eligible) {
   }
 
   return [...groups.entries()]
-    .map(([code, g]) => ({
-      code,
-      display_name: displayNameFor(code, g.sampleDescription),
-      description: g.sampleDescription.slice(0, 140).trim(),
-      category: categoryFor(code),
-      ...summarize(g.items),
-    }))
+    .map(([code, g]) => {
+      const category = categoryFor(code);
+      return {
+        code,
+        display_name: displayNameFor(code),
+        description: g.sampleDescription.slice(0, 140).trim(),
+        category,
+        chart_eligibility: chartEligibilityFor(category),
+        ...summarize(g.items),
+      };
+    })
     .filter((g) => g.recurred + g.no_recurrence >= RATE_VOLUME_FLOOR)
     .sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0));
 }
@@ -425,7 +512,10 @@ function buildByNeighborhood(eligible) {
     groups.get(nta).push(item);
   }
   return [...groups.entries()]
-    .map(([nta, items]) => ({ nta, ...summarize(items) }))
+    .map(([nta, items]) => {
+      const s = summarize(items);
+      return { nta, ...s, sufficient_data: s.recurred + s.no_recurrence >= RATE_VOLUME_FLOOR };
+    })
     .sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0));
 }
 
@@ -450,20 +540,6 @@ function buildByOwner(eligible) {
     .slice(0, 15);
 
   return { topByCount, topByRate };
-}
-
-function buildBuildingScatter(eligible) {
-  const groups = new Map();
-  for (const item of eligible) {
-    if (item.status === 'censored') continue;
-    const id = item.row.buildingid;
-    if (!groups.has(id)) groups.set(id, []);
-    groups.get(id).push(item);
-  }
-  return [...groups.entries()].map(([buildingid, items]) => {
-    const s = summarize(items);
-    return { buildingid, eligible_count: s.recurred + s.no_recurrence, recurrence_rate: s.rate };
-  });
 }
 
 // --- NTA boundaries (for the choropleth) -----------------------------------
@@ -509,10 +585,14 @@ async function fetchNtaBoundaries() {
 export {
   classifyViolationType,
   categoryFor,
+  chartEligibilityFor,
   VIOLATION_CATEGORY,
   BEDBUG_ANNUAL_REPORT_CODE,
+  BEDBUG_DISTRIBUTION_CODE,
+  VACATE_DISMISSAL_CODE,
   displayNameFor,
   DISPLAY_NAMES,
+  RATE_VOLUME_FLOOR,
 };
 
 // --- Main -----------------------------------------------------------------
@@ -540,7 +620,6 @@ async function main() {
     'by_class.json': buildByClass(eligible),
     'by_violation_type.json': buildByViolationType(eligible),
     'by_neighborhood.json': buildByNeighborhood(eligible),
-    'building_scatter.json': buildBuildingScatter(eligible),
   };
 
   const { topByCount, topByRate } = buildByOwner(eligible);

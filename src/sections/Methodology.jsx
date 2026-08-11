@@ -1,39 +1,15 @@
-import { useMemo, useState } from 'react';
-import { ResponsiveContainer, Scatter, ScatterChart, XAxis, YAxis, ZAxis } from 'recharts';
+import { useState } from 'react';
 import { useJsonData } from '../hooks/useJsonData.js';
-import { formatNumber } from '../lib/format.js';
-
-const SCATTER_TARGET_POINTS = 800;
-
-// Recharts' log-scale axis doesn't generate ticks past the first few powers
-// of the base on its own — it stops at 1/2/4/8 regardless of how far the
-// data actually extends. Build the tick list ourselves, up to the real max.
-function powerOfTwoTicks(maxValue) {
-  const ticks = [1];
-  while (ticks[ticks.length - 1] < maxValue) {
-    ticks.push(ticks[ticks.length - 1] * 2);
-  }
-  return ticks;
-}
+import { formatPct } from '../lib/format.js';
 
 export function Methodology() {
   const [expanded, setExpanded] = useState(false);
   const { data: summary } = useJsonData('overall_summary.json');
-  const { data: scatter } = useJsonData('building_scatter.json');
+  const { data: violationTypes } = useJsonData('by_violation_type.json');
 
-  const sampledScatter =
-    expanded && scatter
-      ? scatter.filter((_, i) => i % Math.max(1, Math.ceil(scatter.length / SCATTER_TARGET_POINTS)) === 0)
-      : null;
-
-  // Ticks are computed from the full dataset, not the sampled subset, so
-  // the axis reflects the real range of eligible_count regardless of how
-  // many points are actually plotted.
-  const xTicks = useMemo(() => {
-    if (!scatter) return [];
-    const max = Math.max(...scatter.map((d) => d.eligible_count));
-    return powerOfTwoTicks(max);
-  }, [scatter]);
+  const unresolved = expanded
+    ? (violationTypes ?? []).filter((d) => d.category === 'mixed_or_unresolved').sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0))
+    : [];
 
   return (
     <section id="methodology" className="section">
@@ -57,45 +33,49 @@ export function Methodology() {
           </p>
           <p>
             Rate rankings include only violation types, neighborhoods, and registrations with at
-            least 25 classifiable closed violations. With only a few records, one case can move a
-            rate sharply. The chart below shows the same issue at the building level: rates vary
-            widely when there are few records, then bunch together as the record count grows.
+            least 25 classifiable closed violations. Below that threshold, a single case can move
+            a rate sharply enough to be misleading.
           </p>
 
-          {sampledScatter && (
-            <div className="chart-block">
-              <ResponsiveContainer width="100%" height={320}>
-                <ScatterChart margin={{ top: 10, right: 20, left: 0, bottom: 36 }}>
-                  <XAxis
-                    type="number"
-                    dataKey="eligible_count"
-                    name="Classifiable closed violations"
-                    label={{ value: 'Classifiable closed violations (log scale)', position: 'bottom', fontSize: 12 }}
-                    scale="log"
-                    domain={[1, xTicks[xTicks.length - 1] ?? 'auto']}
-                    ticks={xTicks}
-                    tickLine={false}
-                  />
-                  <YAxis
-                    type="number"
-                    dataKey="recurrence_rate"
-                    name="Same-type repeat rate"
-                    tickFormatter={(v) => `${Math.round(v * 100)}%`}
-                    domain={[0, 1]}
-                    tickLine={false}
-                    axisLine={false}
-                  />
-                  <ZAxis range={[12, 12]} />
-                  <Scatter data={sampledScatter} fill="#b3401f" fillOpacity={0.35} />
-                </ScatterChart>
-              </ResponsiveContainer>
-              <p className="chart-caption">
-                Each point is one building ({formatNumber(sampledScatter.length)} of{' '}
-                {formatNumber(scatter.length)} shown). Buildings with few classifiable violations
-                are on the left, where rates cover nearly the full range. Buildings with more
-                records are on the right, where the rates cluster more closely.
-              </p>
+          <div className="threshold-examples">
+            <div className="threshold-example">
+              <span className="threshold-example__stat">1 repeat out of 1 case = 100%</span>
+              <span className="threshold-example__verdict">Insufficient evidence for ranking</span>
             </div>
+            <div className="threshold-example">
+              <span className="threshold-example__stat">22 repeats out of 25 cases = 88%</span>
+              <span className="threshold-example__verdict">Eligible for comparison</span>
+            </div>
+          </div>
+          <p className="threshold-examples__note">
+            These are illustrative examples, not actual results for a particular building, owner,
+            neighborhood, or violation type.
+          </p>
+          <p>
+            Rates based on very few cases can change sharply as new records arrive. The 25-case
+            threshold reduces the risk of an unstable ranking driven by a small number of records.
+            It does not eliminate statistical uncertainty, particularly for categories close to
+            the threshold.
+          </p>
+
+          {unresolved.length > 0 && (
+            <>
+              <h3 className="methodology__subhead">Records we could not confidently classify</h3>
+              <p>
+                A small number of violation types do not read clearly as a physical condition, an
+                administrative or posting requirement, or an enforcement or legal-status record
+                from the violation text alone. They are excluded from every chart on this page
+                rather than assigned to a category without sufficient evidence.
+              </p>
+              <ul className="category-list">
+                {unresolved.map((d) => (
+                  <li key={d.code}>
+                    <span className="category-list__name">{d.display_name}</span>
+                    <span className="category-list__rate">{formatPct(d.rate)}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
 
           {summary && (

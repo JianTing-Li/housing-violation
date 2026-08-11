@@ -1,23 +1,26 @@
-// Single-hue scale from pale tint to the site accent color, per the
-// "avoid red/green" design guidance — intensity reads as "more recurrence"
-// without implying good/bad via hue.
-const LOW = [250, 235, 224]; // pale tint of the accent
-const HIGH = [140, 45, 20]; // darker accent for the top of the range
-const NO_DATA = '#dedad3';
+import { RATE_BINS, INSUFFICIENT_DATA_BIN, binForNeighborhood } from './neighborhoodLegend.js';
 
-function lerp(a, b, t) {
-  return Math.round(a + (b - a) * t);
+// Discrete, single-hue palette — one fixed color per legend bin, not a
+// continuous interpolation. A neighborhood's color only changes if it
+// crosses a bin boundary, not on every data refresh, and the map's colors
+// always match exactly what the legend shows.
+const BIN_COLORS = {
+  'under-65': '#f7ebe3',
+  '65-74': '#e8c3ac',
+  '75-79': '#d69a72',
+  '80-84': '#b3401f',
+  '85-plus': '#7a2a14',
+};
+
+export const INSUFFICIENT_DATA_COLOR = '#c9c5bd';
+
+export function colorForBin(bin) {
+  if (!bin || bin === INSUFFICIENT_DATA_BIN) return INSUFFICIENT_DATA_COLOR;
+  return BIN_COLORS[bin.id] ?? INSUFFICIENT_DATA_COLOR;
 }
 
-export function makeRateColorScale(values) {
-  const finite = values.filter((v) => v != null);
-  const min = Math.min(...finite);
-  const max = Math.max(...finite);
-
-  return function colorFor(rate) {
-    if (rate == null) return NO_DATA;
-    const t = max === min ? 0.5 : (rate - min) / (max - min);
-    const [r, g, b] = [0, 1, 2].map((i) => lerp(LOW[i], HIGH[i], t));
-    return `rgb(${r}, ${g}, ${b})`;
-  };
+export function colorForNeighborhood(entry) {
+  return colorForBin(binForNeighborhood(entry));
 }
+
+export { RATE_BINS, INSUFFICIENT_DATA_BIN, BIN_COLORS };

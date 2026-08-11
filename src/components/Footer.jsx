@@ -13,9 +13,9 @@ export function Footer() {
         ){data && <> · last updated {data.last_updated.slice(0, 10)}</>}
       </p>
       <p className="footer__limitations">
-        These are violation records, not a direct record of building conditions. A same-type match
-        does not show that the exact condition returned, that it involved the same apartment, or
-        why it was recorded again.
+        These are violation records, not a direct record of building conditions. A repeat
+        violation does not show that the exact condition returned, that it involved the same
+        apartment, or why it was recorded again.
       </p>
     </footer>
   );

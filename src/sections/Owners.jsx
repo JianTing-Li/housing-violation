@@ -62,7 +62,7 @@ export function Owners() {
           <OwnerBarChart data={countData} dataKey="total" valueFormatter={formatNumber} barColor="#1a1a1a" />
         </div>
         <div className="owner-chart">
-          <h3>Highest same-type repeat rate</h3>
+          <h3>Highest repeat violation rate</h3>
           <p className="owner-chart__subtitle">
             Among registrations with at least 25 classifiable violations
           </p>
@@ -72,7 +72,7 @@ export function Owners() {
 
       <ChartTakeaway>
         Registration #{countData[0]?.registrationid} has the most closed violations:{' '}
-        {formatNumber(countData[0]?.total)}. Its same-type repeat rate is{' '}
+        {formatNumber(countData[0]?.total)}. Its repeat violation rate is{' '}
         {formatPct(countData[0]?.rate)}. A high count and a high rate are different measures, and
         they do not always point to the same registration.
       </ChartTakeaway>
