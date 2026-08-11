@@ -31,7 +31,7 @@ export function ViolationTypes() {
           <BarChart
             data={chartData}
             layout="vertical"
-            margin={{ top: 0, right: 50, left: 10, bottom: 0 }}
+            margin={{ top: 0, right: 56, left: 10, bottom: 0 }}
           >
             <XAxis type="number" domain={[0, 100]} hide />
             <YAxis

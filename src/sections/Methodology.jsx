@@ -1,9 +1,20 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ResponsiveContainer, Scatter, ScatterChart, XAxis, YAxis, ZAxis } from 'recharts';
 import { useJsonData } from '../hooks/useJsonData.js';
 import { formatNumber } from '../lib/format.js';
 
 const SCATTER_TARGET_POINTS = 800;
+
+// Recharts' log-scale axis doesn't generate ticks past the first few powers
+// of the base on its own — it stops at 1/2/4/8 regardless of how far the
+// data actually extends. Build the tick list ourselves, up to the real max.
+function powerOfTwoTicks(maxValue) {
+  const ticks = [1];
+  while (ticks[ticks.length - 1] < maxValue) {
+    ticks.push(ticks[ticks.length - 1] * 2);
+  }
+  return ticks;
+}
 
 export function Methodology() {
   const [expanded, setExpanded] = useState(false);
@@ -14,6 +25,15 @@ export function Methodology() {
     expanded && scatter
       ? scatter.filter((_, i) => i % Math.max(1, Math.ceil(scatter.length / SCATTER_TARGET_POINTS)) === 0)
       : null;
+
+  // Ticks are computed from the full dataset, not the sampled subset, so
+  // the axis reflects the real range of eligible_count regardless of how
+  // many points are actually plotted.
+  const xTicks = useMemo(() => {
+    if (!scatter) return [];
+    const max = Math.max(...scatter.map((d) => d.eligible_count));
+    return powerOfTwoTicks(max);
+  }, [scatter]);
 
   return (
     <section id="methodology" className="section">
@@ -45,14 +65,15 @@ export function Methodology() {
           {sampledScatter && (
             <div className="chart-block">
               <ResponsiveContainer width="100%" height={320}>
-                <ScatterChart margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
+                <ScatterChart margin={{ top: 10, right: 20, left: 0, bottom: 36 }}>
                   <XAxis
                     type="number"
                     dataKey="eligible_count"
                     name="Eligible closed violations"
                     label={{ value: 'Eligible closed violations (log scale)', position: 'bottom', fontSize: 12 }}
                     scale="log"
-                    domain={['auto', 'auto']}
+                    domain={[1, xTicks[xTicks.length - 1] ?? 'auto']}
+                    ticks={xTicks}
                     tickLine={false}
                   />
                   <YAxis

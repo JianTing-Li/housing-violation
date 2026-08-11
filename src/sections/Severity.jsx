@@ -40,7 +40,7 @@ export function Severity() {
 
       <div className="chart-block">
         <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={chartData} margin={{ top: 20, right: 20, left: 0, bottom: 0 }}>
+          <BarChart data={chartData} margin={{ top: 28, right: 20, left: 0, bottom: 0 }}>
             <CartesianGrid vertical={false} stroke="#e4e0da" />
             <XAxis dataKey="label" tickLine={false} axisLine={false} />
             <YAxis

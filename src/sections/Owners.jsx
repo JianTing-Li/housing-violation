@@ -10,7 +10,7 @@ const TOP_N = 8;
 function OwnerBarChart({ data, dataKey, valueFormatter, barColor }) {
   return (
     <ResponsiveContainer width="100%" height={TOP_N * 40 + 20}>
-      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 44, left: 10, bottom: 0 }}>
+      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, left: 10, bottom: 0 }}>
         <XAxis type="number" hide />
         <YAxis
           type="category"

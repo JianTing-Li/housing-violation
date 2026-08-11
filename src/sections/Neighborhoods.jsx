@@ -42,7 +42,7 @@ export function Neighborhoods() {
 
       <div className="chart-block">
         <ResponsiveContainer width="100%" height={TOP_N * 46 + 20}>
-          <BarChart data={top5} layout="vertical" margin={{ top: 0, right: 50, left: 10, bottom: 0 }}>
+          <BarChart data={top5} layout="vertical" margin={{ top: 0, right: 56, left: 10, bottom: 0 }}>
             <XAxis type="number" domain={[0, 100]} hide />
             <YAxis
               type="category"
