@@ -1,0 +1,26 @@
+[
+  {
+    "class": "A",
+    "recurred": 38445,
+    "no_recurrence": 13097,
+    "censored": 27747,
+    "total": 79289,
+    "rate": 0.7458965503860929
+  },
+  {
+    "class": "B",
+    "recurred": 116084,
+    "no_recurrence": 22876,
+    "censored": 48186,
+    "total": 187146,
+    "rate": 0.835377086931491
+  },
+  {
+    "class": "C",
+    "recurred": 97232,
+    "no_recurrence": 20299,
+    "censored": 39915,
+    "total": 157446,
+    "rate": 0.8272881197301137
+  }
+]

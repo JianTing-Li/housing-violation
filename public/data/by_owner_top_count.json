@@ -1,0 +1,122 @@
+[
+  {
+    "registrationid": "224955",
+    "recurred": 1440,
+    "no_recurrence": 24,
+    "censored": 73,
+    "total": 1537,
+    "rate": 0.9836065573770492
+  },
+  {
+    "registrationid": "221675",
+    "recurred": 1114,
+    "no_recurrence": 14,
+    "censored": 20,
+    "total": 1148,
+    "rate": 0.9875886524822695
+  },
+  {
+    "registrationid": "211411",
+    "recurred": 970,
+    "no_recurrence": 25,
+    "censored": 74,
+    "total": 1069,
+    "rate": 0.9748743718592965
+  },
+  {
+    "registrationid": "211331",
+    "recurred": 877,
+    "no_recurrence": 7,
+    "censored": 79,
+    "total": 963,
+    "rate": 0.9920814479638009
+  },
+  {
+    "registrationid": "205744",
+    "recurred": 821,
+    "no_recurrence": 21,
+    "censored": 85,
+    "total": 927,
+    "rate": 0.9750593824228029
+  },
+  {
+    "registrationid": "224322",
+    "recurred": 856,
+    "no_recurrence": 6,
+    "censored": 41,
+    "total": 903,
+    "rate": 0.9930394431554525
+  },
+  {
+    "registrationid": "221676",
+    "recurred": 841,
+    "no_recurrence": 22,
+    "censored": 22,
+    "total": 885,
+    "rate": 0.9745075318655851
+  },
+  {
+    "registrationid": "203923",
+    "recurred": 321,
+    "no_recurrence": 0,
+    "censored": 547,
+    "total": 868,
+    "rate": 1
+  },
+  {
+    "registrationid": "214161",
+    "recurred": 776,
+    "no_recurrence": 7,
+    "censored": 71,
+    "total": 854,
+    "rate": 0.9910600255427842
+  },
+  {
+    "registrationid": "202595",
+    "recurred": 722,
+    "no_recurrence": 34,
+    "censored": 60,
+    "total": 816,
+    "rate": 0.955026455026455
+  },
+  {
+    "registrationid": "204625",
+    "recurred": 745,
+    "no_recurrence": 12,
+    "censored": 58,
+    "total": 815,
+    "rate": 0.9841479524438573
+  },
+  {
+    "registrationid": "224577",
+    "recurred": 729,
+    "no_recurrence": 19,
+    "censored": 64,
+    "total": 812,
+    "rate": 0.9745989304812834
+  },
+  {
+    "registrationid": "203983",
+    "recurred": 748,
+    "no_recurrence": 41,
+    "censored": 20,
+    "total": 809,
+    "rate": 0.9480354879594424
+  },
+  {
+    "registrationid": "204361",
+    "recurred": 729,
+    "no_recurrence": 5,
+    "censored": 73,
+    "total": 807,
+    "rate": 0.9931880108991825
+  },
+  {
+    "registrationid": "223499",
+    "recurred": 727,
+    "no_recurrence": 6,
+    "censored": 61,
+    "total": 794,
+    "rate": 0.9918144611186903
+  }
+]

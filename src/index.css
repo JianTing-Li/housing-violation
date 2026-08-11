@@ -1,0 +1,296 @@
+:root {
+  --color-bg: #fdfcfa;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-accent: #b3401f;
+  --color-border: #e4e0da;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --max-width: 780px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* Opaque, not translucent — content that scrolls underneath (e.g. the
+     choropleth map) must not bleed through the nav bar. */
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.9rem 1.5rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link--active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+.section {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 4rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section--hero {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.section--hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.lede {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat__number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.hero-stat--sub .hero-stat__number {
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.hero-stat__label {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 22ch;
+}
+
+.methodology-line {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.section--wide {
+  max-width: 980px;
+}
+
+.map-block {
+  height: 560px;
+  margin-block: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  /* Leaflet's internal panes use `transform: translate3d(...)` for pan/zoom
+     performance, which can otherwise composite above a sibling `position:
+     sticky` element (the nav) despite correct z-index/document order. This
+     forces a real stacking-context boundary so nothing inside can escape. */
+  isolation: isolate;
+  border: 1px solid var(--color-border);
+}
+
+.map-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.owner-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-block: 2rem;
+}
+
+.owner-chart h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.owner-chart__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .owner-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-block {
+  margin-block: 1.5rem;
+}
+
+.chart-takeaway {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+}
+
+.callout {
+  margin-top: 2rem;
+  padding: 1.1rem 1.3rem;
+  border-left: 3px solid var(--color-accent);
+  background: #faf3ef;
+}
+
+.callout__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+.callout p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.methodology summary {
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.methodology summary::marker {
+  color: var(--color-accent);
+}
+
+.methodology__body {
+  margin-top: 1.25rem;
+}
+
+.methodology__body p {
+  font-size: 0.95rem;
+}
+
+.chart-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.recommendations-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.recommendations-list li {
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--color-border);
+}
+
+.recommendations-list__section {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.section--placeholder h2 {
+  font-size: 1.6rem;
+}
+
+.placeholder-note {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.footer {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem 4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.footer__limitations {
+  margin-top: 0.75rem;
+  max-width: 60ch;
+}
+
+@media (max-width: 600px) {
+  .section--hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero-stat__number {
+    font-size: 2.2rem;
+  }
+}
