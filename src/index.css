@@ -90,35 +90,64 @@ a {
   max-width: 62ch;
 }
 
-.hero-stats {
-  display: flex;
-  align-items: flex-end;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-}
-
+/* Two rows (numbers, labels) x two columns (primary stat, sub stat) as an
+   explicit grid, rather than two independently-flowing flex columns — that
+   way each row's height is driven by its tallest cell, and align-self
+   locks numbers to that row's bottom edge and labels to the next row's top
+   edge, regardless of the numbers' differing font sizes or the labels'
+   differing text length/wrap. */
 .hero-stat {
   display: flex;
   flex-direction: column;
 }
 
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas:
+    'num1 num2'
+    'label1 label2';
+  column-gap: 2.5rem;
+  row-gap: 0.35rem;
+  margin-top: 2.5rem;
+}
+
 .hero-stat__number {
+  grid-area: num1;
+  align-self: end;
   font-family: var(--font-serif);
   font-size: 3rem;
   font-weight: 700;
   color: var(--color-accent);
 }
 
-.hero-stat--sub .hero-stat__number {
+.hero-stat__number--sub {
+  grid-area: num2;
   font-size: 2rem;
   color: var(--color-text);
 }
 
 .hero-stat__label {
+  grid-area: label1;
+  align-self: start;
   font-size: 0.95rem;
   color: var(--color-text-muted);
   max-width: 22ch;
+}
+
+.hero-stat__label--sub {
+  grid-area: label2;
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'num1'
+      'label1'
+      'num2'
+      'label2';
+  }
 }
 
 .term-note {
@@ -594,5 +623,8 @@ a {
   }
   .hero-stat__number {
     font-size: 2.2rem;
+  }
+  .hero-stat__number--sub {
+    font-size: 1.5rem;
   }
 }

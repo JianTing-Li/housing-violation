@@ -100,10 +100,10 @@ export function OverallRecurrence() {
       </ChartTakeaway>
 
       <p>
-        A case is classified once one of two things happens: a repeat violation is recorded
-        within a year, or a full year passes with no match. Cases that are too recent to have
-        completed that year are excluded from this chart rather than counted either way, since we
-        do not yet know how they will resolve.
+        {formatNumber(recurredSegment.count)} violations had a repeat within a year,{' '}
+        {formatNumber(noRecurrenceSegment.count)} went a full year with no match, and{' '}
+        {formatNumber(donut.tooRecentCount)} are too recent to classify. See “What counts as a
+        repeat violation?” above for how a repeat is defined.
       </p>
 
       <Callout>{getRecommendation('reinspection')}</Callout>

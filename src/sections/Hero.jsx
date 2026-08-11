@@ -18,18 +18,16 @@ export function Hero() {
       {error && <p className="hero-stat hero-stat--error">Couldn't load summary data.</p>}
       {data && (
         <div className="hero-stats">
-          <div className="hero-stat">
-            <span className="hero-stat__number">{formatPct(data.rate)}</span>
-            <span className="hero-stat__label">
-              of classifiable cases had a repeat violation within a year
-            </span>
-          </div>
-          <div className="hero-stat hero-stat--sub">
-            <span className="hero-stat__number">{formatPct(data.building_any_recurrence_rate)}</span>
-            <span className="hero-stat__label">
-              of buildings in the analysis had at least one repeat violation
-            </span>
-          </div>
+          <span className="hero-stat__number">{formatPct(data.rate)}</span>
+          <span className="hero-stat__number hero-stat__number--sub">
+            {formatPct(data.building_any_recurrence_rate)}
+          </span>
+          <span className="hero-stat__label">
+            of classifiable cases had a repeat violation within a year
+          </span>
+          <span className="hero-stat__label hero-stat__label--sub">
+            of buildings in the analysis had at least one repeat violation
+          </span>
         </div>
       )}
 

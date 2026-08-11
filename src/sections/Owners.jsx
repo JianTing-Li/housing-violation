@@ -7,18 +7,32 @@ import { getRecommendation } from '../lib/recommendations.js';
 
 const TOP_N = 8;
 
+// Recharts right-aligns category-axis tick labels by default, inside a
+// fixed-width column — with "Reg #NNNNNN" labels well short of that
+// column's width, their right-aligned text left a ragged, indented gap
+// between the chart and the flush-left title above it. This renders every
+// label flush at the same small x instead, so the whole chart block's left
+// edge lines up with the title/subtitle text.
+function LeftAlignedTick({ x, y, payload }) {
+  return (
+    <text x={4} y={y} dy={4} textAnchor="start" fontSize={12.5} fill="#5c5c5c">
+      {payload.value}
+    </text>
+  );
+}
+
 function OwnerBarChart({ data, dataKey, valueFormatter, barColor }) {
   return (
     <ResponsiveContainer width="100%" height={TOP_N * 40 + 20}>
-      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, left: 10, bottom: 0 }}>
+      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, left: 0, bottom: 0 }}>
         <XAxis type="number" hide />
         <YAxis
           type="category"
           dataKey="label"
-          width={110}
+          width={96}
           tickLine={false}
           axisLine={false}
-          tick={{ fontSize: 12.5 }}
+          tick={<LeftAlignedTick />}
         />
         <Bar dataKey={dataKey} fill={barColor} radius={[0, 4, 4, 0]} maxBarSize={22}>
           <LabelList dataKey={dataKey} position="right" formatter={valueFormatter} />
