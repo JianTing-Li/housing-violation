@@ -273,6 +273,45 @@ function buildBuildingScatter(eligible) {
   });
 }
 
+// --- NTA boundaries (for the choropleth) -----------------------------------
+// Public dataset, no token needed. Trimmed to the fields/precision the map
+// actually uses, since the source geometry ships far more than that.
+
+const NTA_BOUNDARY_URL = 'https://data.cityofnewyork.us/resource/9nt8-h7nd.geojson';
+
+function roundCoords(coords, digits = 5) {
+  if (typeof coords[0] === 'number') return coords.map((c) => Number(c.toFixed(digits)));
+  return coords.map((c) => roundCoords(c, digits));
+}
+
+async function fetchNtaBoundaries() {
+  const url = new URL(NTA_BOUNDARY_URL);
+  url.searchParams.set('$where', "boroname='Bronx'");
+  url.searchParams.set('$limit', '100');
+
+  const res = await fetch(url, { headers: { 'X-App-Token': APP_TOKEN } });
+  if (!res.ok) {
+    throw new Error(`NTA boundary request failed: ${res.status} ${res.statusText}`);
+  }
+  const raw = await res.json();
+
+  return {
+    type: 'FeatureCollection',
+    features: raw.features.map((f) => ({
+      type: 'Feature',
+      properties: {
+        ntaname: f.properties.ntaname,
+        nta2020: f.properties.nta2020,
+        ntatype: f.properties.ntatype,
+      },
+      geometry: {
+        type: f.geometry.type,
+        coordinates: roundCoords(f.geometry.coordinates),
+      },
+    })),
+  };
+}
+
 // --- Main -----------------------------------------------------------------
 
 async function main() {
@@ -309,6 +348,11 @@ async function main() {
     const count = Array.isArray(data) ? data.length : 1;
     console.log(`  wrote ${filename} (${count} record${count === 1 ? '' : 's'})`);
   }
+
+  console.log('Fetching NTA boundaries...');
+  const ntaBoundaries = await fetchNtaBoundaries();
+  writeFileSync(path.join(OUTPUT_DIR, 'bronx_nta_boundaries.geojson'), JSON.stringify(ntaBoundaries));
+  console.log(`  wrote bronx_nta_boundaries.geojson (${ntaBoundaries.features.length} features)`);
 
   console.log('\nOverall summary:', overallSummary);
 }

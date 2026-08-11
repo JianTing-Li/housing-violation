@@ -42,10 +42,10 @@
   {
     "registrationid": "224322",
     "recurred": 856,
-    "no_recurrence": 5,
-    "censored": 42,
+    "no_recurrence": 6,
+    "censored": 41,
     "total": 903,
-    "rate": 0.9941927990708479
+    "rate": 0.9930394431554525
   },
   {
     "registrationid": "221676",
@@ -74,18 +74,18 @@
   {
     "registrationid": "202595",
     "recurred": 722,
-    "no_recurrence": 26,
-    "censored": 68,
+    "no_recurrence": 34,
+    "censored": 60,
     "total": 816,
-    "rate": 0.9652406417112299
+    "rate": 0.955026455026455
   },
   {
     "registrationid": "204625",
     "recurred": 745,
-    "no_recurrence": 11,
-    "censored": 59,
+    "no_recurrence": 12,
+    "censored": 58,
     "total": 815,
-    "rate": 0.9854497354497355
+    "rate": 0.9841479524438573
   },
   {
     "registrationid": "224577",

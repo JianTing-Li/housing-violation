@@ -125,6 +125,24 @@ a {
   color: var(--color-text-muted);
 }
 
+.section--wide {
+  max-width: 980px;
+}
+
+.map-block {
+  height: 560px;
+  margin-block: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.map-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
 .section h2 {
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
