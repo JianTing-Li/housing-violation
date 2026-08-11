@@ -1,0 +1,152 @@
+:root {
+  --color-bg: #fdfcfa;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-accent: #b3401f;
+  --color-border: #e4e0da;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --max-width: 780px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(253, 252, 250, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.9rem 1.5rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link--active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+.section {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 4rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section--hero {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.section--hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.lede {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat__number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.hero-stat--sub .hero-stat__number {
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.hero-stat__label {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 22ch;
+}
+
+.methodology-line {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.section--placeholder h2 {
+  font-size: 1.6rem;
+}
+
+.placeholder-note {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.footer {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem 4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .section--hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero-stat__number {
+    font-size: 2.2rem;
+  }
+}
