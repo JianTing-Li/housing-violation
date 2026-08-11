@@ -12,9 +12,9 @@ const COLORS = {
 };
 
 const LABELS = {
-  recurred: 'Recurred within a year',
-  no_recurrence: 'Confirmed no recurrence',
-  censored: 'Censored (too recent to know)',
+  recurred: 'Same type recorded within a year',
+  no_recurrence: 'Full year passed with no match',
+  censored: 'Too recent, with no match yet',
 };
 
 export function OverallRecurrence() {
@@ -30,7 +30,7 @@ export function OverallRecurrence() {
 
   return (
     <section id="overall-recurrence-rate" className="section">
-      <h2>How often does a closed violation come back?</h2>
+      <h2>How often does the same kind of violation return?</h2>
 
       <div className="chart-block">
         <ResponsiveContainer width="100%" height={320}>
@@ -54,16 +54,16 @@ export function OverallRecurrence() {
       </div>
 
       <ChartTakeaway>
-        {formatPct(data.rate)} of closed violations with a fully observed one-year window came
-        back — only {formatPct(1 - data.rate)} were confirmed permanently resolved.
+        Among closed violations we could classify, about 4 in 5 ({formatPct(data.rate)}) were
+        followed by a violation with the same HPD order number in the same building. The other{' '}
+        {formatPct(1 - data.rate)} went a full year with no such match.
       </ChartTakeaway>
 
       <p>
-        A violation counts as "closed" once HPD certifies the repair or marks it resolved.
-        Violations closed too recently to have had a full year to potentially recur —{' '}
-        {formatNumber(data.censored)} of them — are <strong>censored</strong>: excluded from the
-        rate rather than counted as "no recurrence," since we simply don't know yet how they'll
-        turn out.
+        Here, “classifiable” means one of two things: the same type appeared again within a year,
+        or a full year passed without a match. Another {formatNumber(data.censored)} closed
+        violations are too recent and have no match so far. They are excluded from the rate
+        because their full follow-up window has not passed.
       </p>
 
       <Callout>{getRecommendation('reinspection')}</Callout>

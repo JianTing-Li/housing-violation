@@ -28,16 +28,18 @@ export function Neighborhoods() {
 
   return (
     <section id="neighborhoods" className="section section--wide">
-      <h2>Where does this problem concentrate?</h2>
+      <h2>Where do violations return most often?</h2>
 
       <div className="map-block">
         <Choropleth boundaries={boundaries} ratesByNta={ratesByNta} />
       </div>
-      <p className="map-caption">Darker shading = higher recurrence rate. Hover a neighborhood for exact numbers.</p>
+      <p className="map-caption">
+        Darker areas have higher same-type repeat rates. Hover for the numbers.
+      </p>
 
       <ChartTakeaway>
-        {top5[0]?.nta} has the highest recurrence rate in the Bronx at {formatPct(top5[0]?.rate)},
-        among neighborhoods with enough closed violations to measure reliably.
+        {top5[0]?.nta} has the Bronx’s highest same-type repeat rate at{' '}
+        {formatPct(top5[0]?.rate)}, among neighborhoods with enough records to compare.
       </ChartTakeaway>
 
       <div className="chart-block">
@@ -60,9 +62,9 @@ export function Neighborhoods() {
       </div>
 
       <p>
-        Geography alone doesn't explain "why" — a neighborhood's rate reflects whichever
-        buildings and owners happen to be concentrated there. Pair this with the ownership data
-        below before drawing conclusions about a place itself.
+        The map shows where repeats are recorded, not why. A neighborhood’s rate reflects its mix
+        of buildings and HPD registrations. It should not be read as a judgment about the
+        neighborhood itself.
       </p>
 
       <Callout>{getRecommendation('neighborhood-resourcing')}</Callout>

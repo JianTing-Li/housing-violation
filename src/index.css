@@ -240,6 +240,86 @@ a {
   margin-top: 0.5rem;
 }
 
+.violation-tooltip {
+  max-width: 280px;
+  padding: 0.65rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-size: 0.82rem;
+}
+
+.violation-tooltip strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.violation-tooltip__rate {
+  display: block;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.violation-tooltip p {
+  margin: 0.4rem 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.category-aside {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.category-aside h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+}
+
+.category-aside__note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1.5rem;
+}
+
+.category-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category-list__name {
+  color: var(--color-text);
+}
+
+.category-list__rate {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .category-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .recommendations-list {
   list-style: none;
   margin: 1.5rem 0 0;

@@ -1,5 +1,7 @@
 # Bronx Housing Violation Recurrence
 
+**[Live site →](https://housing-violations-recurrence.vercel.app/)**
+
 A data journalism site analyzing 653K+ NYC HPD housing violation records to answer one question: **when a housing violation gets marked "closed," does the problem actually go away?**
 
 Built with a fully static architecture — a Node pipeline pulls and analyzes the data once at build time, so the deployed site never touches the source API or exposes any credentials.

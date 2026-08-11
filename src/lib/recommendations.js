@@ -4,28 +4,28 @@
 export const RECOMMENDATIONS = [
   {
     id: 'reinspection',
-    section: 'Overall recurrence rate',
-    text: 'Require a verified re-inspection before a violation is closed, instead of relying on landlord self-certification — the current system counts a violation as "fixed" without confirming it.',
+    section: 'All closed violations',
+    text: 'Test follow-up inspections on a sample of closed violations. Compare the results with similar cases that did not receive a follow-up inspection.',
   },
   {
     id: 'severity-scrutiny',
-    section: 'Severity class',
-    text: 'Scrutiny at close-out should scale with severity, not just urgency at issuance — a Class C closure deserves at least as much verification as a Class A one.',
+    section: 'More serious violations',
+    text: 'Give Class C closures a larger share of follow-up checks, then compare their same-type repeat rate with Classes A and B.',
   },
   {
     id: 'violation-targeting',
-    section: 'Violation type',
-    text: "Target verified re-inspection at these specific top categories first — they're where a \"closed\" status is least likely to mean the problem is actually gone.",
+    section: 'Common repeat types',
+    text: 'Start a follow-up pilot with violation categories that have both high repeat rates and enough records for a fair comparison.',
   },
   {
     id: 'neighborhood-resourcing',
     section: 'Neighborhood patterns',
-    text: 'Use this pattern for inspection-capacity and resourcing decisions, not as a standalone explanation — high-recurrence neighborhoods are where verified re-inspection would catch the most repeat failures per inspector-hour.',
+    text: 'Use neighborhood rates to choose sites for a pilot, while accounting for the mix of buildings and registrations in each area.',
   },
   {
     id: 'owner-accountability',
-    section: 'Owner & building level',
-    text: "Pursue ownership-level accountability for the owners with both high volume and high rates. A full portfolio view requires joining against HPD's separate Registration Contacts dataset — a next step, not a finished claim here.",
+    section: 'Owner records',
+    text: 'Join these records with HPD’s Registration Contacts data before drawing conclusions about an owner’s full portfolio. Then examine owners with both many violations and high repeat rates.',
   },
 ];
 
