@@ -1,5 +1,8 @@
 import { Nav } from './components/Nav.jsx';
 import { Hero } from './sections/Hero.jsx';
+import { OverallRecurrence } from './sections/OverallRecurrence.jsx';
+import { Severity } from './sections/Severity.jsx';
+import { ViolationTypes } from './sections/ViolationTypes.jsx';
 import { PlaceholderSection } from './sections/PlaceholderSection.jsx';
 
 export default function App() {
@@ -8,8 +11,9 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <PlaceholderSection id="severity" title="Recurrence by Severity Class" />
-        <PlaceholderSection id="violation-types" title="Recurrence by Violation Type" />
+        <OverallRecurrence />
+        <Severity />
+        <ViolationTypes />
         <PlaceholderSection id="neighborhoods" title="Neighborhood Patterns" />
         <PlaceholderSection id="owners" title="Owner &amp; Building Level" />
         <PlaceholderSection id="methodology" title="Methodology" />

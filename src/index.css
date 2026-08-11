@@ -125,6 +125,45 @@ a {
   color: var(--color-text-muted);
 }
 
+.section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-block {
+  margin-block: 1.5rem;
+}
+
+.chart-takeaway {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+}
+
+.callout {
+  margin-top: 2rem;
+  padding: 1.1rem 1.3rem;
+  border-left: 3px solid var(--color-accent);
+  background: #faf3ef;
+}
+
+.callout__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+.callout p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 .section--placeholder h2 {
   font-size: 1.6rem;
 }

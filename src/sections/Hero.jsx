@@ -1,9 +1,5 @@
 import { useJsonData } from '../hooks/useJsonData.js';
-
-function formatPct(rate) {
-  if (rate == null) return '—';
-  return `${Math.round(rate * 100)}%`;
-}
+import { formatPct } from '../lib/format.js';
 
 export function Hero() {
   const { data, loading, error } = useJsonData('overall_summary.json');
