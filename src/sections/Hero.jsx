@@ -7,6 +7,13 @@ export function Hero() {
   return (
     <section id="overview" className="section section--hero">
       <h1>When a Bronx housing violation is closed, what happens next?</h1>
+      <p className="hero-stakes">
+        When a violation reopens, a tenant is dealing with the same unresolved hazard again, and
+        the city has already spent inspection resources without the underlying problem going
+        away. This analysis is for anyone trying to understand whether NYC's housing violation
+        system is actually resolving problems, including tenants, researchers, and the agencies
+        responsible for enforcing it.
+      </p>
       <p className="lede">
         We examined closed HPD violations to measure how often a violation with the same order
         number was recorded again in the same building within one year. This does not establish
@@ -29,6 +36,14 @@ export function Hero() {
             of buildings in the analysis had at least one repeat violation
           </span>
         </div>
+      )}
+
+      {data && data.rate > data.building_any_recurrence_rate && (
+        <p className="hero-note">
+          The violation-level rate is higher than the building-level rate, so repeats aren’t
+          spread evenly among buildings that have one: some buildings with a repeat appear to
+          have several, which pulls the violation-level average above the building-level share.
+        </p>
       )}
 
       <details className="term-note">

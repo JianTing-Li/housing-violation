@@ -79,11 +79,11 @@ export function OverallRecurrence() {
       <ul className="donut-legend" aria-hidden="true">
         <li>
           <span className="donut-legend__swatch" style={{ background: COLORS.recurred }} />
-          Repeat violation within a year — {formatPct(recurredSegment.share)} ({formatNumber(recurredSegment.count)})
+          Repeat violation within a year: {formatPct(recurredSegment.share)} ({formatNumber(recurredSegment.count)})
         </li>
         <li>
           <span className="donut-legend__swatch" style={{ background: COLORS.no_recurrence }} />
-          Full year passed with no match — {formatPct(noRecurrenceSegment.share)} ({formatNumber(noRecurrenceSegment.count)})
+          Full year passed with no match: {formatPct(noRecurrenceSegment.share)} ({formatNumber(noRecurrenceSegment.count)})
         </li>
       </ul>
 
@@ -100,13 +100,18 @@ export function OverallRecurrence() {
       </ChartTakeaway>
 
       <p>
-        {formatNumber(recurredSegment.count)} violations had a repeat within a year,{' '}
-        {formatNumber(noRecurrenceSegment.count)} went a full year with no match, and{' '}
-        {formatNumber(donut.tooRecentCount)} are too recent to classify. See “What counts as a
+        Put another way, roughly {Math.round(recurredSegment.count / noRecurrenceSegment.count)}{' '}
+        violations recur for every one that doesn’t. Going a full year without the same violation
+        returning is the less common outcome in this data, not the norm. See “What counts as a
         repeat violation?” above for how a repeat is defined.
       </p>
 
       <Callout>{getRecommendation('reinspection')}</Callout>
+
+      <p>
+        A recurrence rate this size raises an obvious follow-up. Is this mostly minor, technical
+        repeats, or are the most hazardous violations just as likely to come back?
+      </p>
     </section>
   );
 }

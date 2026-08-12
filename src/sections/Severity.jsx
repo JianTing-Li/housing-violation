@@ -17,7 +17,7 @@ function buildTakeaway(byClass) {
   const highestLabel = CLASS_LABELS[highest.class];
 
   if (highest.class === 'C') {
-    return `Class C — the “immediately hazardous” tier — has the highest repeat violation rate (${formatPct(highest.rate)}), just ahead of Class B (${formatPct(second.rate)}).`;
+    return `Class C, the “immediately hazardous” tier, has the highest repeat violation rate (${formatPct(highest.rate)}), just ahead of Class B (${formatPct(second.rate)}).`;
   }
 
   return `${highestLabel} has the highest repeat violation rate (${formatPct(highest.rate)}). Class C is close behind at ${formatPct(byClass.find((c) => c.class === 'C').rate)}, so severity alone does not explain the pattern.`;
@@ -65,6 +65,11 @@ export function Severity() {
       </p>
 
       <Callout>{getRecommendation('severity-scrutiny')}</Callout>
+
+      <p>
+        That raises a more specific question: which kinds of problems are actually driving these
+        repeats?
+      </p>
     </section>
   );
 }

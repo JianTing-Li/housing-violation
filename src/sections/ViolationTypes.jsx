@@ -52,6 +52,10 @@ export function ViolationTypes() {
     ratePct: Math.round(d.rate * 100),
   }));
 
+  const bedbug = administrative.find((d) => d.code === 'BEDBUG-ANNUAL-REPORT');
+  const waterLeak = physical.find((d) => d.code === '§27-2026');
+  const coDetector = physical.find((d) => d.code === '§27-2046.1');
+
   return (
     <section id="violation-types" className="section">
       <h2>Which physical-condition violations have the highest repeat rates?</h2>
@@ -108,6 +112,16 @@ export function ViolationTypes() {
             others do not.
           </p>
           <CategoryList items={administrative} />
+          {bedbug && waterLeak && coDetector && (
+            <p className="category-aside__note">
+              Some administrative categories recur at rates that overlap with physical-condition
+              categories. The annual bedbug report recurs at {formatPct(bedbug.rate)}, close to
+              water leaks ({formatPct(waterLeak.rate)}) and missing CO detectors (
+              {formatPct(coDetector.rate)}) above. That doesn't mean a repeat paperwork record is
+              evidence of a physical problem; it means administrative rates aren't uniformly lower
+              than physical ones.
+            </p>
+          )}
         </div>
       )}
 
@@ -115,13 +129,18 @@ export function ViolationTypes() {
         <div className="category-aside">
           <h3>Enforcement and legal-status records</h3>
           <p className="category-aside__note">
-            These describe a regulatory or legal status — a vacate order, a filing tied to one, or
-            an enforcement-program notice — rather than an ongoing physical condition or a routine
-            posting duty.
+            These describe a regulatory or legal status, such as a vacate order, a filing tied to
+            one, or an enforcement-program notice. That's different from an ongoing physical
+            condition or a routine posting duty.
           </p>
           <CategoryList items={enforcement} />
         </div>
       )}
+
+      <p>
+        Is this pattern spread evenly across the Bronx, or does it concentrate in particular
+        neighborhoods?
+      </p>
     </section>
   );
 }

@@ -84,10 +84,23 @@ a {
   margin-bottom: 1rem;
 }
 
+.hero-stakes {
+  font-size: 1.05rem;
+  max-width: 62ch;
+  margin-bottom: 0.75rem;
+}
+
 .lede {
   font-size: 1.1rem;
   color: var(--color-text-muted);
   max-width: 62ch;
+}
+
+.hero-note {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 60ch;
 }
 
 /* Two rows (numbers, labels) x two columns (primary stat, sub stat) as an
@@ -159,7 +172,6 @@ a {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-accent);
-  display: inline-block;
 }
 
 .term-note p {
@@ -571,9 +583,64 @@ a {
   }
 }
 
+.recommendation-tiers {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.recommendation-tier__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.recommendation-tier__badge {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.recommendation-tier__label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.recommendation-tier__note {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.recommendation-tier--prerequisite .recommendation-tier__badge {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.recommendation-tier--prerequisite .recommendation-tier__label {
+  color: var(--color-text-muted);
+}
+
+.recommendation-tier--prerequisite .recommendations-list li {
+  border-left-style: dashed;
+  opacity: 0.85;
+}
+
 .recommendations-list {
   list-style: none;
-  margin: 1.5rem 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -593,6 +660,19 @@ a {
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin-bottom: 0.25rem;
+}
+
+.recommendations-list__flag {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
 }
 
 .section--placeholder h2 {

@@ -13,8 +13,6 @@ export function Nav() {
   const [activeId, setActiveId] = useState(LINKS[0].id);
 
   useEffect(() => {
-    const sections = LINKS.map((link) => document.getElementById(link.id)).filter(Boolean);
-
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((e) => e.isIntersecting);
@@ -25,8 +23,38 @@ export function Nav() {
       { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
     );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    // Several sections wait on an async data fetch before rendering their
+    // <section id="..."> at all (see useJsonData), so they don't exist in
+    // the DOM yet when this effect first runs. Watch for them to mount
+    // and hand each one to the observer as it appears, instead of only
+    // capturing whichever sections happened to be present synchronously.
+    const observedIds = new Set();
+
+    function observeAvailableSections() {
+      LINKS.forEach((link) => {
+        if (observedIds.has(link.id)) return;
+        const el = document.getElementById(link.id);
+        if (el) {
+          observer.observe(el);
+          observedIds.add(link.id);
+        }
+      });
+    }
+
+    observeAvailableSections();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeAvailableSections();
+      if (observedIds.size === LINKS.length) {
+        mutationObserver.disconnect();
+      }
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   function handleClick(e, id) {

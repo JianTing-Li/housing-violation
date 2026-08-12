@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useJsonData } from '../hooks/useJsonData.js';
-import { formatPct } from '../lib/format.js';
+import { formatNumber, formatPct } from '../lib/format.js';
 
 export function Methodology() {
   const [expanded, setExpanded] = useState(false);
@@ -14,9 +14,10 @@ export function Methodology() {
   return (
     <section id="methodology" className="section">
       <details className="methodology" onToggle={(e) => setExpanded(e.target.open)}>
-        <summary>What this does—and doesn’t—tell us</summary>
+        <summary>Methodology and limitations</summary>
 
         <div className="methodology__body">
+          <h3 className="methodology__subhead">What counts as a repeat</h3>
           <p>
             In this analysis, a repeat means that a later violation has the same building ID and
             HPD order number, with an inspection date within <strong>365 days</strong> of the first
@@ -24,13 +25,26 @@ export function Methodology() {
             status-change date when no certified date is available. The order number identifies a
             kind of violation; it does not identify a specific apartment or physical condition.
           </p>
+
+          <h3 className="methodology__subhead">Why some cases are excluded from the rate</h3>
           <p>
-            A case is classified as a repeat as soon as a matching record appears within that
-            year. A case counts as “no repeat” only after the full year passes without a match.
-            Newer cases with no match yet are <strong>censored</strong>, meaning they are left out
-            of the rate until there is enough follow-up time. Counting them as “no repeat” now
-            would make the rate look lower simply because they are newer.
+            A case is marked a repeat as soon as a matching record appears, but can only be marked
+            “no repeat” after a full year passes with none. Cases still short of that year are{' '}
+            <strong>censored</strong>, meaning they’re left out of the rate rather than counted as
+            “no repeat,” since counting them now would bias the rate low simply because they’re
+            newer.
+            {summary && (
+              <>
+                {' '}Roughly {formatPct(summary.censored / summary.total)} of all closed
+                violations in this dataset ({formatNumber(summary.censored)} of{' '}
+                {formatNumber(summary.total)}) are currently censored this way, so the published
+                rate reflects only the closed violations old enough to judge and could shift as
+                those cases mature.
+              </>
+            )}
           </p>
+
+          <h3 className="methodology__subhead">Why some categories are excluded from rankings</h3>
           <p>
             Rate rankings include only violation types, neighborhoods, and registrations with at
             least 25 classifiable closed violations. Below that threshold, a single case can move
@@ -52,10 +66,8 @@ export function Methodology() {
             neighborhood, or violation type.
           </p>
           <p>
-            Rates based on very few cases can change sharply as new records arrive. The 25-case
-            threshold reduces the risk of an unstable ranking driven by a small number of records.
-            It does not eliminate statistical uncertainty, particularly for categories close to
-            the threshold.
+            The threshold reduces the risk of an unstable ranking, but it doesn’t eliminate
+            statistical uncertainty, particularly for categories close to it.
           </p>
 
           {unresolved.length > 0 && (
