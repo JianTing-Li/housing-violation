@@ -115,13 +115,18 @@ export function ViolationTypes() {
         <div className="category-aside">
           <h3>Enforcement and legal-status records</h3>
           <p className="category-aside__note">
-            These describe a regulatory or legal status — a vacate order, a filing tied to one, or
-            an enforcement-program notice — rather than an ongoing physical condition or a routine
-            posting duty.
+            These describe a regulatory or legal status, such as a vacate order, a filing tied to
+            one, or an enforcement-program notice. That's different from an ongoing physical
+            condition or a routine posting duty.
           </p>
           <CategoryList items={enforcement} />
         </div>
       )}
+
+      <p>
+        Is this pattern spread evenly across the Bronx, or does it concentrate in particular
+        neighborhoods?
+      </p>
     </section>
   );
 }

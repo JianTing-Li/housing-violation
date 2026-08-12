@@ -118,8 +118,18 @@ export function Neighborhoods() {
         of buildings and HPD registrations. It should not be read as a judgment about the
         neighborhood itself.
       </p>
+      <p>
+        Even accounting for that, a gap this wide between neighborhoods is large enough to be
+        worth HPD’s attention.
+      </p>
 
       <Callout>{getRecommendation('neighborhood-resourcing')}</Callout>
+
+      <p>
+        A pattern like this could trace back to housing stock and building age, or to a smaller
+        number of specific buildings and owners. Does it cluster with specific buildings or
+        landlords, not just geography?
+      </p>
     </section>
   );
 }

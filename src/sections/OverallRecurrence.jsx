@@ -79,11 +79,11 @@ export function OverallRecurrence() {
       <ul className="donut-legend" aria-hidden="true">
         <li>
           <span className="donut-legend__swatch" style={{ background: COLORS.recurred }} />
-          Repeat violation within a year — {formatPct(recurredSegment.share)} ({formatNumber(recurredSegment.count)})
+          Repeat violation within a year: {formatPct(recurredSegment.share)} ({formatNumber(recurredSegment.count)})
         </li>
         <li>
           <span className="donut-legend__swatch" style={{ background: COLORS.no_recurrence }} />
-          Full year passed with no match — {formatPct(noRecurrenceSegment.share)} ({formatNumber(noRecurrenceSegment.count)})
+          Full year passed with no match: {formatPct(noRecurrenceSegment.share)} ({formatNumber(noRecurrenceSegment.count)})
         </li>
       </ul>
 
@@ -107,6 +107,11 @@ export function OverallRecurrence() {
       </p>
 
       <Callout>{getRecommendation('reinspection')}</Callout>
+
+      <p>
+        A recurrence rate this size raises an obvious follow-up. Is this mostly minor, technical
+        repeats, or are the most hazardous violations just as likely to come back?
+      </p>
     </section>
   );
 }

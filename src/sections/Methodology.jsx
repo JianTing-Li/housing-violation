@@ -14,7 +14,7 @@ export function Methodology() {
   return (
     <section id="methodology" className="section">
       <details className="methodology" onToggle={(e) => setExpanded(e.target.open)}>
-        <summary>What this does—and doesn’t—tell us</summary>
+        <summary>Methodology and limitations</summary>
 
         <div className="methodology__body">
           <p>
