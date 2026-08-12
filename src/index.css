@@ -96,6 +96,13 @@ a {
   max-width: 62ch;
 }
 
+.hero-note {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
 /* Two rows (numbers, labels) x two columns (primary stat, sub stat) as an
    explicit grid, rather than two independently-flowing flex columns — that
    way each row's height is driven by its tallest cell, and align-self

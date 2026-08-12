@@ -38,6 +38,14 @@ export function Hero() {
         </div>
       )}
 
+      {data && data.rate > data.building_any_recurrence_rate && (
+        <p className="hero-note">
+          The violation-level rate is higher than the building-level rate, so repeats aren’t
+          spread evenly among buildings that have one: some buildings with a repeat appear to
+          have several, which pulls the violation-level average above the building-level share.
+        </p>
+      )}
+
       <details className="term-note">
         <summary>What counts as a repeat violation?</summary>
         <p>

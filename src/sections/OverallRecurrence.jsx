@@ -100,9 +100,9 @@ export function OverallRecurrence() {
       </ChartTakeaway>
 
       <p>
-        {formatNumber(recurredSegment.count)} violations had a repeat within a year,{' '}
-        {formatNumber(noRecurrenceSegment.count)} went a full year with no match, and{' '}
-        {formatNumber(donut.tooRecentCount)} are too recent to classify. See “What counts as a
+        Put another way, roughly {Math.round(recurredSegment.count / noRecurrenceSegment.count)}{' '}
+        violations recur for every one that doesn’t. Going a full year without the same violation
+        returning is the less common outcome in this data, not the norm. See “What counts as a
         repeat violation?” above for how a repeat is defined.
       </p>
 
